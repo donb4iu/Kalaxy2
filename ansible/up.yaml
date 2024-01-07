@@ -1,0 +1,53 @@
+---
+- hosts: raspberry_pi
+  roles:
+    - raspberry-pi-up
+- hosts: amd64
+  roles:
+    - amd64-up
+- hosts: raspbian
+  roles:
+    - raspbian-up
+- hosts: rpi4
+  roles:
+    - ubuntu-up
+- hosts: amdC2
+  roles:
+    - ubuntu-up
+- hosts: raspbian
+  roles:
+    - debian-up
+- hosts: rpi4
+  roles:
+    - debian-up
+- hosts: amdC2
+  roles:
+    - debian-up
+- hosts: docker-nodes
+  roles:
+    - docker-up
+- hosts: all
+  roles:
+    - storage-up
+- hosts: all
+  roles:
+    - microk8s-up
+- hosts: k3s_master
+  roles:
+    - k3s-master-up
+  run_once: yes
+- hosts: k3s_worker
+  roles:
+    - k3s-worker-up
+- hosts:
+    - k8s_master
+    - k8s_worker
+  roles:
+    - k8s-commons-up
+- hosts: k8s_master
+  roles:
+    - k8s-master-up
+  run_once: yes
+- hosts: k8s_worker
+  roles:
+    - k8s-worker-up

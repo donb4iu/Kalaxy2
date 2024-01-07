@@ -1,0 +1,48 @@
+---
+- hosts:
+    - microk8s_master
+    - microk8s_worker
+  roles:
+    - microk8s-common-down
+- hosts:
+    - k8s_master
+    - k8s_worker
+  roles:
+    - k8s-commons-down
+- hosts: k3s_worker
+  roles:
+    - k3s-worker-down
+- hosts: k3s_master
+  roles:
+    - k3s-master-down
+  run_once: yes
+- hosts: all
+  roles:
+    - storage-down
+- hosts: docker-nodes
+  roles:
+    - docker-down
+- hosts: raspbian
+  roles:
+    - debian-down
+- hosts: rpi4
+  roles:
+    - debian-down
+- hosts: amdC2
+  roles:
+    - debian-down
+- hosts: rpi4
+  roles:
+    - ubuntu-down
+- hosts: amdC2
+  roles:
+    - ubuntu-down
+- hosts: amd64
+  roles:
+    - amd64-down
+- hosts: raspbian
+  roles:
+    - raspbian-down
+- hosts: raspberry_pi
+  roles:
+    - raspberry-pi-down

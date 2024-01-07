@@ -1,0 +1,10 @@
+{
+  "title": "Kalaxy Cluster",
+  "tagline": "Arm64/Amd64 cluster research",
+  "image": "rpi4.png",
+  "html": {
+    "auto_toc": true,
+    "search": true
+  },
+  "author": "Don Buddenbaum"
+}
