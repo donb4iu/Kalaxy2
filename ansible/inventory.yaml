@@ -1,0 +1,108 @@
+---
+all:
+  hosts:
+    arm64-01:
+      ansible_host: 192.168.2.51
+    arm64-02:
+      ansible_host: 192.168.2.52
+    arm64-03:
+      ansible_host: 192.168.2.53
+    arm64-04:
+      ansible_host: 192.168.2.54
+    arm64-05:
+      ansible_host: 192.168.2.55
+    amd64-01:
+      ansible_host: 192.168.2.61
+    amd64-02:
+      ansible_host: 192.168.2.62
+    amd64-03:
+      ansible_host: 192.168.2.63
+    amd64-04:
+      ansible_host: 192.168.2.64
+    amd64-05:
+      ansible_host: 192.168.2.65
+  children:
+    docker-nodes:
+      hosts:
+    microk8s_master:
+      hosts:
+        arm64-01: {}
+        arm64-02: {}
+        arm64-03: {}
+    microk8s_worker:
+      hosts:
+        arm64-04: {}
+        arm64-05: {}
+        amd64-01: {}
+        amd64-02: {}
+    k3s_master:
+      # At most one master:
+      hosts:
+    k3s_worker:
+      # At least one worker unless there is no master:
+      hosts:
+    k8s_master:
+      hosts:
+      # Only one master!
+    k8s_worker:
+      hosts:
+    raspberry_pi:
+      hosts:
+        arm64-01: {}
+        arm64-05: {}
+        arm64-02: {}
+        arm64-03: {}
+        arm64-04: {}
+    amd64:
+      hosts:
+        amd64-01: {}
+        amd64-02: {}
+        amd64-03: {}
+        amd64-04: {}
+        amd64-05: {}
+    raspbian:
+      hosts: {}
+      vars:
+        ansible_ssh_user: pi
+        boot_directory: /boot
+    amdC2:
+      hosts:
+        amd64-01: {}
+        amd64-02: {}
+        amd64-03: {}
+        amd64-04: {}
+        amd64-05: {}
+        amd64-06: {}
+      vars:
+        ansible_ssh_user: dbuddenbaum
+        boot_directory: /boot
+    rpi4:
+      hosts:
+        arm64-01: {}
+        arm64-05: {}
+        arm64-02: {}
+        arm64-03: {}
+        arm64-04: {}
+      vars:
+        ansible_ssh_user: pi
+        boot_directory: /boot/firmware
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+    #containerd_version: 1.2.13-2
+    # Do you want to delete local data in k3s, k8s and Docker upon teardown?
+    #delete_local_data: no
+    #docker_apt_key_id: 8D81803C0EBFCD88
+    #docker_apt_key_url: "https://download.docker.com/linux/{{ ansible_lsb.id.lower() }}/gpg"
+    #docker_apt_repository: "deb https://download.docker.com/linux/{{ ansible_lsb.id.lower() }} {{ ansible_lsb.codename.lower() }} stable"
+    # Make sure to match the `no_proxy` list or otherwise expect Docker images to be proxied twice:
+    #docker_registry_mirror_url: https://my-docker-registry-mirror.local/
+    #docker_version: "5:19.03.12~3-0~{{ ansible_lsb.id.lower() }}-{{ ansible_lsb.codename.lower() }}" # (https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+    #k3s_version: v1.17.11+k3s1 # (https://github.com/rancher/k3s/releases)
+    #k8s_version: 1.17.11-00 # (https://github.com/kubernetes/kubernetes/releases)
+    #kubernetes_cni_version: 0.7.5-00 # (https://github.com/containernetworking/plugins/releases)
+    #locale: C.UTF-8
+    # Make sure to match all nodes and the `docker_registry_mirror_url`:
+    #no_proxy: 127.0.0.1,.local,localhost
+    # Make sure to use an IP address, not a hostname, or otherwise expect the Kubernetes setup to fail:
+    #proxy_url: http://10.0.0.1:3128/
+    #timezone: UTC
