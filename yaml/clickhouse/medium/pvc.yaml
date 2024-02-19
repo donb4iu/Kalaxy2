@@ -5,8 +5,8 @@ kind: PersistentVolumeClaim
 metadata:
   name: clickhouse-storage
 spec:
-  storageClassName: nfs-csi
+  storageClassName: nfs-csi-retain
   accessModes: [ReadWriteOnce]
   resources:
     requests:
-      storage: 5Gi
+      storage: 6Gi

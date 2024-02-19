@@ -53,13 +53,13 @@ write_files:
         ethernets:
           eth0:
             addresses:s in eth0.
-              - 192.168.2.57/16
-            gateway4: 192.168.2.253
+              - 192.168.2.63/16
+            gateway4: 192.168.2.1
             nameservers:
               addresses:
                 - 8.8.4.4
                 - 8.8.8.8
-                - 192.168.2.253
+                - 192.168.2.1
     ## To enable WiFi network connection
     ## Note: IP allocation is dynamic and won't match the defined state a
     ##       This will require manually configuring the Ansible inventory file with
