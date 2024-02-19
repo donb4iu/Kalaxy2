@@ -33,6 +33,20 @@ secret/clickhouse-operator configured
 deployment.apps/clickhouse-operator unchanged
 service/clickhouse-operator-metrics unchanged
 ```
+#### #( 02/18/24@11:22PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2@main✔
+   kubectl get all -n demo
+
+```
+NAME                            READY   STATUS    RESTARTS   AGE
+pod/chi-demo-01-demo-01-0-0-0   1/1     Running   0          56m
+
+NAME                              TYPE           CLUSTER-IP       EXTERNAL-IP    PORT(S)                         AGE
+service/chi-demo-01-demo-01-0-0   ClusterIP      None             <none>         9000/TCP,8123/TCP,9009/TCP      56m
+service/clickhouse-demo-01        LoadBalancer   10.152.183.114   192.168.2.21   8123:31182/TCP,9000:31455/TCP   56m
+
+NAME                                       READY   AGE
+statefulset.apps/chi-demo-01-demo-01-0-0   1/1     56m
+```
 
 #### Tests
 
