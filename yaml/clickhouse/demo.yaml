@@ -1,0 +1,12 @@
+apiVersion: "clickhouse.altinity.com/v1"
+kind: "ClickHouseInstallation"
+metadata:
+  name: "demo-01"
+spec:
+  configuration:
+    clusters:
+      - name: "demo-01"
+        layout:
+          type: Standard
+          shardsCount: 1
+          replicasCount: 1

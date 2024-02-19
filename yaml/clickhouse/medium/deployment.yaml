@@ -18,7 +18,7 @@ spec:
             name: clickhouse-userconfigmap
         - name: clickhouse-storage
           persistentVolumeClaim:
-            claimName: clickhouse-storage
+            claimName: clickhouse
       containers:
       - name: clickhouse
         image: clickhouse/clickhouse-server
@@ -44,3 +44,5 @@ spec:
               subPath: storage.xml
             - name: clickhouse-storage
               mountPath: /data
+      nodeSelector:
+              kubernetes.io/arch: arm64

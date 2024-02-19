@@ -1,12 +1,12 @@
-# pvc-nfs.yaml
 ---
-apiVersion: v1
 kind: PersistentVolumeClaim
+apiVersion: v1
 metadata:
-  name: clickhouse
+  name: jiva-volume-claim
 spec:
   storageClassName: openebs-jiva-csi-default
-  accessModes: [ReadWriteOnce]
+  accessModes:
+    - ReadWriteOnce
   resources:
     requests:
-      storage: 6Gi
+      storage: 5G
