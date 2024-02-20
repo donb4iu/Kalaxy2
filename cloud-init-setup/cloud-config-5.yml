@@ -85,4 +85,5 @@ runcmd:
       's/fixrtc/fixrtc cgroup_enable=memory cgroup_memory=1/',
       /boot/firmware/cmdline.txt,
     ]
+  - [sudo, systemctl, enable, iscsid]
   - [sudo, systemctl, restart, sshd]

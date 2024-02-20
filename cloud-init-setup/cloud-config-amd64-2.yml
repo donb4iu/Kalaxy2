@@ -1,11 +1,11 @@
 #cloud-config
 
 ## Set your hostname here, the manage_etc_hosts will update the hosts file entries as well
-hostname: amd64-worker-01
+hostname: amd64-02
 manage_etc_hosts: true
 
 ## Set the locale of the system
-locale: 'en_AU.UTF-8'
+locale: 'en_US.utf8'
 
 ## Set the timezone
 ## Value of 'timezone' must exist in /usr/share/zoneinfo
@@ -81,4 +81,5 @@ runcmd:
       's/PasswordAuthentication no/PasswordAuthentication yes/g',
       /etc/ssh/sshd_config,
     ]
+  - [sudo, systemctl, enable, iscsid]   
   - [sudo, systemctl, restart, sshd]
