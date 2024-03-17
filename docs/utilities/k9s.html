@@ -61,7 +61,7 @@
 
         <div class="Collapsible__content" id="sidebar_content">
             <!-- Navigation -->
-            <ul class='Nav'><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>ansible</a><ul class='Nav'><li class='Nav__item '><a href="../ansible/ansible_automation.html">ansible automation</a></li><li class='Nav__item '><a href="../ansible/microk8s_setup.html">microk8s setup</a></li><li class='Nav__item '><a href="../ansible/storage.html">storage</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>clickhouse</a><ul class='Nav'><li class='Nav__item '><a href="../clickhouse/docker.html">docker</a></li><li class='Nav__item '><a href="../clickhouse/documentation.html">documentation</a></li><li class='Nav__item '><a href="../clickhouse/kubernetes_operator.html">kubernetes operator</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>documentation</a><ul class='Nav'><li class='Nav__item '><a href="../documentation/documentation.html">documentation</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>setup</a><ul class='Nav'><li class='Nav__item '><a href="../setup/microk8s.html">microk8s</a></li><li class='Nav__item '><a href="../setup/notes.html">notes</a></li><li class='Nav__item '><a href="../setup/README.html">README</a></li><li class='Nav__item '><a href="../setup/rpi_usb_ubuntu.html">rpi usb ubuntu</a></li></ul></li><li class='Nav__item Nav__item--open has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>utilities</a><ul class='Nav'><li class='Nav__item Nav__item--active'><a href="../utilities/k9s.html">k9s</a></li></ul></li></ul>
+            <ul class='Nav'><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>ansible</a><ul class='Nav'><li class='Nav__item '><a href="../ansible/ansible_automation.html">ansible automation</a></li><li class='Nav__item '><a href="../ansible/microk8s_setup.html">microk8s setup</a></li><li class='Nav__item '><a href="../ansible/storage.html">storage</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>clickhouse</a><ul class='Nav'><li class='Nav__item '><a href="../clickhouse/docker.html">docker</a></li><li class='Nav__item '><a href="../clickhouse/documentation.html">documentation</a></li><li class='Nav__item '><a href="../clickhouse/kubernetes_operator.html">kubernetes operator</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>documentation</a><ul class='Nav'><li class='Nav__item '><a href="../documentation/documentation.html">documentation</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>remove</a><ul class='Nav'><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>microk8s</a><ul class='Nav'><li class='Nav__item '><a href="../remove/microk8s/microk8s_node.html">microk8s node</a></li></ul></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>setup</a><ul class='Nav'><li class='Nav__item '><a href="../setup/microk8s.html">microk8s</a></li><li class='Nav__item '><a href="../setup/minio.html">minio</a></li><li class='Nav__item '><a href="../setup/notes.html">notes</a></li><li class='Nav__item '><a href="../setup/README.html">README</a></li><li class='Nav__item '><a href="../setup/rpi_usb_ubuntu.html">rpi usb ubuntu</a></li></ul></li><li class='Nav__item Nav__item--open has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>utilities</a><ul class='Nav'><li class='Nav__item Nav__item--active'><a href="../utilities/k9s.html">k9s</a></li></ul></li></ul>
             <div class="Links">
                             </div>
 
@@ -93,7 +93,13 @@
 <a href="#k9s">K9s</a>
 <ul>
 <li>
+<a href="#references">References</a>
+</li>
+<li>
 <a href="#setup">Setup</a>
+<ul>
+<li>
+<a href="#brew">Brew</a>
 <ul>
 <li>
 <a href="#02-05-22-11-04pm-dbuddenbaum-donb-mbp4">#( 02/05/22@11:04PM )( dbuddenbaum@donb-mbp4 ):~</a>
@@ -110,12 +116,23 @@
 </li>
 </ul>
 </li>
+</ul>
+</li>
 </ul>    </div>
 </div>
 <h1><a id="k9s" href="#k9s" class="Permalink" aria-hidden="true" title="Permalink">#</a>K9s</h1>
+<h2><a id="references" href="#references" class="Permalink" aria-hidden="true" title="Permalink">#</a>References</h2>
+<ul>
+<li>
 <p><a href="https://k9scli.io/topics/install/" class="Link--external" rel="noopener noreferrer">K9s - Kubernetes CLI To Manage Your Clusters In Style!</a></p>
+</li>
+<li>
+<p><a href="https://medium.com/@bestpractices/use-docker-to-run-k9s-to-manage-a-kubernetes-cluster-63e726e01444" class="Link--external" rel="noopener noreferrer">Use Docker to Run K9s to Manage a Kubernetes Cluster</a></p>
+</li>
+</ul>
 <h2><a id="setup" href="#setup" class="Permalink" aria-hidden="true" title="Permalink">#</a>Setup</h2>
-<h3><a id="02-05-22-11-04pm-dbuddenbaum-donb-mbp4" href="#02-05-22-11-04pm-dbuddenbaum-donb-mbp4" class="Permalink" aria-hidden="true" title="Permalink">#</a><strong>#( 02/05/22@11:04PM )( dbuddenbaum@donb-mbp4 ):~</strong></h3>
+<h3><a id="brew" href="#brew" class="Permalink" aria-hidden="true" title="Permalink">#</a>Brew</h3>
+<h4><a id="02-05-22-11-04pm-dbuddenbaum-donb-mbp4" href="#02-05-22-11-04pm-dbuddenbaum-donb-mbp4" class="Permalink" aria-hidden="true" title="Permalink">#</a><strong>#( 02/05/22@11:04PM )( dbuddenbaum@donb-mbp4 ):~</strong></h4>
 <p>brew install derailed/k9s/k9s</p>
 <pre><code>Running `brew update --preinstall`...
 ==&gt; Homebrew is run entirely by unpaid volunteers. Please consider donating:
@@ -152,8 +169,8 @@ Tapped 1 formula (12 files, 113.2KB).
 Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
 Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
 </code></pre>
-<h2><a id="docker" href="#docker" class="Permalink" aria-hidden="true" title="Permalink">#</a>Docker</h2>
-<h3><a id="11-22-22-3-43pm-donbuddenbaum-donbs-imac" href="#11-22-22-3-43pm-donbuddenbaum-donbs-imac" class="Permalink" aria-hidden="true" title="Permalink">#</a>#( 11/22/22@ 3:43PM )( donbuddenbaum@donbs-imac ):~</h3>
+<h3><a id="docker" href="#docker" class="Permalink" aria-hidden="true" title="Permalink">#</a>Docker</h3>
+<h4><a id="11-22-22-3-43pm-donbuddenbaum-donbs-imac" href="#11-22-22-3-43pm-donbuddenbaum-donbs-imac" class="Permalink" aria-hidden="true" title="Permalink">#</a>#( 11/22/22@ 3:43PM )( donbuddenbaum@donbs-imac ):~</h4>
 <p>docker run –rm -it -v ~/.kube/config:/root/.kube/config quay.io/derailed/k9s</p>
     </div>
 

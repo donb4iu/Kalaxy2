@@ -2,7 +2,7 @@
 
 ## Reference
 
-
+- [How to create a ServiceMonitor in Microk8s: Observability Tutorial](https://nuculabs.dev/p/how-to-create-a-servicemonitor-in-microk8s-observability-tutorial)
 
 
 ## Setup
@@ -50,6 +50,12 @@
     Now try logging into the machine, with:   "ssh 'dbuddenbaum@192.168.2.54'"
     and check to make sure that only the key(s) you wanted were added.##
 
+#### dbuddenbaum@donb-ms7821:~$ ssh-keygen -f "/home/dbuddenbaum/.ssh/known_hosts" -R "192.168.2.51"
+```
+# Host 192.168.2.51 found: line 2
+/home/dbuddenbaum/.ssh/known_hosts updated.
+Original contents retained as /home/dbuddenbaum/.ssh/known_hosts.old
+```
 
 #### dbuddenbaum@arm64-05:~$ sudo snap install microk8s --classic --channel=1.29/stable
     microk8s (1.29/stable) v1.29.0 from Canonical✓ installed
@@ -84,27 +90,17 @@
 
 #### dbuddenbaum@arm64-01:~$ microk8s config > config
 
+    cd .kube
+    rsync dbuddenbaum@amd64-03:~/.kube/config config
+
 ## Cluster
 
-#### dbuddenbaum@arm64-01:~$ microk8s enable dns rbac dashboard ingress metallb
+#### dbuddenbaum@amd64-03:~$ microk8s enable dns
+    Infer repository core for addon dns
+    Addon core/dns is already enabled
+#### dbuddenbaum@amd64-03:~$ microk8s enable dashboard
 ```
-Infer repository core for addon dns
-Infer repository core for addon rbac
 Infer repository core for addon dashboard
-Infer repository core for addon ingress
-Infer repository core for addon metallb
-WARNING: Do not enable or disable multiple addons in one command.
-         This form of chained operations on addons will be DEPRECATED in the future.
-         Please, enable one addon at a time: 'microk8s enable <addon>'
-Addon core/dns is already enabled
-Enabling RBAC
-Reconfiguring apiserver
-Adding argument --authorization-mode to nodes.
-Restarting apiserver
-Restarting nodes.
-The connection to the server 127.0.0.1:16443 was refused - did you specify the right host or port?
-Failed to list nodes (try 1): Command '['/snap/microk8s/6357/microk8s-kubectl.wrapper', 'get', 'node', '-o', 'json']' returned non-zero exit status 1.
-RBAC is enabled
 Enabling Kubernetes Dashboard
 Infer repository core for addon metrics-server
 Enabling Metrics-Server
@@ -145,7 +141,11 @@ Use this token in the https login UI of the kubernetes-dashboard service.
 In an RBAC enabled setup (microk8s enable RBAC) you need to create a user with restricted
 permissions as shown in:
 https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md
+```
 
+#### dbuddenbaum@amd64-03:~$ microk8s enable ingress
+```
+Infer repository core for addon ingress
 Enabling Ingress
 ingressclass.networking.k8s.io/public created
 ingressclass.networking.k8s.io/nginx created
@@ -160,8 +160,11 @@ configmap/nginx-ingress-tcp-microk8s-conf created
 configmap/nginx-ingress-udp-microk8s-conf created
 daemonset.apps/nginx-ingress-microk8s-controller created
 Ingress is enabled
+```
+#### dbuddenbaum@amd64-03:~$ microk8s enable metallb
+```Infer repository core for addon metallb
 Enabling MetalLB
-Enter each IP address range delimited by comma (e.g. '10.64.140.43-10.64.140.49,192.168.0.105-192.168.0.111'): 192.168.2.20-192.168.2.39
+Enter each IP address range delimited by comma (e.g. '10.64.140.43-10.64.140.49,192.168.0.105-192.168.0.111'): 192.168.2.20-192.168.2.49
 Applying Metallb manifest
 customresourcedefinition.apiextensions.k8s.io/addresspools.metallb.io created
 customresourcedefinition.apiextensions.k8s.io/bfdprofiles.metallb.io created
@@ -189,29 +192,76 @@ validatingwebhookconfiguration.admissionregistration.k8s.io/validating-webhook-c
 Waiting for Metallb controller to be ready.
 error: timed out waiting for the condition on deployments/controller
 MetalLB controller is still not ready
-error: timed out waiting for the condition on deployments/controller
-MetalLB controller is still not ready
 deployment.apps/controller condition met
-Error from server (InternalError): error when creating "STDIN": Internal error occurred: failed calling webhook "ipaddresspoolvalidationwebhook.metallb.io": failed to call webhook: Post "https://webhook-service.metallb-system.svc:443/validate-metallb-io-v1beta1-ipaddresspool?timeout=10s": dial tcp 10.152.183.83:443: connect: connection refused
-Error from server (InternalError): error when creating "STDIN": Internal error occurred: failed calling webhook "l2advertisementvalidationwebhook.metallb.io": failed to call webhook: Post "https://webhook-service.metallb-system.svc:443/validate-metallb-io-v1beta1-l2advertisement?timeout=10s": dial tcp 10.152.183.83:443: connect: connection refused
-Failed to create default address pool, will retry
-Error from server (InternalError): error when creating "STDIN": Internal error occurred: failed calling webhook "ipaddresspoolvalidationwebhook.metallb.io": failed to call webhook: Post "https://webhook-service.metallb-system.svc:443/validate-metallb-io-v1beta1-ipaddresspool?timeout=10s": dial tcp 10.152.183.83:443: connect: connection refused
-Error from server (InternalError): error when creating "STDIN": Internal error occurred: failed calling webhook "l2advertisementvalidationwebhook.metallb.io": failed to call webhook: Post "https://webhook-service.metallb-system.svc:443/validate-metallb-io-v1beta1-l2advertisement?timeout=10s": dial tcp 10.152.183.83:443: connect: connection refused
-Failed to create default address pool, will retry
-Error from server (InternalError): error when creating "STDIN": Internal error occurred: failed calling webhook "ipaddresspoolvalidationwebhook.metallb.io": failed to call webhook: Post "https://webhook-service.metallb-system.svc:443/validate-metallb-io-v1beta1-ipaddresspool?timeout=10s": dial tcp 10.152.183.83:443: connect: connection refused
-Error from server (InternalError): error when creating "STDIN": Internal error occurred: failed calling webhook "l2advertisementvalidationwebhook.metallb.io": failed to call webhook: Post "https://webhook-service.metallb-system.svc:443/validate-metallb-io-v1beta1-l2advertisement?timeout=10s": dial tcp 10.152.183.83:443: connect: connection refused
-Failed to create default address pool, will retry
-Error from server (InternalError): error when creating "STDIN": Internal error occurred: failed calling webhook "ipaddresspoolvalidationwebhook.metallb.io": failed to call webhook: Post "https://webhook-service.metallb-system.svc:443/validate-metallb-io-v1beta1-ipaddresspool?timeout=10s": dial tcp 10.152.183.83:443: connect: connection refused
-Error from server (InternalError): error when creating "STDIN": Internal error occurred: failed calling webhook "l2advertisementvalidationwebhook.metallb.io": failed to call webhook: Post "https://webhook-service.metallb-system.svc:443/validate-metallb-io-v1beta1-l2advertisement?timeout=10s": dial tcp 10.152.183.83:443: connect: connection refused
-Failed to create default address pool, will retry
-Error from server (InternalError): error when creating "STDIN": Internal error occurred: failed calling webhook "ipaddresspoolvalidationwebhook.metallb.io": failed to call webhook: Post "https://webhook-service.metallb-system.svc:443/validate-metallb-io-v1beta1-ipaddresspool?timeout=10s": dial tcp 10.152.183.83:443: connect: connection refused
-Error from server (InternalError): error when creating "STDIN": Internal error occurred: failed calling webhook "l2advertisementvalidationwebhook.metallb.io": failed to call webhook: Post "https://webhook-service.metallb-system.svc:443/validate-metallb-io-v1beta1-l2advertisement?timeout=10s": dial tcp 10.152.183.83:443: connect: connection refused
-Failed to create default address pool, will retry
 ipaddresspool.metallb.io/default-addresspool created
 l2advertisement.metallb.io/default-advertise-all-pools created
 MetalLB is enabled
+dbuddenbaum@amd64-03:~$ microk8s enable helm3
+Infer repository core for addon helm3
+Addon core/helm3 is already enabled
 ```
+#### dbuddenbaum@amd64-03:~$ microk8s enable observability
+```
+Infer repository core for addon observability
+Addon core/dns is already enabled
+Addon core/helm3 is already enabled
+Enabling default storage class.
+WARNING: Hostpath storage is not suitable for production environments.
+         A hostpath volume can grow beyond the size limit set in the volume claim manifest.
 
+deployment.apps/hostpath-provisioner created
+storageclass.storage.k8s.io/microk8s-hostpath created
+serviceaccount/microk8s-hostpath created
+clusterrole.rbac.authorization.k8s.io/microk8s-hostpath created
+clusterrolebinding.rbac.authorization.k8s.io/microk8s-hostpath created
+Storage will be available soon.
+Enabling observability
+Release "kube-prom-stack" does not exist. Installing it now.
+NAME: kube-prom-stack
+LAST DEPLOYED: Fri Mar  8 19:55:55 2024
+NAMESPACE: observability
+STATUS: deployed
+REVISION: 1
+NOTES:
+kube-prometheus-stack has been installed. Check its status by running:
+  kubectl --namespace observability get pods -l "release=kube-prom-stack"
+
+Visit https://github.com/prometheus-operator/kube-prometheus for instructions on how to create & configure Alertmanager and Prometheus instances using the Operator.
+Release "loki" does not exist. Installing it now.
+NAME: loki
+LAST DEPLOYED: Fri Mar  8 19:56:53 2024
+NAMESPACE: observability
+STATUS: deployed
+REVISION: 1
+NOTES:
+The Loki stack has been deployed to your cluster. Loki can now be added as a datasource in Grafana.
+
+See http://docs.grafana.org/features/datasources/loki/ for more detail.
+Release "tempo" does not exist. Installing it now.
+NAME: tempo
+LAST DEPLOYED: Fri Mar  8 19:56:56 2024
+NAMESPACE: observability
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+Adding argument --authentication-kubeconfig to nodes.
+Adding argument --authorization-kubeconfig to nodes.
+Restarting nodes.
+Adding argument --authentication-kubeconfig to nodes.
+Adding argument --authorization-kubeconfig to nodes.
+Restarting nodes.
+The connection to the server 127.0.0.1:16443 was refused - did you specify the right host or port?
+Failed to list nodes (try 1): Command '['/snap/microk8s/6641/microk8s-kubectl.wrapper', 'get', 'node', '-o', 'json']' returned non-zero exit status 1.
+Adding argument --metrics-bind-address to nodes.
+Restarting nodes.
+The connection to the server 127.0.0.1:16443 was refused - did you specify the right host or port?
+Failed to list nodes (try 1): Command '['/snap/microk8s/6641/microk8s-kubectl.wrapper', 'get', 'node', '-o', 'json']' returned non-zero exit status 1.
+
+Note: the observability stack is setup to monitor only the current nodes of the MicroK8s cluster.
+For any nodes joining the cluster at a later stage this addon will need to be set up again.
+
+Observability has been enabled (user/pass: admin/prom-operator)
+```
 ### Dashboard
 
 #### #( 02/18/24@ 3:04PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/microk8s/k8s-dashboard@main✗✗✗
@@ -242,6 +292,13 @@ k8s-dashboard               LoadBalancer   10.152.183.90    192.168.2.20   443:3
 ```
 
 [Kubernetes Dashboard Adjusting the timeout of the Kubernetes Dashboard](https://blinkeye.github.io/post/public/2019-05-30-kubernetes-dashboard/)
+
+```
+kubectl patch --namespace kubernetes-dashboard deployment \
+  kubernetes-dashboard --type='json' --patch \
+ '[{"op": "add", "path": "/spec/template/spec/containers/0/args/2", "value": "--token-ttl=43200" }]'
+```
+or
 
 ![kubernetes-dashboard-ttl.png](../images/kubernetes_dashboard_ttl.png)
 
@@ -317,3 +374,46 @@ Note: the observability stack is setup to monitor only the current nodes of the 
 For any nodes joining the cluster at a later stage this addon will need to be set up again.
 ```
 Observability has been enabled **(user/pass: admin/prom-operator)**
+
+### Grafana
+
+#### #( 02/20/24@ 6:54PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2@main✗✗✗
+   kubectl get deployment -n observability
+```  
+NAME                                  READY   UP-TO-DATE   AVAILABLE   AGE
+kube-prom-stack-kube-prome-operator   1/1     1            1           2d
+kube-prom-stack-kube-state-metrics    1/1     1            1           2d
+kube-prom-stack-grafana               1/1     1            1           2d
+```
+#### #( 02/20/24@ 6:56PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2@main✗✗✗
+   kubectl port-forward deployment/kube-prom-stack-grafana -n observability 3000
+```   
+Forwarding from 127.0.0.1:3000 -> 3000
+Forwarding from [::1]:3000 -> 3000
+```
+or for loadbalancer
+
+#### #( 02/20/24@ 7:47PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/microk8s/prometheus@main✗✗✗
+   kubectl apply -f grafana-lb-svc.yaml
+
+    service/grafana-dashboard configured
+
+
+### Config for Kubectl
+
+#### dbuddenbaum@arm64-01:~/.kube$ 
+
+microk8s config > config
+
+#### #( 02/29/24@ 7:05PM )( donbuddenbaum@donbs-imac ):~/.kube
+rsync dbuddenbaum@arm64-01:~/.kube/config config
+
+#### #( 02/29/24@ 7:05PM )( donbuddenbaum@donbs-imac ):~/.kube
+ls
+
+
+```
+Untitled.pdf           config.ha              config.k8s.rpi4.old
+cache                  config.imac            config.rpi4.opensource
+config                 config.k8s             http-cache
+```

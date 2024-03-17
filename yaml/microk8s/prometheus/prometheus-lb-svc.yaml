@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: prometheus-dashboard
+  namespace: observability
+  labels:
+    app.kubernetes.io/name: prometheus
+    prometheus: kube-prom-stack-kube-prome-prometheus
+spec:
+  type: LoadBalancer
+  selector:
+    app.kubernetes.io/name: prometheus
+    prometheus: kube-prom-stack-kube-prome-prometheus
+  ports:
+    - protocol: TCP
+      port: 80  
+      targetPort: 9090

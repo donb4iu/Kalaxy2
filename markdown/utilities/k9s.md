@@ -1,9 +1,15 @@
 # K9s
-[K9s - Kubernetes CLI To Manage Your Clusters In Style!](https://k9scli.io/topics/install/)
+
+## References
+- [K9s - Kubernetes CLI To Manage Your Clusters In Style!](https://k9scli.io/topics/install/)
+
+- [Use Docker to Run K9s to Manage a Kubernetes Cluster](https://medium.com/@bestpractices/use-docker-to-run-k9s-to-manage-a-kubernetes-cluster-63e726e01444)
 
 ## Setup
 
-### **#( 02/05/22@11:04PM )( dbuddenbaum@donb-mbp4 ):~**
+### Brew
+
+#### **#( 02/05/22@11:04PM )( dbuddenbaum@donb-mbp4 ):~**
 
 brew install derailed/k9s/k9s
 
@@ -44,7 +50,7 @@ Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
 Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
 ```
 
-## Docker
+### Docker
 
-### #( 11/22/22@ 3:43PM )( donbuddenbaum@donbs-imac ):~
+#### #( 11/22/22@ 3:43PM )( donbuddenbaum@donbs-imac ):~
 docker run --rm -it -v ~/.kube/config:/root/.kube/config quay.io/derailed/k9s
