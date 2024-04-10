@@ -132,7 +132,7 @@ docker buildx build --platform linux/amd64,linux/arm64 -f yaml/nginx-docs/k8s-do
 
 ### Single Arch Build NGINX with static site
 
-[Demystifying Persistent Volumes and Persistent Volume Claims](https://learning.kasten.io/kubernetes/blog/demystifying-persistent-volumes-and-persistent-volume-claims/)
+
 
 #### #( 07/29/22@ 5:23PM )( donbuddenbaum@donbs-imac ):~/Documents/rPi4/kalaxy@main✗✗✗
 

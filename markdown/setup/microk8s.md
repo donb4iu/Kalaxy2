@@ -142,6 +142,12 @@ In an RBAC enabled setup (microk8s enable RBAC) you need to create a user with r
 permissions as shown in:
 https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md
 ```
+#### #( 04/09/24@ 9:43PM )( donbuddenbaum@donbs-imac ):~
+   kubectl patch --namespace kube-system deployment \
+  kubernetes-dashboard --type='json' --patch \
+ '[{"op": "add", "path": "/spec/template/spec/containers/0/args/2", "value": "--token-ttl=43200" }]'
+
+    deployment.apps/kubernetes-dashboard patched
 
 #### dbuddenbaum@amd64-03:~$ microk8s enable ingress
 ```
