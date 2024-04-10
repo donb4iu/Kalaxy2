@@ -11,9 +11,15 @@
 ```
 Infer repository core for addon helm3
 Addon core/helm3 is already enabled
-dbuddenbaum@arm64-01:~$ microk8s helm3 repo add csi-driver-nfs https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/charts
-"csi-driver-nfs" has been added to your repositories
-dbuddenbaum@arm64-01:~$ microk8s helm3 repo update
+```
+
+#### dbuddenbaum@arm64-01:~$ microk8s helm3 repo add csi-driver-nfs https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/charts
+
+      "csi-driver-nfs" has been added to your repositories
+
+#### dbuddenbaum@arm64-01:~$ microk8s helm3 repo update
+
+```
 Hang tight while we grab the latest from your chart repositories...
 ...Successfully got an update from the "csi-driver-nfs" chart repository
 Update Complete. ⎈Happy Helming!⎈
