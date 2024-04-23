@@ -6,6 +6,8 @@
 
 - [Argo CD - Declarative GitOps CD for Kubernetes](https://argo-cd.readthedocs.io/en/stable/)
 
+- [ArgoCD Example Apps](https://github.com/argoproj/argocd-example-apps)
+
 ## Source
 
 ### dbuddenbaum@amd64-03:~$ ***microk8s enable community***
@@ -160,3 +162,6 @@ zsh completions have been installed to:
 
 
 ![alt text](image.png)
+
+## Examples
+

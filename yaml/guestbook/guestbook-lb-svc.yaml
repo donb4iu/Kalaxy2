@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: guestbook-dashboard
+  namespace: guestbook
+  labels:
+    app.kubernetes.io/instance: guestbook
+    app.kubernetes.io/name: guestbook
+spec:
+  type: LoadBalancer
+  selector:
+    app: guestbook-ui
+  ports:
+    - protocol: TCP
+      port: 80  
+      targetPort: 80
