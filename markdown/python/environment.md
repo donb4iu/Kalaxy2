@@ -3,7 +3,18 @@
 ## Reference
 
 - [The ultimate guide to managing Python virtual environments in MacOS](https://medium.com/@miqui.ferrer/the-ultimate-guide-to-managing-python-virtual-environments-in-macos-c8cb49bf0a3c)
+- [zauberzeug
+/
+nicegui](https://github.com/zauberzeug/nicegui)
 
+-  [How to start a Python project with Django in 2020  ](https://medium.com/@cristobalcl/how-to-start-a-python-project-with-django-in-2020-803122721b23)
+
+-  [The Ultimate Python Set Up: Pyenv + Poetry](https://delightfuldatascience.substack.com/p/the-ultimate-python-set-up-pyenv)
+
+## Install
+
+### (3.12.0-venv) #( 04/23/24@ 2:58PM )( donbuddenbaum@donbs-imac ):~/Documents
+   pip install nicegui-highcharts
 
 ## Setup
 
@@ -75,3 +86,5 @@ Installed Python-3.12.0 to /Users/donbuddenbaum/.pyenv/versions/3.12.0
 * system (set by /Users/donbuddenbaum/.pyenv/version)
   3.12.0
 ```
+
+## Django

@@ -280,10 +280,11 @@ Observability has been enabled (user/pass: admin/prom-operator)
 
     service/k8s-dashboard created
 
-#### #( 02/18/24@ 3:13PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/microk8s/k8s-dashboard@main✗✗✗
-   kubectl -n kube-system create token admin-user
+#### Token with Duration
+##### #( 02/18/24@ 3:13PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/microk8s/k8s-dashboard@main✗✗✗
+   kubectl -n kube-system create token admin-user --duration=720h
 ```   
-eyJhbGciOiJSUzI1NiIsImtpZCI6ImNyRHBLN01nczgtX1liWVRsLW1VT21iaW5tQ2lYS2htTzZfS1BlUGVmZHMifQ.eyJhdWQiOlsiaHR0cHM6Ly9rdWJlcm5ldGVzLmRlZmF1bHQuc3ZjIl0sImV4cCI6MTcwODI5MDc5NiwiaWF0IjoxNzA4Mjg3MTk2LCJpc3MiOiJodHRwczovL2t1YmVybmV0ZXMuZGVmYXVsdC5zdmMiLCJrdWJlcm5ldGVzLmlvIjp7Im5hbWVzcGFjZSI6Imt1YmUtc3lzdGVtIiwic2VydmljZWFjY291bnQiOnsibmFtZSI6ImFkbWluLXVzZXIiLCJ1aWQiOiI2NDMxMDZiMi1mN2MyLTRlZGItYTk5YS0yN2ZjNjdjMTBlMGIifX0sIm5iZiI6MTcwODI4NzE5Niwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50Omt1YmUtc3lzdGVtOmFkbWluLXVzZXIifQ.AU-FVzF6U6OjC91tybe9AqdsMPZTlOu2qEuHSjEpXrjtYuy4SqLPtGrIMHqvySdNpgp0xyMNz0F-6L9ES4oNwZorTb5Rm3sSwuXNhkow_-gJw9Ao0LYKI9sg8Y3KaVbHY-WZmbxO36Ick5mJkh-V3YofvBoHcQtnC7MJHRjneOp-ht2VIL-Ob-y2CWfgwT3cGHdlU9lsBxz0FSQCvKzB3bszbp1jBoCNARS9YhVlMJq41dt5F0xX5XKbtV93RHpPScFGAltQXrPBj-Fy3ShtZ70JeJGg5NjwLqBSuplGaBuotSJxZVXJhNJgFkmjMR7kdrCaz8t6A1rCPnzAwLXcWA
+😀
 ```
 
 #### #( 02/18/24@ 3:13PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/microk8s/k8s-dashboard@main✗✗✗
@@ -422,4 +423,18 @@ ls
 Untitled.pdf           config.ha              config.k8s.rpi4.old
 cache                  config.imac            config.rpi4.opensource
 config                 config.k8s             http-cache
+```
+
+#### #( 05/07/24@ 2:32PM )( donbuddenbaum@donbs-imac ):~
+   
+   rsync -azP dbuddenbaum@arm64-05:~/.kube/config ~/.kube/config
+
+```
+receiving file list ...
+1 file to consider
+config
+        5462 100%    5.21MB/s    0:00:00 (xfer#1, to-check=0/1)
+
+sent 38 bytes  received 3676 bytes  1061.14 bytes/sec
+total size is 5462  speedup is 1.47
 ```

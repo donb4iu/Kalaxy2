@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  namespace: resume
+spec:
+  type: LoadBalancer
+  selector:
+    app: nginx
+  ports:
+    - port: 3001
+      targetPort: 80
+

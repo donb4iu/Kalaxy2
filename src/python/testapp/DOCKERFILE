@@ -1,0 +1,56 @@
+# Pull the official base image
+FROM python:3.10-slim-buster
+
+# Set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+# The port environment variable is set by Railway when the container is run
+# But we can default it to 8080 for local development
+ENV PORT=8080
+
+# Expose the port
+EXPOSE $PORT
+
+# Set work directory in the container
+WORKDIR /code
+
+# Install dependencies
+COPY requirements.txt /code/
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
+
+# Copy project
+COPY . /code/
+
+# Command to run on container start
+#CMD ["python", "main.py"]
+
+CMD uvicorn main:app --host 0.0.0.0 --port $PORT
+###
+FROM ros:humble-ros-base
+
+RUN apt-get update && apt-get install -y \
+    python3-pip \
+    # python3-dev \
+    # build-essential \
+   && rm -rf /var/lib/apt/lists/*
+
+SHELL ["/bin/bash", "-c"]
+
+RUN pip3 install nicegui
+
+ADD ros2_ws /ros2_ws
+
+WORKDIR /ros2_ws
+
+RUN source /opt/ros/humble/setup.bash && \
+    colcon build --symlink-install
+
+COPY ros_entrypoint.sh /
+
+EXPOSE 8080
+
+ENTRYPOINT ["/ros_entrypoint.sh"]
+
+CMD ros2 launch gui main_launch.py
