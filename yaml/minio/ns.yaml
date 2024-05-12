@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: minio
+## Not necessary with multi arc image
+  annotations:
+    scheduler.alpha.kubernetes.io/node-selector: kubernetes.io/arch=amd64
+  labels:
+    name: knote
+spec: {}
+status: {}
+

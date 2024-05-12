@@ -696,4 +696,380 @@ Error response from daemon: No such container: mongo
 Error response from daemon: No such container: minio
 ```
 
+## Build mArch Containers
 
+### #( 05/10/24@10:59PM )( donbuddenbaum@donbs-imac ):~/Documents/knote-java/04-05@master✔
+   mvn -Dminio.access.key=mykey -Dminio.secret.key=mysecret clean install
+```
+[INFO] Scanning for projects...
+[INFO]
+[INFO] -----------------------< io.learnk8s:knote-java >-----------------------
+[INFO] Building knote 1.0.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ knote-java ---
+[INFO] Deleting /Users/donbuddenbaum/Documents/knote-java/04-05/target
+[INFO]
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ knote-java ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 2 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ knote-java ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /Users/donbuddenbaum/Documents/knote-java/04-05/target/classes
+[INFO]
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ knote-java ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/donbuddenbaum/Documents/knote-java/04-05/src/test/resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ knote-java ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /Users/donbuddenbaum/Documents/knote-java/04-05/target/test-classes
+[INFO]
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ knote-java ---
+[INFO]
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running io.learnk8s.knote.KnoteJavaApplicationTests
+23:02:54.563 [main] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class io.learnk8s.knote.KnoteJavaApplicationTests]
+23:02:54.572 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+23:02:54.588 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+23:02:54.621 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [io.learnk8s.knote.KnoteJavaApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+23:02:54.641 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [io.learnk8s.knote.KnoteJavaApplicationTests], using SpringBootContextLoader
+23:02:54.646 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [io.learnk8s.knote.KnoteJavaApplicationTests]: class path resource [io/learnk8s/knote/KnoteJavaApplicationTests-context.xml] does not exist
+23:02:54.647 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [io.learnk8s.knote.KnoteJavaApplicationTests]: class path resource [io/learnk8s/knote/KnoteJavaApplicationTestsContext.groovy] does not exist
+23:02:54.647 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [io.learnk8s.knote.KnoteJavaApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+23:02:54.648 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [io.learnk8s.knote.KnoteJavaApplicationTests]: KnoteJavaApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+23:02:54.712 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [io.learnk8s.knote.KnoteJavaApplicationTests]
+23:02:54.813 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/donbuddenbaum/Documents/knote-java/04-05/target/classes/io/learnk8s/knote/KnoteJavaApplication.class]
+23:02:54.819 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration io.learnk8s.knote.KnoteJavaApplication for test class io.learnk8s.knote.KnoteJavaApplicationTests
+23:02:54.955 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [io.learnk8s.knote.KnoteJavaApplicationTests]: using defaults.
+23:02:54.956 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+23:02:54.978 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@63611043, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@20ca951f, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@2d778add, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@73302995, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1838ccb8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6c2ed0cd, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7d9e8ef7, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@f107c50, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@51133c06, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4b213651, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@4241e0f4, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@4ebff610]
+23:02:54.980 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [io.learnk8s.knote.KnoteJavaApplicationTests]
+23:02:54.980 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [io.learnk8s.knote.KnoteJavaApplicationTests]
+23:02:54.982 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [io.learnk8s.knote.KnoteJavaApplicationTests]
+23:02:54.982 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [io.learnk8s.knote.KnoteJavaApplicationTests]
+23:02:54.983 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [io.learnk8s.knote.KnoteJavaApplicationTests]
+23:02:54.983 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [io.learnk8s.knote.KnoteJavaApplicationTests]
+23:02:54.987 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@1b75c2e3 testClass = KnoteJavaApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@1984b1f testClass = KnoteJavaApplicationTests, locations = '{}', classes = '{class io.learnk8s.knote.KnoteJavaApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{minio.reconnect.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@60015ef5, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@65b3f4a4, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@609db43b, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@52102734], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+23:02:54.988 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [io.learnk8s.knote.KnoteJavaApplicationTests]
+23:02:54.988 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [io.learnk8s.knote.KnoteJavaApplicationTests]
+23:02:55.015 [main] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, minio.reconnect.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.6.RELEASE)
+
+2024-05-10 23:02:55.411  INFO 29325 --- [           main] i.l.knote.KnoteJavaApplicationTests      : Starting KnoteJavaApplicationTests on donbs-imac.local with PID 29325 (started by donbuddenbaum in /Users/donbuddenbaum/Documents/knote-java/04-05)
+2024-05-10 23:02:55.413  INFO 29325 --- [           main] i.l.knote.KnoteJavaApplicationTests      : No active profile set, falling back to default profiles: default
+2024-05-10 23:02:56.468  INFO 29325 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2024-05-10 23:02:56.543  INFO 29325 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 67ms. Found 1 repository interfaces.
+2024-05-10 23:02:57.495  INFO 29325 --- [           main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2024-05-10 23:02:57.600  INFO 29325 --- [localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1}] to localhost:27017
+2024-05-10 23:02:57.607  INFO 29325 --- [localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[7, 0, 8]}, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=4290869}
+java.net.ConnectException: Failed to connect to localhost/0:0:0:0:0:0:0:1:9000
+	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:249)
+	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:167)
+	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
+	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
+	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
+	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:94)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:125)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:264)
+	at okhttp3.RealCall.execute(RealCall.java:93)
+	at io.minio.MinioClient.executeReq(MinioClient.java:1111)
+	at io.minio.MinioClient.execute(MinioClient.java:1070)
+	at io.minio.MinioClient.updateRegionCache(MinioClient.java:1219)
+	at io.minio.MinioClient.getRegion(MinioClient.java:1264)
+	at io.minio.MinioClient.executeHead(MinioClient.java:1312)
+	at io.minio.MinioClient.bucketExists(MinioClient.java:3286)
+	at io.learnk8s.knote.KNoteController.initMinio(KnoteJavaApplication.java:202)
+	at io.learnk8s.knote.KNoteController.init(KnoteJavaApplication.java:130)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:363)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:307)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:136)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:414)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:845)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:119)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.base/java.net.Socket.connect(Socket.java:608)
+	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:130)
+	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
+	... 76 more
+> Minio Reconnect: false
+> Minio initialized!
+2024-05-10 23:02:59.082  INFO 29325 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-05-10 23:02:59.334  INFO 29325 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-05-10 23:03:00.096  INFO 29325 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2024-05-10 23:03:00.187  INFO 29325 --- [           main] i.l.knote.KnoteJavaApplicationTests      : Started KnoteJavaApplicationTests in 5.159 seconds (JVM running for 6.445)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.438 s - in io.learnk8s.knote.KnoteJavaApplicationTests
+2024-05-10 23:03:00.690  INFO 29325 --- [       Thread-1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+[INFO]
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+[INFO]
+[INFO] --- maven-jar-plugin:3.1.2:jar (default-jar) @ knote-java ---
+[INFO] Building jar: /Users/donbuddenbaum/Documents/knote-java/04-05/target/knote-java-1.0.0.jar
+[INFO]
+[INFO] --- spring-boot-maven-plugin:2.1.6.RELEASE:repackage (repackage) @ knote-java ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO]
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ knote-java ---
+[INFO] Installing /Users/donbuddenbaum/Documents/knote-java/04-05/target/knote-java-1.0.0.jar to /Users/donbuddenbaum/.m2/repository/io/learnk8s/knote-java/1.0.0/knote-java-1.0.0.jar
+[INFO] Installing /Users/donbuddenbaum/Documents/knote-java/04-05/pom.xml to /Users/donbuddenbaum/.m2/repository/io/learnk8s/knote-java/1.0.0/knote-java-1.0.0.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  15.505 s
+[INFO] Finished at: 2024-05-10T23:03:03-04:00
+[INFO] ------------------------------------------------------------------------
+```
+
+### #( 05/10/24@10:48PM )( donbuddenbaum@donbs-imac ):~/Documents/knote-java/04-05@master✗✗✗
+   docker buildx create --use
+
+      blissful_heisenberg
+
+### #( 05/10/24@11:03PM )( donbuddenbaum@donbs-imac ):~/Documents/knote-java/04-05@master✗✗✗
+   docker buildx build --platform linux/amd64,linux/arm64 -t donb4iu/knote-java:2.0.0 --push .
+
+```
+[+] Building 21.5s (14/14) FINISHED                                                                                                              docker-container:blissful_heisenberg
+ => [internal] load build definition from Dockerfile                                                                                                                             0.0s
+ => => transferring dockerfile: 188B                                                                                                                                             0.0s
+ => [linux/amd64 internal] load metadata for docker.io/adoptopenjdk/openjdk11:jdk-11.0.2.9-slim                                                                                  0.9s
+ => [linux/arm64 internal] load metadata for docker.io/adoptopenjdk/openjdk11:jdk-11.0.2.9-slim                                                                                  0.9s
+ => [auth] adoptopenjdk/openjdk11:pull token for registry-1.docker.io                                                                                                            0.0s
+ => [internal] load .dockerignore                                                                                                                                                0.0s
+ => => transferring context: 2B                                                                                                                                                  0.0s
+ => [internal] load build context                                                                                                                                                1.1s
+ => => transferring context: 33.57MB                                                                                                                                             1.1s
+ => CACHED [linux/arm64 1/3] FROM docker.io/adoptopenjdk/openjdk11:jdk-11.0.2.9-slim@sha256:f08341ea88e6dfae4a8ded768941574ead9b6794730f55afb8f54fe4bf7c1366                     0.0s
+ => => resolve docker.io/adoptopenjdk/openjdk11:jdk-11.0.2.9-slim@sha256:f08341ea88e6dfae4a8ded768941574ead9b6794730f55afb8f54fe4bf7c1366                                        0.0s
+ => CACHED [linux/amd64 1/3] FROM docker.io/adoptopenjdk/openjdk11:jdk-11.0.2.9-slim@sha256:f08341ea88e6dfae4a8ded768941574ead9b6794730f55afb8f54fe4bf7c1366                     0.0s
+ => => resolve docker.io/adoptopenjdk/openjdk11:jdk-11.0.2.9-slim@sha256:f08341ea88e6dfae4a8ded768941574ead9b6794730f55afb8f54fe4bf7c1366                                        0.0s
+ => [linux/amd64 2/3] COPY target/*.jar /opt/app.jar                                                                                                                             0.4s
+ => [linux/arm64 2/3] COPY target/*.jar /opt/app.jar                                                                                                                             0.4s
+ => [linux/arm64 3/3] WORKDIR /opt                                                                                                                                               0.1s
+ => [linux/amd64 3/3] WORKDIR /opt                                                                                                                                               0.1s
+ => exporting to image                                                                                                                                                          18.8s
+ => => exporting layers                                                                                                                                                          1.9s
+ => => exporting manifest sha256:464cdfed847001cee40bce41aebff78845aed5f5f79c7b2700044fe597e8539c                                                                                0.0s
+ => => exporting config sha256:f39b96fb875d525ba3c0d98c91d6a391907b4e344a64fe60fb440e429399db59                                                                                  0.0s
+ => => exporting attestation manifest sha256:a2c2adf40ec7cc45d5c0578ce2a4abcf3d1c7521a8dc95e8b0f21682d0cb1562                                                                    0.0s
+ => => exporting manifest sha256:7950d9291ad59642096c38e005d74e4306d7feda83aab20af2254fde1602e281                                                                                0.0s
+ => => exporting config sha256:fddb98ea66dcfc12711eec7feb0c64a87986ce5faadc55e593aab930880ddca0                                                                                  0.0s
+ => => exporting attestation manifest sha256:6d0fc3be8e21b114312c1a86d5a9eee32ba08c1a760089675f4b115a0da5f080                                                                    0.0s
+ => => exporting manifest list sha256:3b8cbe7f1c74738c85ba277235006606ff2daa8aaaaeae69c36bc1e565d130be                                                                           0.0s
+ => => pushing layers                                                                                                                                                           15.4s
+ => => pushing manifest for docker.io/donb4iu/knote-java:2.0.0@sha256:3b8cbe7f1c74738c85ba277235006606ff2daa8aaaaeae69c36bc1e565d130be                                           1.4s
+ => [auth] donb4iu/knote-java:pull,push token for registry-1.docker.io                                                                                                           0.0s
+
+Build multi-platform images faster with Docker Build Cloud: https://docs.docker.com/go/docker-build-cloud
+```
+
+## Build & Test Minio with mArch image 
+
+### #( 05/10/24@11:09PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/knotes/nfs@main✗✗✗
+   docker run \
+  --name=mongo \
+  --rm \
+  --network=knote \
+  mongo
+
+```
+{"t":{"$date":"2024-05-11T03:10:24.142+00:00"},"s":"I",  "c":"NETWORK",  "id":4915701, "ctx":"main","msg":"Initialized wire specification","attr":{"spec":{"incomingExternalClient":{"minWireVersion":0,"maxWireVersion":21},"incomingInternalClient":{"minWireVersion":0,"maxWireVersion":21},"outgoing":{"minWireVersion":6,"maxWireVersion":21},"isInternalClient":true}}}
+{"t":{"$date":"2024-05-11T03:10:24.143+00:00"},"s":"I",  "c":"CONTROL",  "id":23285,   "ctx":"main","msg":"Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'"}
+{"t":{"$date":"2024-05-11T03:10:24.146+00:00"},"s":"I",  "c":"NETWORK",  "id":4648601, "ctx":"main","msg":"Implicit TCP FastOpen unavailable. If TCP FastOpen is required, set tcpFastOpenServer, tcpFastOpenClient, and tcpFastOpenQueueSize."}
+{"t":{"$date":"2024-05-11T03:10:24.149+00:00"},"s":"I",  "c":"REPL",     "id":5123008, "ctx":"main","msg":"Successfully registered PrimaryOnlyService","attr":{"service":"TenantMigrationDonorService","namespace":"config.tenantMigrationDonors"}}
+{"t":{"$date":"2024-05-11T03:10:24.149+00:00"},"s":"I",  "c":"REPL",     "id":5123008, "ctx":"main","msg":"Successfully registered PrimaryOnlyService","attr":{"service":"TenantMigrationRecipientService","namespace":"config.tenantMigrationRecipients"}}
+{"t":{"$date":"2024-05-11T03:10:24.149+00:00"},"s":"I",  "c":"CONTROL",  "id":5945603, "ctx":"main","msg":"Multi threading initialized"}
+{"t":{"$date":"2024-05-11T03:10:24.149+00:00"},"s":"I",  "c":"TENANT_M", "id":7091600, "ctx":"main","msg":"Starting TenantMigrationAccessBlockerRegistry"}
+{"t":{"$date":"2024-05-11T03:10:24.150+00:00"},"s":"I",  "c":"CONTROL",  "id":4615611, "ctx":"initandlisten","msg":"MongoDB starting","attr":{"pid":1,"port":27017,"dbPath":"/data/db","architecture":"64-bit","host":"126cb11ee1dc"}}
+{"t":{"$date":"2024-05-11T03:10:24.150+00:00"},"s":"I",  "c":"CONTROL",  "id":23403,   "ctx":"initandlisten","msg":"Build Info","attr":{"buildInfo":{"version":"7.0.9","gitVersion":"3ff3a3925c36ed277cf5eafca5495f2e3728dd67","openSSLVersion":"OpenSSL 3.0.2 15 Mar 2022","modules":[],"allocator":"tcmalloc","environment":{"distmod":"ubuntu2204","distarch":"x86_64","target_arch":"x86_64"}}}}
+{"t":{"$date":"2024-05-11T03:10:24.150+00:00"},"s":"I",  "c":"CONTROL",  "id":51765,   "ctx":"initandlisten","msg":"Operating System","attr":{"os":{"name":"Ubuntu","version":"22.04"}}}
+{"t":{"$date":"2024-05-11T03:10:24.150+00:00"},"s":"I",  "c":"CONTROL",  "id":21951,   "ctx":"initandlisten","msg":"Options set by command line","attr":{"options":{"net":{"bindIp":"*"}}}}
+{"t":{"$date":"2024-05-11T03:10:24.152+00:00"},"s":"I",  "c":"STORAGE",  "id":22297,   "ctx":"initandlisten","msg":"Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem","tags":["startupWarnings"]}
+{"t":{"$date":"2024-05-11T03:10:24.153+00:00"},"s":"I",  "c":"STORAGE",  "id":22315,   "ctx":"initandlisten","msg":"Opening WiredTiger","attr":{"config":"create,cache_size=3458M,session_max=33000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,remove=true,path=journal,compressor=snappy),builtin_extension_config=(zstd=(compression_level=6)),file_manager=(close_idle_time=600,close_scan_interval=10,close_handle_minimum=2000),statistics_log=(wait=0),json_output=(error,message),verbose=[recovery_progress:1,checkpoint_progress:1,compact_progress:1,backup:0,checkpoint:0,compact:0,evict:0,history_store:0,recovery:0,rts:0,salvage:0,tiered:0,timestamp:0,transaction:0,verify:0,log:0],"}}
+{"t":{"$date":"2024-05-11T03:10:25.141+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1715397025,"ts_usec":141511,"thread":"1:0x7f9d962efc80","session_name":"txn-recover","category":"WT_VERB_RECOVERY_PROGRESS","category_id":30,"verbose_level":"DEBUG_1","verbose_level_id":1,"msg":"recovery log replay has successfully finished and ran for 0 milliseconds"}}}
+{"t":{"$date":"2024-05-11T03:10:25.141+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1715397025,"ts_usec":141680,"thread":"1:0x7f9d962efc80","session_name":"txn-recover","category":"WT_VERB_RECOVERY_PROGRESS","category_id":30,"verbose_level":"DEBUG_1","verbose_level_id":1,"msg":"Set global recovery timestamp: (0, 0)"}}}
+{"t":{"$date":"2024-05-11T03:10:25.141+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1715397025,"ts_usec":141726,"thread":"1:0x7f9d962efc80","session_name":"txn-recover","category":"WT_VERB_RECOVERY_PROGRESS","category_id":30,"verbose_level":"DEBUG_1","verbose_level_id":1,"msg":"Set global oldest timestamp: (0, 0)"}}}
+{"t":{"$date":"2024-05-11T03:10:25.141+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1715397025,"ts_usec":141796,"thread":"1:0x7f9d962efc80","session_name":"txn-recover","category":"WT_VERB_RECOVERY_PROGRESS","category_id":30,"verbose_level":"DEBUG_1","verbose_level_id":1,"msg":"recovery was completed successfully and took 0ms, including 0ms for the log replay, 0ms for the rollback to stable, and 0ms for the checkpoint."}}}
+{"t":{"$date":"2024-05-11T03:10:25.155+00:00"},"s":"I",  "c":"STORAGE",  "id":4795906, "ctx":"initandlisten","msg":"WiredTiger opened","attr":{"durationMillis":1002}}
+{"t":{"$date":"2024-05-11T03:10:25.155+00:00"},"s":"I",  "c":"RECOVERY", "id":23987,   "ctx":"initandlisten","msg":"WiredTiger recoveryTimestamp","attr":{"recoveryTimestamp":{"$timestamp":{"t":0,"i":0}}}}
+{"t":{"$date":"2024-05-11T03:10:25.183+00:00"},"s":"W",  "c":"CONTROL",  "id":22120,   "ctx":"initandlisten","msg":"Access control is not enabled for the database. Read and write access to data and configuration is unrestricted","tags":["startupWarnings"]}
+{"t":{"$date":"2024-05-11T03:10:25.183+00:00"},"s":"W",  "c":"CONTROL",  "id":22178,   "ctx":"initandlisten","msg":"/sys/kernel/mm/transparent_hugepage/enabled is 'always'. We suggest setting it to 'never' in this binary version","tags":["startupWarnings"]}
+{"t":{"$date":"2024-05-11T03:10:25.183+00:00"},"s":"W",  "c":"CONTROL",  "id":5123300, "ctx":"initandlisten","msg":"vm.max_map_count is too low","attr":{"currentValue":262144,"recommendedMinimum":1677720,"maxConns":838860},"tags":["startupWarnings"]}
+{"t":{"$date":"2024-05-11T03:10:25.184+00:00"},"s":"I",  "c":"STORAGE",  "id":20320,   "ctx":"initandlisten","msg":"createCollection","attr":{"namespace":"admin.system.version","uuidDisposition":"provided","uuid":{"uuid":{"$uuid":"1526df3f-333a-4db1-a2ee-298688b10402"}},"options":{"uuid":{"$uuid":"1526df3f-333a-4db1-a2ee-298688b10402"}}}}
+{"t":{"$date":"2024-05-11T03:10:25.202+00:00"},"s":"I",  "c":"INDEX",    "id":20345,   "ctx":"initandlisten","msg":"Index build: done building","attr":{"buildUUID":null,"collectionUUID":{"uuid":{"$uuid":"1526df3f-333a-4db1-a2ee-298688b10402"}},"namespace":"admin.system.version","index":"_id_","ident":"index-1-8856531098339113795","collectionIdent":"collection-0-8856531098339113795","commitTimestamp":null}}
+{"t":{"$date":"2024-05-11T03:10:25.202+00:00"},"s":"I",  "c":"REPL",     "id":20459,   "ctx":"initandlisten","msg":"Setting featureCompatibilityVersion","attr":{"newVersion":"7.0"}}
+{"t":{"$date":"2024-05-11T03:10:25.202+00:00"},"s":"I",  "c":"REPL",     "id":5853300, "ctx":"initandlisten","msg":"current featureCompatibilityVersion value","attr":{"featureCompatibilityVersion":"7.0","context":"setFCV"}}
+{"t":{"$date":"2024-05-11T03:10:25.202+00:00"},"s":"I",  "c":"NETWORK",  "id":4915702, "ctx":"initandlisten","msg":"Updated wire specification","attr":{"oldSpec":{"incomingExternalClient":{"minWireVersion":0,"maxWireVersion":21},"incomingInternalClient":{"minWireVersion":0,"maxWireVersion":21},"outgoing":{"minWireVersion":6,"maxWireVersion":21},"isInternalClient":true},"newSpec":{"incomingExternalClient":{"minWireVersion":0,"maxWireVersion":21},"incomingInternalClient":{"minWireVersion":21,"maxWireVersion":21},"outgoing":{"minWireVersion":21,"maxWireVersion":21},"isInternalClient":true}}}
+{"t":{"$date":"2024-05-11T03:10:25.203+00:00"},"s":"I",  "c":"NETWORK",  "id":4915702, "ctx":"initandlisten","msg":"Updated wire specification","attr":{"oldSpec":{"incomingExternalClient":{"minWireVersion":0,"maxWireVersion":21},"incomingInternalClient":{"minWireVersion":21,"maxWireVersion":21},"outgoing":{"minWireVersion":21,"maxWireVersion":21},"isInternalClient":true},"newSpec":{"incomingExternalClient":{"minWireVersion":0,"maxWireVersion":21},"incomingInternalClient":{"minWireVersion":21,"maxWireVersion":21},"outgoing":{"minWireVersion":21,"maxWireVersion":21},"isInternalClient":true}}}
+{"t":{"$date":"2024-05-11T03:10:25.203+00:00"},"s":"I",  "c":"REPL",     "id":5853300, "ctx":"initandlisten","msg":"current featureCompatibilityVersion value","attr":{"featureCompatibilityVersion":"7.0","context":"startup"}}
+{"t":{"$date":"2024-05-11T03:10:25.205+00:00"},"s":"I",  "c":"STORAGE",  "id":5071100, "ctx":"initandlisten","msg":"Clearing temp directory"}
+{"t":{"$date":"2024-05-11T03:10:25.205+00:00"},"s":"I",  "c":"CONTROL",  "id":6608200, "ctx":"initandlisten","msg":"Initializing cluster server parameters from disk"}
+{"t":{"$date":"2024-05-11T03:10:25.205+00:00"},"s":"I",  "c":"CONTROL",  "id":20536,   "ctx":"initandlisten","msg":"Flow Control is enabled on this deployment"}
+{"t":{"$date":"2024-05-11T03:10:25.207+00:00"},"s":"I",  "c":"FTDC",     "id":20625,   "ctx":"initandlisten","msg":"Initializing full-time diagnostic data capture","attr":{"dataDirectory":"/data/db/diagnostic.data"}}
+{"t":{"$date":"2024-05-11T03:10:25.209+00:00"},"s":"I",  "c":"STORAGE",  "id":20320,   "ctx":"initandlisten","msg":"createCollection","attr":{"namespace":"local.startup_log","uuidDisposition":"generated","uuid":{"uuid":{"$uuid":"48960fb4-2f88-4d83-8b7e-697ab298f1f7"}},"options":{"capped":true,"size":10485760}}}
+{"t":{"$date":"2024-05-11T03:10:25.231+00:00"},"s":"I",  "c":"INDEX",    "id":20345,   "ctx":"initandlisten","msg":"Index build: done building","attr":{"buildUUID":null,"collectionUUID":{"uuid":{"$uuid":"48960fb4-2f88-4d83-8b7e-697ab298f1f7"}},"namespace":"local.startup_log","index":"_id_","ident":"index-3-8856531098339113795","collectionIdent":"collection-2-8856531098339113795","commitTimestamp":null}}
+{"t":{"$date":"2024-05-11T03:10:25.231+00:00"},"s":"I",  "c":"REPL",     "id":6015317, "ctx":"initandlisten","msg":"Setting new configuration state","attr":{"newState":"ConfigReplicationDisabled","oldState":"ConfigPreStart"}}
+{"t":{"$date":"2024-05-11T03:10:25.231+00:00"},"s":"I",  "c":"STORAGE",  "id":22262,   "ctx":"initandlisten","msg":"Timestamp monitor starting"}
+{"t":{"$date":"2024-05-11T03:10:25.234+00:00"},"s":"I",  "c":"CONTROL",  "id":20712,   "ctx":"LogicalSessionCacheReap","msg":"Sessions collection is not set up; waiting until next sessions reap interval","attr":{"error":"NamespaceNotFound: config.system.sessions does not exist"}}
+{"t":{"$date":"2024-05-11T03:10:25.234+00:00"},"s":"I",  "c":"STORAGE",  "id":20320,   "ctx":"LogicalSessionCacheRefresh","msg":"createCollection","attr":{"namespace":"config.system.sessions","uuidDisposition":"generated","uuid":{"uuid":{"$uuid":"e7845007-46de-4e79-bfae-5f3f2c0f7219"}},"options":{}}}
+{"t":{"$date":"2024-05-11T03:10:25.235+00:00"},"s":"I",  "c":"NETWORK",  "id":23015,   "ctx":"listener","msg":"Listening on","attr":{"address":"/tmp/mongodb-27017.sock"}}
+{"t":{"$date":"2024-05-11T03:10:25.235+00:00"},"s":"I",  "c":"NETWORK",  "id":23015,   "ctx":"listener","msg":"Listening on","attr":{"address":"0.0.0.0"}}
+{"t":{"$date":"2024-05-11T03:10:25.235+00:00"},"s":"I",  "c":"NETWORK",  "id":23016,   "ctx":"listener","msg":"Waiting for connections","attr":{"port":27017,"ssl":"off"}}
+{"t":{"$date":"2024-05-11T03:10:25.235+00:00"},"s":"I",  "c":"CONTROL",  "id":8423403, "ctx":"initandlisten","msg":"mongod startup complete","attr":{"Summary of time elapsed":{"Startup from clean shutdown?":true,"Statistics":{"Transport layer setup":"0 ms","Run initial syncer crash recovery":"0 ms","Create storage engine lock file in the data directory":"0 ms","Get metadata describing storage engine":"0 ms","Create storage engine":"1024 ms","Write current PID to file":"0 ms","Write a new metadata for storage engine":"3 ms","Initialize FCV before rebuilding indexes":"1 ms","Drop abandoned idents and get back indexes that need to be rebuilt or builds that need to be restarted":"0 ms","Rebuild indexes for collections":"0 ms","Load cluster parameters from disk for a standalone":"0 ms","Build user and roles graph":"0 ms","Set up the background thread pool responsible for waiting for opTimes to be majority committed":"0 ms","Initialize information needed to make a mongod instance shard aware":"0 ms","Start up the replication coordinator":"0 ms","Start transport layer":"1 ms","_initAndListen total elapsed time":"1085 ms"}}}}
+{"t":{"$date":"2024-05-11T03:10:25.254+00:00"},"s":"I",  "c":"REPL",     "id":7360102, "ctx":"LogicalSessionCacheRefresh","msg":"Added oplog entry for create to transaction","attr":{"namespace":"config.$cmd","uuid":{"uuid":{"$uuid":"e7845007-46de-4e79-bfae-5f3f2c0f7219"}},"object":{"create":"system.sessions","idIndex":{"v":2,"key":{"_id":1},"name":"_id_"}}}}
+{"t":{"$date":"2024-05-11T03:10:25.255+00:00"},"s":"I",  "c":"REPL",     "id":7360100, "ctx":"LogicalSessionCacheRefresh","msg":"Added oplog entry for createIndexes to transaction","attr":{"namespace":"config.$cmd","uuid":{"uuid":{"$uuid":"e7845007-46de-4e79-bfae-5f3f2c0f7219"}},"object":{"createIndexes":"system.sessions","v":2,"key":{"lastUse":1},"name":"lsidTTLIndex","expireAfterSeconds":1800}}}
+{"t":{"$date":"2024-05-11T03:10:25.265+00:00"},"s":"I",  "c":"INDEX",    "id":20345,   "ctx":"LogicalSessionCacheRefresh","msg":"Index build: done building","attr":{"buildUUID":null,"collectionUUID":{"uuid":{"$uuid":"e7845007-46de-4e79-bfae-5f3f2c0f7219"}},"namespace":"config.system.sessions","index":"_id_","ident":"index-5-8856531098339113795","collectionIdent":"collection-4-8856531098339113795","commitTimestamp":null}}
+{"t":{"$date":"2024-05-11T03:10:25.265+00:00"},"s":"I",  "c":"INDEX",    "id":20345,   "ctx":"LogicalSessionCacheRefresh","msg":"Index build: done building","attr":{"buildUUID":null,"collectionUUID":{"uuid":{"$uuid":"e7845007-46de-4e79-bfae-5f3f2c0f7219"}},"namespace":"config.system.sessions","index":"lsidTTLIndex","ident":"index-6-8856531098339113795","collectionIdent":"collection-4-8856531098339113795","commitTimestamp":null}}
+{"t":{"$date":"2024-05-11T03:11:25.183+00:00"},"s":"I",  "c":"WTCHKPT",  "id":22430,   "ctx":"Checkpointer","msg":"WiredTiger message","attr":{"message":{"ts_sec":1715397085,"ts_usec":183310,"thread":"1:0x7f9d8d2dc640","session_name":"WT_SESSION.checkpoint","category":"WT_VERB_CHECKPOINT_PROGRESS","category_id":6,"verbose_level":"DEBUG_1","verbose_level_id":1,"msg":"saving checkpoint snapshot min: 34, snapshot max: 34 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 1"}}}
+{"t":{"$date":"2024-05-11T03:11:52.775+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.21.0.4:49540","uuid":{"uuid":{"$uuid":"10e5dbd0-59ef-456c-9c44-582a0edd2b0b"}},"connectionId":1,"connectionCount":1}}
+{"t":{"$date":"2024-05-11T03:11:52.803+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn1","msg":"client metadata","attr":{"remote":"172.21.0.4:49540","client":"conn1","negotiatedCompressors":[],"doc":{"driver":{"name":"mongo-java-driver","version":"3.8.2"},"os":{"type":"Linux","name":"Linux","architecture":"amd64","version":"6.6.22-linuxkit"},"platform":"Java/AdoptOpenJDK/11.0.2+9"}}}
+{"t":{"$date":"2024-05-11T03:11:52.840+00:00"},"s":"I",  "c":"NETWORK",  "id":6788700, "ctx":"conn1","msg":"Received first command on ingress connection since session start or auth handshake","attr":{"elapsedMillis":36}}
+```
+
+### #( 05/10/24@11:27PM )( donbuddenbaum@donbs-imac ):~/Documents/knote-java@master✗✗✗
+   docker run \
+  --name=minio \
+  --rm \
+  --network=knote \
+  -e MINIO_ACCESS_KEY=mykey \
+  -e MINIO_SECRET_KEY=mysecret \
+  minio/minio server /data
+
+```
+WARNING: MINIO_ACCESS_KEY and MINIO_SECRET_KEY are deprecated.
+         Please use MINIO_ROOT_USER and MINIO_ROOT_PASSWORD
+Formatting 1st pool, 1 set(s), 1 drives per set.
+WARNING: Host local has more than 0 drives of set. A host failure will result in data becoming unavailable.
+MinIO Object Storage Server
+Copyright: 2015-2024 MinIO, Inc.
+License: GNU AGPLv3 - https://www.gnu.org/licenses/agpl-3.0.html
+Version: RELEASE.2024-05-10T01-41-38Z (go1.22.3 linux/amd64)
+
+API: http://172.21.0.3:9000  http://127.0.0.1:9000
+WebUI: http://172.21.0.3:36049 http://127.0.0.1:36049
+
+Docs: https://min.io/docs/minio/linux/index.html
+Status:         1 Online, 0 Offline.
+STARTUP WARNINGS:
+- The standard parity is set to 0. This can lead to data loss.
+```
+
+### #( 05/10/24@11:27PM )( donbuddenbaum@donbs-imac ):~/Documents/knote-java/04-05@master✗✗✗
+   docker run \
+  --name=knote-java \
+  --rm \
+  --network=knote \
+  -p 8080:8080 \
+  -e MONGO_URL=mongodb://mongo:27017/dev \
+  -e MINIO_ACCESS_KEY=mykey \
+  -e MINIO_SECRET_KEY=mysecret \
+  -e MINIO_HOST=minio \
+  donb4iu/knote-java:2.0.0
+
+```
+Picked up JAVA_TOOL_OPTIONS:
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.6.RELEASE)
+
+2024-05-11 03:29:14.585  INFO 1 --- [           main] io.learnk8s.knote.KnoteJavaApplication   : Starting KnoteJavaApplication v1.0.0 on 732b0d8774f2 with PID 1 (/opt/app.jar started by root in /opt)
+2024-05-11 03:29:14.605  INFO 1 --- [           main] io.learnk8s.knote.KnoteJavaApplication   : No active profile set, falling back to default profiles: default
+2024-05-11 03:29:16.400  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2024-05-11 03:29:16.497  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 88ms. Found 1 repository interfaces.
+2024-05-11 03:29:17.652  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-05-11 03:29:17.727  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-11 03:29:17.728  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2024-05-11 03:29:17.895  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-11 03:29:17.896  INFO 1 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3192 ms
+2024-05-11 03:29:18.565  INFO 1 --- [           main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[mongo:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2024-05-11 03:29:18.727  INFO 1 --- [l'}-mongo:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1}] to mongo:27017
+2024-05-11 03:29:18.735  INFO 1 --- [l'}-mongo:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=mongo:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[7, 0, 9]}, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=4861925}
+> Minio initialized!
+2024-05-11 03:29:20.207  INFO 1 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-05-11 03:29:20.421  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-05-11 03:29:20.805  INFO 1 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2024-05-11 03:29:20.926  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-05-11 03:29:20.933  INFO 1 --- [           main] io.learnk8s.knote.KnoteJavaApplication   : Started KnoteJavaApplication in 7.411 seconds (JVM running for 8.585)
+2024-05-11 03:30:05.190  INFO 1 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-11 03:30:05.191  INFO 1 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-11 03:30:05.214  INFO 1 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 23 ms
+2024-05-11 03:30:05.342  INFO 1 --- [nio-8080-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2}] to mongo:27017
+```

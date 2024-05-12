@@ -1,8 +1,8 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: k8s-minio-console
-  namespace: minio-operator
+  name: minio
+  namespace: minio
   labels:
     k8s-app: k8s-minio-console
 spec:
