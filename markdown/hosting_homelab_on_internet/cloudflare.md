@@ -47,5 +47,9 @@ Authenticating as: Don Buddenbaum,,, (dbuddenbaum)
 Password:
 ==== AUTHENTICATION COMPLETE ===
 ```
+## Check Cloud Flared Status
+
+385  systemctl status cloudflared
+386  sudo cloudflared service uninstall
 
 ## LinkedIn Authorization

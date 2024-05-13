@@ -3,10 +3,13 @@ kind: Service
 metadata:
   name: nginx
   namespace: resume
+  labels:
+    application: resume
 spec:
   type: LoadBalancer
   selector:
     app: nginx
+    application: resume
   ports:
     - port: 3001
       targetPort: 80

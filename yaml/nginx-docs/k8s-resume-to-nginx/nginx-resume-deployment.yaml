@@ -1,6 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  labels:
+    application: resume
   name: nginx
   namespace: resume
 spec:
@@ -8,10 +10,12 @@ spec:
   selector:
     matchLabels:
       app: nginx
+      application: resume
   template:
     metadata:
       labels:
         app: nginx
+        application: resume
     spec:
       containers:
       - name: nginx
