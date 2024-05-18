@@ -138,3 +138,74 @@ Operations to perform:
 Running migrations:
   Applying polls.0001_initial... OK
 ```
+#### query database with shell
+```
+>>> from polls.models import Choice, Question  # Import the model classes we just wrote.
+
+# No questions are in the system yet.
+>>> Question.objects.all()
+<QuerySet []>
+
+# Create a new Question.
+# Support for time zones is enabled in the default settings file, so
+# Django expects a datetime with tzinfo for pub_date. Use timezone.now()
+# instead of datetime.datetime.now() and it will do the right thing.
+>>> from django.utils import timezone
+>>> q = Question(question_text="What's new?", pub_date=timezone.now())
+
+# Save the object into the database. You have to call save() explicitly.
+>>> q.save()
+
+# Now it has an ID.
+>>> q.id
+1
+
+# Access model field values via Python attributes.
+>>> q.question_text
+"What's new?"
+>>> q.pub_date
+datetime.datetime(2012, 2, 26, 13, 0, 0, 775217, tzinfo=datetime.timezone.utc)
+
+# Change values by changing the attributes, then calling save().
+>>> q.question_text = "What's up?"
+>>> q.save()
+
+# objects.all() displays all the questions in the database.
+>>> Question.objects.all()
+<QuerySet [<Question: Question object (1)>]>
+```
+##### (3.12.0-venv) #( 05/17/24@11:57PM )( donbuddenbaum@donbs-imac ):~/Documents/pollapp/mysite@main✗✗✗
+   python manage.py shell
+
+    Python 3.12.0 (main, Apr 22 2024, 18:13:12) [Clang 15.0.0 (clang-1500.1.0.2.5)] on darwin
+    Type "help", "copyright", "credits" or "license" for more information.
+    (InteractiveConsole)
+>>> from polls.models import Choice, Question
+
+>>> Question.objects.all()
+
+    <QuerySet []>
+>>> from django.utils import timezone
+
+>>> q = Question(question_text="What's new?", pub_date=timezone.now())
+
+>>> q.save()
+
+>>> q.id
+
+    1
+>>> q.question_text
+"What's new?"
+
+>>> q.pub_date
+
+        datetime.datetime(2024, 5, 18, 4, 9, 55, 562224, tzinfo=datetime.timezone.utc)
+
+>>> q.question_text = "What's up?"
+
+>>> q.save()
+
+>>> Question.objects.all()
+
+    <QuerySet [<Question: Question object (1)>]>
+>>>

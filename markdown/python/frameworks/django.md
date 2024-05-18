@@ -59,3 +59,19 @@ Running migrations:
   Applying auth.0012_alter_user_first_name_max_length... OK
   Applying sessions.0001_initial... OK
   ```
+
+###  Super User
+#### (3.12.0-venv) #( 05/18/24@12:29AM )( donbuddenbaum@donbs-imac ):~/Documents/pollapp/mysite@main✗✗✗
+   python manage.py createsuperuser
+
+```
+Username (leave blank to use 'donbuddenbaum'): admin
+Email address: dbuddenbaum@gmail.com
+Password:
+Password (again):
+Superuser created successfully.
+```
+
+### Database
+
+[database model and migration (pollapp)](../pollapp.md#setup-database)
