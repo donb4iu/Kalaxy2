@@ -4,7 +4,22 @@
 
 -   [How to install Django](https://docs.djangoproject.com/en/5.0/topics/install/#how-to-install-django)
 -   [Writing your first Django app](https://docs.djangoproject.com/en/5.0/intro/tutorial01/)
+-   [Introducing automated testing](https://docs.djangoproject.com/en/5.0/intro/tutorial05/)
 
+## Django Commands
+
+**Command Cheatsheet**
+
+
+```
+Command	Description
+. python -m venv (name_of_venv)	                Creates a virtual environment
+. source (venv)/bin/activate	                Activates a virtual environment
+. django-admin startproject (project_name)	    Starts a Django project
+, django-admin startproject (project_name) .	Sets up a project in the same directory
+. python manage.py runserver                	Runs the Django server
+. python manage.py startapp (app_name)	        Creates a Django app
+```
 
 ## Setup
 
@@ -75,3 +90,29 @@ Superuser created successfully.
 ### Database
 
 [database model and migration (pollapp)](../pollapp.md#setup-database)
+
+## Testing
+
+### (3.12.0-venv) #( 05/18/24@ 2:55AM )( donbuddenbaum@donbs-imac ):~/Documents/pollapp/mysite@main✗✗✗
+   python manage.py test polls
+
+```
+Found 1 test(s).
+Creating test database for alias 'default'...
+System check identified no issues (0 silenced).
+F
+======================================================================
+FAIL: test_was_published_recently_with_future_question (polls.tests.QuestionModelTests.test_was_published_recently_with_future_question)
+was_published_recently() returns False for questions whose pub_date
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/donbuddenbaum/Documents/pollapp/mysite/polls/tests.py", line 19, in test_was_published_recently_with_future_question
+    self.assertIs(future_question.was_published_recently(), False)
+AssertionError: True is not False
+
+----------------------------------------------------------------------
+Ran 1 test in 0.002s
+
+FAILED (failures=1)
+Destroying test database for alias 'default'...
+```
