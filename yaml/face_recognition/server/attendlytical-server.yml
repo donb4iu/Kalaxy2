@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: server
-        image: cheahwen/attendlytical-server:latest
+        image: donb4iu/attendlytical-server:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 4000 #  Need to be same as target port in service
@@ -43,9 +43,10 @@ spec:
               name: mongo-config
               key: mongo-url
         - name: MONGO_URI
-          value: "mongodb://$(MONGO_USER_NAME):$(MONGO_USER_PWD)@http://192.168.2.33:27018/" # Check mongo.yml to see db service running port 27018
+#          value: "mongodb://$(MONGO_USER_NAME):$(MONGO_USER_PWD)@$(MONGO_URL):$(MONGO_PORT)" # Check mongo.yml to see db service running port 27018
+          value: "mongodb://$(MONGO_URL):$(MONGO_PORT)" # Check mongo.yml to see db service running port 27018
         - name: SECRET_KEY
-          value: sfssdfsdfsdfsdf
+          value: abcdefgh
         - name: CLOUDINARY_NAME
           valueFrom:
             secretKeyRef:
