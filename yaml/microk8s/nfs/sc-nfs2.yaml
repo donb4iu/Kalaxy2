@@ -1,0 +1,15 @@
+# sc-nfs2.yaml
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: nfs-csi2
+provisioner: nfs.csi.k8s.io
+parameters:
+  server: 192.168.2.7
+  share: /mnt/sdd1/nfs-server2
+reclaimPolicy: Delete
+volumeBindingMode: Immediate
+mountOptions:
+  - hard
+  - nfsvers=4.1
