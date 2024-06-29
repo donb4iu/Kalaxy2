@@ -4,6 +4,15 @@
 
 - [Part V: Kubernetes Deployment with Minikube For A Full Stack Application (React + NodeJS + GraphQL)](https://medium.com/@cheahwen1997/part-v-kubernetes-deployment-with-minikube-for-a-full-stack-application-react-nodejs-82406b325b50)
 
+## Architeecture
+
+### Tech Stack
+![alt text](image-1.png)
+
+The overview architecture is the client-server and linked to the MongoDB. 
+* The client side will carry out all the procedure of face recognition such as face detection, facial landmark detection, feature extraction and feature matching. 
+* The extracted feature is sent over to the server and stored into the database. 
+* During the matching process, all the feature vectors are fetched accordingly to match with the detected feature vectors.
 
 ## Setup
 
