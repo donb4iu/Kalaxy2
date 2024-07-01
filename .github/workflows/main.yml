@@ -12,9 +12,9 @@ jobs:
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        source-files: 'doc/'
+        source-files: 'docs/'
         destination-username: 'donb4iu'
         destination-repository: 'donb4iu.github.io'
         destination-branch: 'main'
-        destination-directory: 'doc/'
+        destination-directory: 'docs/'
         commit-email: 'dbuddenbaum@gmail.com'
