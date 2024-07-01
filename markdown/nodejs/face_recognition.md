@@ -2,9 +2,20 @@
 
 ## References
 
+- [DeepFace: A Library for Face Recognition and Facial Analysis](https://medium.com/@byte-explorer/deepface-a-library-for-face-recognition-and-facial-analysis-144222eb60bc)
+
+- [Part I: Implement a Face Recognition Attendance System with face-api.js](https://medium.com/analytics-vidhya/implement-a-face-recognition-attendance-system-with-face-api-js-part-i-2d16f32cfe47)
+
+- [Part II: Implement a Face Recognition Attendance System with face-api.js](https://medium.com/analytics-vidhya/implement-a-face-recognition-attendance-system-with-face-api-js-part-ii-4854639ee4c7)
+
+- [Part III: Implement a Face Recognition Attendance System with face-api.js](https://medium.com/analytics-vidhya/implement-a-face-recognition-attendance-system-with-face-api-js-part-iii-4ed3ffc49479)
+
+- [Part IV: Serverless Deployment with Netlify Lambda (ReactJS FE + GraphQL BE)](https://medium.com/@cheahwen1997/implement-a-face-recognition-attendance-system-with-face-api-js-946a1615236d)
+
+
 - [Part V: Kubernetes Deployment with Minikube For A Full Stack Application (React + NodeJS + GraphQL)](https://medium.com/@cheahwen1997/part-v-kubernetes-deployment-with-minikube-for-a-full-stack-application-react-nodejs-82406b325b50)
 
-## Architeecture
+## Architecture
 
 ### Tech Stack
 ![alt text](image-1.png)
@@ -13,6 +24,44 @@ The overview architecture is the client-server and linked to the MongoDB.
 * The client side will carry out all the procedure of face recognition such as face detection, facial landmark detection, feature extraction and feature matching. 
 * The extracted feature is sent over to the server and stored into the database. 
 * During the matching process, all the feature vectors are fetched accordingly to match with the detected feature vectors.
+
+### System Design Overview
+
+Design for the education institution/college/university. In the attendance system, there are 2 user roles which are lecturer and student. 
+* The lecturer can:
+   * add course, 
+   * view course info, 
+   * create the attendance, 
+   * change the attendance system, 
+   * join the attendance room (Face Matching occurs) and 
+   * view attendance report. 
+* The student can:
+   * enrol course, 
+   * view course info, 
+   * upload face image (Face Registration occurs) , 
+   * join attendance room and
+   * view attendance report.
+
+![alt text](image-2.png)
+
+### Basic Requirements
+
+1. Attendance Form
+2. Attendance Transaction with Timestamp Display (Record earliest timestamp)
+3. Activate/Deactivation of Attendance Transaction
+4. Attendance Report
+
+### System Architecture
+
+The system is a client-server architecture which contains several modules such as face registration module, face matching module, user module, attendance module and course module. Each module is backed by the resolver in the server to handle the respective GraphQL request query.
+
+![alt text](image-3.png)
+
+### Database Design
+
+There is a total of 5 collections, namely “People”, “Face Photo”, “Course”, “Attendance” and “Trx”.
+
+![alt text](image-4.png)
 
 ## Setup
 
