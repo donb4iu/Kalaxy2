@@ -1,4 +1,4 @@
-name: Deploy to GitHub pages
+name: Build Daux pages from markdown
 on:
   push:
     branches: [ main ]
