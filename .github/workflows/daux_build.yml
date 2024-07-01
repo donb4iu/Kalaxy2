@@ -1,4 +1,4 @@
-name: Build Daux pages from markdown
+name: Build Daux docs from markdown
 on:
   push:
     branches: [ main ]
