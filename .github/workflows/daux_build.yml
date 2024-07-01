@@ -10,16 +10,13 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Generate static Daux files
-      uses: tj-actions/docker-run@v2
+      uses: addnab/docker-run-action@v3
       with:
         image: daux/daux.io@latest
-        name: daux
-        args: |
-          echo " --rm"
-          echo "-it"
-          echo "-w /build"
-          echo "-v ./:/build"
-          echo "daux generate -s markdown -d docs"
+        options: |
+          -v ${{ github.workspace }}:/build
+          -w /build
+        run: daux generate -s markdown -d docs
 
     - name: Init new repo in dist folder and commit generated files
       run: |
