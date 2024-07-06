@@ -1,1 +1,5 @@
-echo "daux generate -s markdown -d docs"
+echo "daux"
+echo "generate"
+echo "-s markdown"
+echo "-d docs"
+
