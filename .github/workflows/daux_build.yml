@@ -18,7 +18,7 @@ jobs:
           -it
           -v ${{ github.workspace }}:/build
           -w /build
-        run: daux generate -s markdown -d docs
+        run: echo "daux generate -s markdown -d docs"
 
     - name: Init new repo in dist folder and commit generated files
       run: |
