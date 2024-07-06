@@ -14,11 +14,10 @@ jobs:
         image: daux/daux.io:latest
         options: |
           --rm 
-          -it
           -v ${{ github.workspace }}:/build
           -w /build
-          -tty
-        run: "daux generate -s markdown -d docs"
+        run: echo"daux generate -s markdown -d docs"
+        shell: bash
 
     - name: commit generated files
       run: |
