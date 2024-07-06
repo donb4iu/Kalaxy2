@@ -12,7 +12,7 @@ jobs:
     - name: Generate static Daux files
       uses: addnab/docker-run-action@v3
       with:
-        image: daux/daux.io@latest
+        image: daux/daux.io:latest
         options: |
           --rm 
           -it
