@@ -1,4 +1,4 @@
-name: Build Daux docs from markdown
+honame: Build Daux docs from markdown
 on:
   push:
     branches: [ main ]
@@ -18,7 +18,7 @@ jobs:
           -v ${{ github.workspace }}:/build
           -w /build
           -tty
-        run: daux generate -s markdown -d docs
+        run: echo "daux generate -s markdown -d docs"
         shell: bash
 
     - name: commit generated files
