@@ -17,9 +17,9 @@ jobs:
           -it
           -v ${{ github.workspace }}:/build
           -w /build
-          --tty
-        shell: bash
+          -tty
         run: daux generate -s markdown -d docs
+        shell: bash
 
     - name: commit generated files
       run: |
