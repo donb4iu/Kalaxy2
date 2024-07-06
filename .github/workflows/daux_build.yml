@@ -22,6 +22,7 @@ jobs:
       run: |
         git config --local user.email "dbuddenbaum@gmail.com"
         git config --local user.name "donb4iu"
+        git add -A
         git commit -a -m 'commit generated daux.io generated docs to repository'
 
     - name: Force push to destination branch
