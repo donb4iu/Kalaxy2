@@ -1,9 +1,16 @@
-# Documentation
+# Daux Documentation
+
 
 
 [daux.io](https://github.com/dauxio/dauxio.github.io)
 
-## Generate
+## Automatic Generation
+
+[git actions](../automation/github/actions.md)
+
+
+
+## Generate Manually 
 #### #( 05/03/22@ 2:00PM )( dbuddenbaum@donb-mbp4 ):~/Documents/rpi4/kalaxy@main✗✗✗
 docker run --rm -it -w /build -v "$PWD":/build daux/daux.io daux generate -s markdown -d docs
 ```
