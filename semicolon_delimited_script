@@ -1,5 +1,1 @@
-echo "daux"
-echo "generate"
-echo "-s markdown"
-echo "-d docs"
-
+echo " bash:daux&&generate&&-s markdown&&-d docs"
