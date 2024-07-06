@@ -16,11 +16,7 @@ jobs:
           --rm 
           -v ${{ github.workspace }}:/build
           -w /build
-        run: |
-          echo "daux"
-          echo "generate"
-          echo "-s markdown"
-          echo "-d docs"
+        run: echo " bash:daux&&generate&&-s markdown&&-d docs"
 
     - name: commit generated files
       run: |
