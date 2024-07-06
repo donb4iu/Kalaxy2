@@ -18,7 +18,6 @@ jobs:
           -w /build
           -tty
         run: echo "daux generate -s markdown -d docs"
-        shell: bash
 
     - name: commit generated files
       run: |
