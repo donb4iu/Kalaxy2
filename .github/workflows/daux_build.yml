@@ -14,7 +14,6 @@ jobs:
         image: daux/daux.io:latest
         options: |
           --rm 
-          -it
           -v ${{ github.workspace }}:/build
           -w /build
           -tty
