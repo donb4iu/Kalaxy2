@@ -4,4 +4,4 @@ metadata:
   name: client-config
   namespace: attendlytical
 data:
-  base-url: http://192.168.2.32:4000/graphql  # API Endpoint
+  base-url: http://10.152.183.205:4000/graphql  # API Endpoint
