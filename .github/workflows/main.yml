@@ -1,8 +1,6 @@
 name: Deploy Daux docs to pages
 on:
-  push:
-    branches:
-    - main
+
 
 jobs:
   publish: 
