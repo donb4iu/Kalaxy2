@@ -1,1 +1,1 @@
-echo " bash:daux&&generate&&-s markdown&&-d docs"
+/daux/bin/daux generate -s markdown -d docs
