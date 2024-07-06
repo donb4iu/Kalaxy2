@@ -15,7 +15,6 @@ jobs:
         image: daux/daux.io:latest
         options: |
           --rm 
-          -it
           -v ${{ github.workspace }}:/build
           -w /build
         run: echo "daux generate -s markdown -d docs"
