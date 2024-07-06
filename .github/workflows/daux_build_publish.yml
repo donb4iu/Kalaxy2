@@ -1,4 +1,4 @@
-name: Build Daux docs from markdown
+name: Build Daux webpages from markdown push to docs then to gitpages repo
 on:
   push:
     branches: [ main ]
@@ -8,7 +8,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Generate static Daux files
+    - name: Generate static Daux webpages
       uses: addnab/docker-run-action@v3
       with:
         image: daux/daux.io:latest
@@ -18,15 +18,27 @@ jobs:
           -w /build
         run: /daux/bin/daux generate -s markdown -d docs
 
-    - name: commit generated files
+    - name: commit generated webpages files
       run: |
         git config --local user.email "dbuddenbaum@gmail.com"
         git config --local user.name "donb4iu"
         git add -A
         git commit -a -m 'commit generated daux.io generated docs to repository'
 
-    - name: Force push to destination branch
+    - name: Force push generated webpages back to the docs directory
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.API_TOKEN_GITHUB }}
         branch: main
+
+    - name: Push generated webpages in the docs directory to pages repository
+      uses: nkoppel/push-files-to-another-repository@v1.1.3
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      with:
+        source-files: 'docs/'
+        destination-username: 'donb4iu'
+        destination-repository: 'donb4iu.github.io'
+        destination-branch: 'main'
+        destination-directory: 'docs/'
+        commit-email: 'dbuddenbaum@gmail.com'
