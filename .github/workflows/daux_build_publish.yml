@@ -40,5 +40,5 @@ jobs:
         destination-username: 'donb4iu'
         destination-repository: 'donb4iu.github.io'
         destination-branch: 'main'
-        destination-directory: 'docs/'
+        destination-directory: '/'
         commit-email: 'dbuddenbaum@gmail.com'
