@@ -1,4 +1,4 @@
-name: Build Daux webpages from markdown push to docs then to gitpages repo
+name: Cr8 Daux webpage image and push to docker hub
 on:
   push:
     branches: [ main ]
