@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
-    <title>microk8s add ons - Kalaxy2 Cluster</title>
+    <title>microk8s - Kalaxy2 Cluster</title>
     <meta name="description" content="Arm64/Amd64 cluster research">
     <meta name="author" content="Don Buddenbaum">
     <meta charset="UTF-8">
@@ -70,7 +70,9 @@
 <li class='Nav__item '><a href="ansible/storage.html">storage</a></li></ul></li>
 <li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>automation</a><ul class='Nav'>
 <li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>github</a><ul class='Nav'>
-<li class='Nav__item '><a href="automation/github/actions.html">actions</a></li></ul></li></ul></li>
+<li class='Nav__item '><a href="automation/github/actions.html">actions</a></li></ul></li>
+<li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>microk8s</a><ul class='Nav'>
+<li class='Nav__item '><a href="automation/microk8s/microk8s_add_ons.html">microk8s add ons</a></li></ul></li></ul></li>
 <li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>cicd</a><ul class='Nav'>
 <li class='Nav__item '><a href="cicd/jenkins_argocd.html">jenkins argocd</a></li></ul></li>
 <li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>clickhouse</a><ul class='Nav'>
@@ -87,10 +89,7 @@
 <li class='Nav__item '><a href="databases/mysql.html">mysql</a></li>
 <li class='Nav__item '><a href="databases/performant_datamodels.html">performant datamodels</a></li></ul></li>
 <li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>documentation</a><ul class='Nav'>
-<li class='Nav__item '><a href="documentation/documentation.html">documentation</a></li>
-<li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>nodejs</a><ul class='Nav'>
-<li class='Nav__item '><a href="documentation/nodejs/face_recognition_attendance_system.html">face recognition attendance system</a></li>
-<li class='Nav__item '><a href="documentation/nodejs/node.html">node</a></li></ul></li>
+<li class='Nav__item '><a href="documentation/dauxio.html">dauxio</a></li>
 <li class='Nav__item '><a href="documentation/resume.html">resume</a></li></ul></li>
 <li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>file system</a><ul class='Nav'>
 <li class='Nav__item '><a href="file_system/backup.html">backup</a></li>
@@ -117,11 +116,12 @@
 <li class='Nav__item '><a href="java/knotes.html">knotes</a></li></ul></li>
 <li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>jupyter tensorflow</a><ul class='Nav'>
 <li class='Nav__item '><a href="jupyter_tensorflow/jupyter_tensorflow.html">jupyter tensorflow</a></li></ul></li>
-<li class='Nav__item Nav__item--active'><a href="microk8s_add_ons.html">microk8s add ons</a></li>
+<li class='Nav__item Nav__item--active'><a href="microk8s.html">microk8s</a></li>
 <li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>nfs</a><ul class='Nav'>
 <li class='Nav__item '><a href="nfs/nfs_csi.html">nfs-csi</a></li></ul></li>
 <li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>nodejs</a><ul class='Nav'>
-<li class='Nav__item '><a href="nodejs/face_recognition.html">face recognition</a></li></ul></li>
+<li class='Nav__item '><a href="nodejs/face_recognition.html">face recognition</a></li>
+<li class='Nav__item '><a href="nodejs/node.html">node</a></li></ul></li>
 <li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>object storage</a><ul class='Nav'>
 <li class='Nav__item '><a href="object_storage/minio.html">minio</a></li></ul></li>
 <li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>project management</a><ul class='Nav'>
@@ -134,7 +134,8 @@
 <li class='Nav__item '><a href="python/frameworks/django.html">django</a></li></ul></li>
 <li class='Nav__item '><a href="python/nicegui.html">nicegui</a></li>
 <li class='Nav__item '><a href="python/pollapp.html">pollapp</a></li></ul></li>
-<li class='Nav__item '><a href="references/index.html" class="Nav__item__link"><i class="Nav__arrow">&nbsp;</i>references</a><ul class='Nav'></ul></li>
+<li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>references</a><ul class='Nav'>
+<li class='Nav__item '><a href="references/glossary.html">glossary</a></li></ul></li>
 <li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>remove</a><ul class='Nav'>
 <li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>microk8s</a><ul class='Nav'>
 <li class='Nav__item '><a href="remove/microk8s/microk8s_node.html">microk8s node</a></li></ul></li></ul></li>
@@ -178,7 +179,7 @@
                 <article class="Page">
 
     <div class="Page__header">
-        <h1><a href="microk8s_add_ons.html">microk8s add ons</a></h1>
+        <h1><a href="microk8s.html">microk8s</a></h1>
                     </div>
 
     <div class="s-content">
@@ -187,7 +188,7 @@
     <div class="TableOfContentsContainer__content">
         <ul class="TableOfContents">
 <li>
-<a href="#microk8s-addons">MicroK8s Addons</a>
+<a href="#microk8s">MicroK8s</a>
 <ul>
 <li>
 <a href="#references">References</a>
@@ -196,12 +197,14 @@
 </li>
 </ul>    </div>
 </div>
-<h1><a id="microk8s-addons" href="#microk8s-addons" class="Permalink" aria-hidden="true" title="Permalink">#</a>MicroK8s Addons</h1>
+<h1><a id="microk8s" href="#microk8s" class="Permalink" aria-hidden="true" title="Permalink">#</a>MicroK8s</h1>
 <p><img src="image.png" alt="alt text" /></p>
 <h2><a id="references" href="#references" class="Permalink" aria-hidden="true" title="Permalink">#</a>References</h2>
 <ul>
 <li>
-<a href="https://medium.com/itnext/the-microk8s-addons-framework-is-now-open-to-everyone-b8bea5a53a5d" class="Link--external" rel="noopener noreferrer">The MicroK8s addons framework is now open to everyone</a>
+<a href="https://microk8s.io/" class="Link--external" rel="noopener noreferrer">The effortless Kubernetes
+Zero-ops, pure-upstream, HA Kubernetes,
+from developer workstations to production.</a>
 </li>
 </ul>
     </div>
