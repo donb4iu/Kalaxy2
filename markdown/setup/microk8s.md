@@ -93,7 +93,8 @@ Original contents retained as /home/dbuddenbaum/.ssh/known_hosts.old
     cd .kube
     rsync dbuddenbaum@amd64-03:~/.kube/config config
 
-## Cluster
+### Cluster
+
 
 #### dbuddenbaum@amd64-03:~$ microk8s enable dns
     Infer repository core for addon dns
