@@ -7,7 +7,7 @@
 
 ## Issues
 
-1. Git Pages wont display the pages in a directory named **Documentation**
+1. Git Pages won't display the pages in a directory named **Documentation**
 
 ## Automatic Generation
 

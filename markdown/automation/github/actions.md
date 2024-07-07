@@ -7,7 +7,7 @@
 - [Welcome to github-action-push-to-another-repository’s documentation!](https://cpina.github.io/push-to-another-repository-docs/)
 - [Deploying static sites to GitHub Pages using GitHub Actions](https://medium.com/@danieljimgarcia/publishing-static-sites-to-github-pages-using-github-actions-8040f57dfeaf)
 - [Using Docker Run inside of GitHub Actions](https://aschmelyun.com/blog/using-docker-run-inside-of-github-actions/)
-
+- [build-push-action](https://github.com/docker/build-push-action?tab=readme-ov-file)
 - [Multi-platform image with GitHub Actions](https://docs.docker.com/build/ci/github-actions/multi-platform/)
 ## Setup
 
@@ -25,8 +25,10 @@
 
 addnab/docker-run-action@v3 doesnt support entry point so have to call executible directly
 
-### Build Docker Image for WebPage Deployment
+### WebPage Deployment to Git Pages Repo
 
 * Copy files to another repository: adds/updatres docs in docs directory
 * github-action-push-to-another-repository: deletes and recreates docs directory
+
+### Webpage Image Creation and Push
 
