@@ -1,4 +1,4 @@
-# Daux Documentation
+# DauxIO Kalaxy2 Documentation
 
 
 
