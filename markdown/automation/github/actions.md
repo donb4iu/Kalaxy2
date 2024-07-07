@@ -3,6 +3,8 @@
 ## Resources
 
 - [Copy files to another repository](https://github.com/marketplace/actions/copy-files-to-another-repository)
+- [github-action-push-to-another-repository](https://github.com/cpina/github-action-push-to-another-repository)
+- [Welcome to github-action-push-to-another-repository’s documentation!](https://cpina.github.io/push-to-another-repository-docs/)
 - [Deploying static sites to GitHub Pages using GitHub Actions](https://medium.com/@danieljimgarcia/publishing-static-sites-to-github-pages-using-github-actions-8040f57dfeaf)
 - [Using Docker Run inside of GitHub Actions](https://aschmelyun.com/blog/using-docker-run-inside-of-github-actions/)
 
@@ -25,4 +27,6 @@ addnab/docker-run-action@v3 doesnt support entry point so have to call executibl
 
 ### Build Docker Image for WebPage Deployment
 
+* Copy files to another repository: adds/updatres docs in docs directory
+* github-action-push-to-another-repository: deletes and recreates docs directory
 
