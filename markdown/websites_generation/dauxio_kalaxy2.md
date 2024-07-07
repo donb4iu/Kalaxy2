@@ -1,8 +1,13 @@
-# DauxIO Kalaxy2 Documentation
+# DauxIO Kalaxy2 Website Generation
 
 
+## References
 
 [daux.io](https://github.com/dauxio/dauxio.github.io)
+
+## Issues
+
+1. Git Pages wont display the pages in a directory named **Documentation**
 
 ## Automatic Generation
 
