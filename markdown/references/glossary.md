@@ -9,7 +9,6 @@
 ## N
 
 - [Nginx](#i)
-- [Nginx Installation](../../docs/setup/microk8s.html#Cluster)
 
 ## T
 
