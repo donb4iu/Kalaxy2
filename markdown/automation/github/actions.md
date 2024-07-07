@@ -6,9 +6,10 @@
 - [Deploying static sites to GitHub Pages using GitHub Actions](https://medium.com/@danieljimgarcia/publishing-static-sites-to-github-pages-using-github-actions-8040f57dfeaf)
 - [Using Docker Run inside of GitHub Actions](https://aschmelyun.com/blog/using-docker-run-inside-of-github-actions/)
 
+- [Multi-platform image with GitHub Actions](https://docs.docker.com/build/ci/github-actions/multi-platform/)
 ## Setup
 
-### Docker Run
+### Docker Run for Daux IO
 
     - name: Generate static Daux webpages
       uses: addnab/docker-run-action@v3
@@ -21,3 +22,7 @@
         run: /daux/bin/daux generate -s markdown -d docs
 
 addnab/docker-run-action@v3 doesnt support entry point so have to call executible directly
+
+### Build Docker Image for WebPage Deployment
+
+
