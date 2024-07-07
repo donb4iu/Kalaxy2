@@ -32,13 +32,12 @@ jobs:
         branch: main
 
     - name: Push generated webpages in the docs directory to pages repository
-      uses: nkoppel/push-files-to-another-repository@v1.1.3
+      uses: cpina/github-action-push-to-another-repository@main
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        source-files: 'docs/'
-        destination-username: 'donb4iu'
-        destination-repository: 'donb4iu.github.io'
-        destination-branch: 'main'
-        destination-directory: '/'
-        commit-email: 'dbuddenbaum@gmail.com'
+        source-files: 'docs'
+        destination-github-username: 'donb4iu'
+        destination-repository-name: 'donb4iu.github.io'
+        target-branch: 'main'
+        user-email: dbuddenbaum@gmail.com
