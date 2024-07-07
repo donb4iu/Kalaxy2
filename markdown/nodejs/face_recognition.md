@@ -65,6 +65,10 @@ There is a total of 5 collections, namely “People”, “Face Photo”, “Cou
 
 ## Setup
 
+### MongoDB Cluster
+
+https://cloud.mongodb.com/v2/666246014c572b50af60d3d3#/overview
+
 ### Dockerfile
 
     docker buildx create --use
