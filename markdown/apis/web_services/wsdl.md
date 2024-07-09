@@ -340,7 +340,7 @@ The <binding> element provides specific details on how a portType operation will
 
 - The bindings provide information where the service is located.
 
-- For SOAP protocol, the binding is <soap:binding>, and the transport is SOAP messages on top of HTTP protocol.
+- For SOAP protocol, the binding is \<soap:binding\>, and the transport is SOAP messages on top of HTTP protocol.
 
 - You can specify multiple bindings for a single portType.
 
