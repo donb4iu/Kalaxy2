@@ -1,4 +1,4 @@
-# Web Services  - SOAP, WSDL, UDDI
+# SOAP
 
 
 ## References
@@ -116,6 +116,8 @@ SOAP includes a built-in set of rules for encoding data types. It enables the SO
 - To use SOAP 1.2 encoding, use the value http://www.w3.org/2001/12/soap-encoding
 - Latest SOAP specification adopts all the built-in types defined by XML Schema. Still, SOAP maintains its own convention for defining constructs not - standardized by XML Schema, such as arrays and references.
 
+#### Scalar Types
+
 | Simple Type	 | Example                                                                                                                 |
 | :------------- | :---------------------------------------------------------------------------------------------------------------------- |
 |string|	Confirm this is electric.|
@@ -140,3 +142,13 @@ SOAP includes a built-in set of rules for encoding data types. It enables the SO
 |date|	1999-05-31, ---05.|
 |time|	13:20:00.000, 13:20:00.000-05:00|
 **Table:** Simple Types Built-In to XML Schema
+
+#### Compound Types
+
+##### array of 10 double values 
+
+arrayType = "xsd:double[10]"
+
+##### two-dimensional array of strings 
+
+arrayType = "xsd:string[5,5]"
