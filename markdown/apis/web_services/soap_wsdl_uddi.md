@@ -82,3 +82,24 @@ The optional Header element offers a flexible framework for specifying additiona
 
 ### Body
 The SOAP body is a mandatory element that contains the application-defined XML data being exchanged in the SOAP message. The body must be contained within the envelope and must follow any headers that might be defined for the message.
+
+### Fault
+If an error occurs during processing, the response to a SOAP message is a SOAP fault element in the body of the message, and the fault is returned to the sender of the SOAP message.
+
+The SOAP fault mechanism returns specific information about the error, including a predefined code, a description, and the address of the SOAP processor that generated the fault.
+
+#### Points to Note
+- A SOAP message can carry only one fault block.
+- Fault is an optional part of a SOAP message.
+- For HTTP binding, a successful response is linked to the 200 to 299 range of status codes.
+- SOAP Fault is linked to the 500 to 599 range of status codes.
+
+#### Sub-elements of Fault
+The SOAP Fault has the following sub elements −
+
+| Sr.No	  | Sub-element          | Description                                                                                                     |
+| :-----: | :------------------: | :------------------------------------------------------------------------------------------------------- |
+| 1       | \<faultCode\>        |It is a text code used to indicate a class of errors. See the next Table for a listing of predefined fault codes. |
+| 2       | \<faultString\>      | It is a text message explaining the error. |
+| 3	      | \<faultActor\>       | It is a text string indicating who caused the fault. It is useful if the SOAP message travels through several nodes in the SOAP message path, and the client needs to know which node caused the error. A node that does not act as the ultimate destination must include a faultActor element |
+| 4       | \<detail\>           | It is an element used to carry application-specific error messages. The detail element can contain child elements called detail entries. |
