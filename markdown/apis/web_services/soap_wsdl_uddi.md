@@ -103,3 +103,40 @@ The SOAP Fault has the following sub elements −
 | 2       | \<faultString\>      | It is a text message explaining the error. |
 | 3	      | \<faultActor\>       | It is a text string indicating who caused the fault. It is useful if the SOAP message travels through several nodes in the SOAP message path, and the client needs to know which node caused the error. A node that does not act as the ultimate destination must include a faultActor element |
 | 4       | \<detail\>           | It is an element used to carry application-specific error messages. The detail element can contain child elements called detail entries. |
+
+### Encoding
+SOAP includes a built-in set of rules for encoding data types. It enables the SOAP message to indicate specific data types, such as integers, floats, doubles, or arrays.
+
+- SOAP data types are divided into two broad categories − scalar types and compound types.
+- Scalar types contain exactly one value such as a last name, price, or product description.
+- Compound types contain multiple values such as a purchase order or a list of stock quotes.
+- Compound types are further subdivided into arrays and structs.
+- The encoding style for a SOAP message is set via the SOAP-ENV:encodingStyle attribute.
+- To use SOAP 1.1 encoding, use the value http://schemas.xmlsoap.org/soap/encoding/
+- To use SOAP 1.2 encoding, use the value http://www.w3.org/2001/12/soap-encoding
+- Latest SOAP specification adopts all the built-in types defined by XML Schema. Still, SOAP maintains its own convention for defining constructs not - standardized by XML Schema, such as arrays and references.
+
+| Simple Type	 | Example                                                                                                                 |
+| :------------- | :---------------------------------------------------------------------------------------------------------------------- |
+|string|	Confirm this is electric.|
+|boolean|	true, false, 1, 0.|
+|float|	-INF, -1E4, -0, 0, 12.78E-2, 12, INF, NaN.|
+|double|	-INF, -1E4, -0, 0, 12.78E-2, 12, INF, NaN.|
+|decimal|	-1.23, 0, 123.4, 1000.00.|
+|binary|	100010|
+|integer|	-126789, -1, 0, 1, 126789.|
+|nonPositiveInteger|	-126789, -1, 0.|
+|negativeInteger|	-126789, -1.|
+|long|	-1, 12678967543233|
+|int|	-1, 126789675|
+|short|	-1, 12678|
+|byte|	-1, 126|
+|nonNegativeInteger|	0, 1, 126789|
+|unsignedLong|	0, 12678967543233|
+|unsignedInt|	0, 1267896754|
+|unsignedShort|	0, 12678|
+|unsignedByte|	0, 126|
+|positiveInteger|	1, 126789.|
+|date|	1999-05-31, ---05.|
+|time|	13:20:00.000, 13:20:00.000-05:00|
+**Table:** Simple Types Built-In to XML Schema
