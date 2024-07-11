@@ -1,10 +1,10 @@
 # Java
 
 ## References
-
+- [The Software Development Kit Manager](https://sdkman.io/)
 - [Java Version Management: The right way to manage Java versions](https://medium.com/javarevisited/java-version-management-the-right-way-to-manage-java-versions-3c3554dc2512)
 
-
+- [All the 16 Lombok Annotations Explained in a 4-minute article](https://medium.com/javarevisited/all-the-16-lombok-annotations-explained-in-a-4-minute-article-926f71934ec6)
 
 ## Version Management
 
