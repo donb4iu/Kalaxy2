@@ -2,6 +2,8 @@
 
 ## References
 
+- [Mastering NestJS — Building an Effective REST API Backend](https://medium.com/@janishar.ali/mastering-nestjs-building-an-effective-rest-api-backend-8a5add59c2f5)
+
 - [Implement a Face Recognition Attendance System with face-api.js — Part III](https://medium.com/analytics-vidhya/implement-a-face-recognition-attendance-system-with-face-api-js-part-iii-4ed3ffc49479)
 
 

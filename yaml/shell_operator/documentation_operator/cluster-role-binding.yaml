@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: monitor-pods-acc-clusterrolebinding
+subjects:
+  - kind: ServiceAccount
+    name: monitor-pods-acc
+    namespace: documentation
+roleRef:
+  kind: ClusterRole
+  name: pod-manager-clusterrole
+  apiGroup: rbac.authorization.k8s.io

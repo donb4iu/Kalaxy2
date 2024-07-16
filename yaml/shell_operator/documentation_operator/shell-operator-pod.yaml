@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: shell-operator
+  namespace: documentation
+spec:
+  serviceAccountName: monitor-pods-acc
+  containers:
+    - name: shell-operator
+      image: donb4iu/shell-operator-hooks:latest
+      imagePullPolicy: Always
