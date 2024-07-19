@@ -30,7 +30,7 @@ else
 
 		# Create a YAML for the CRD
 		cat <<EOF | kubectl apply -f -
-apiVersion: http.crossplane.io/v1alpha2
+apiVersion: http.crossplane.io/v1alpha1
 kind: DisposableRequest
 metadata:
   name: slack-webhook-deletion-$podName
@@ -43,7 +43,7 @@ spec:
       "channel": "kalaxy2",
       "username": "webhookbot",
       "text": "A pod has been deleted.\n\nPod Name: $podName\nNamespace: $podNamespace\nDeletion Timestamp: $deletionTimestamp",
-      "icon_url": "https://example.com/path/to/icon.png"
+      "icon_url": "https://icons8.com/icon/100414/bot"
     }'
 EOF
 

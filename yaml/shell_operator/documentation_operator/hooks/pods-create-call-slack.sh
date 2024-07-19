@@ -30,7 +30,7 @@ else
 		image=$(jq -r .[$i].object.spec.containers[0].image $BINDING_CONTEXT_PATH)
 		# Create a YAML for the CRD
 		cat <<EOF | kubectl apply -f -
-apiVersion: http.crossplane.io/v1alpha2
+apiVersion: http.crossplane.io/v1alpha1
 kind: DisposableRequest
 metadata:
   name: slack-webhook-creation-$podName
@@ -43,7 +43,7 @@ spec:
       "channel": "#kalaxy2",
       "username": "webhookbot",
       "text": "A new pod has been created.\n\nPod Name: $podName\nNamespace: $podNamespace\nCreation Timestamp: $creationTimestamp\nImage: $image",
-      "icon_url": "https://example.com/path/to/icon.png"
+      "icon_url": "https://icons8.com/icon/100414/bot"
     }'
 EOF
 
