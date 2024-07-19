@@ -40,7 +40,7 @@ spec:
     url: $WEBHOOK_URL
     method: POST
     body: '{
-      "channel": "#app-notify",
+      "channel": "kalaxy2",
       "username": "webhookbot",
       "text": "A pod has been deleted.\n\nPod Name: $podName\nNamespace: $podNamespace\nDeletion Timestamp: $deletionTimestamp",
       "icon_url": "https://example.com/path/to/icon.png"

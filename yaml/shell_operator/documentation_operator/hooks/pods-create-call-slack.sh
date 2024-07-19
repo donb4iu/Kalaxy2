@@ -40,7 +40,7 @@ spec:
     url: $WEBHOOK_URL
     method: POST
     body: '{
-      "channel": "#app-notify",
+      "channel": "#kalaxy2",
       "username": "webhookbot",
       "text": "A new pod has been created.\n\nPod Name: $podName\nNamespace: $podNamespace\nCreation Timestamp: $creationTimestamp\nImage: $image",
       "icon_url": "https://example.com/path/to/icon.png"

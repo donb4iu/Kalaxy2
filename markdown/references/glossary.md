@@ -13,3 +13,9 @@
 ## T
 
 - [Traefik](#i)
+
+## S
+
+### Secrets
+
+- [[Kubernetes] – How to create a Secret with base64 encode values? Is it safe to store confidential info?](https://dev4devs.com/2019/10/22/kubernetes-how-to-create-a-secret-with-base64-encode-values-is-it-safe-to-store-confidential-information/)
