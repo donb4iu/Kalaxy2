@@ -6,6 +6,8 @@
 
 ## Reference
 
+- [Crossplane Providers and Configurations for  your control plane](https://marketplace.upbound.io/)
+
 - [Crossplane is an open source Kubernetes extension that transforms your Kubernetes cluster into a universal control plane.](https://docs.crossplane.io/latest/)
 
 - [Introducing provider-http: Empowering Crossplane with HTTP Interactions](https://blog.crossplane.io/introducing-provider-http-empowering-crossplane-with-http-interactions/)
@@ -15,6 +17,8 @@
 - [Step-by-step guide to working with Crossplane and Kubernetes](https://www.techtarget.com/searchitoperations/tutorial/Step-by-step-guide-to-working-with-Crossplane-and-Kubernetes)
 
 - [Introduction to Crossplane](https://medium.com/nerd-for-tech/introduction-to-crossplane-2f873ae0f9f3)
+
+- [Getting Started with Crossplane: A Glimpse Into the Future | Tutorial (part 1)](https://gist.github.com/vfarcic/732bf76feb51489add89567433019460)
 
 ## Install Kubernetes
 

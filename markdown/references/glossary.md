@@ -14,6 +14,10 @@
 
 - [Traefik](#i)
 
+## Token
+
+### kubectl -n kube-system create token <user> --duration=720h
+
 ## S
 
 ### Secrets

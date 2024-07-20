@@ -11,7 +11,7 @@ configVersion: v1
 kubernetes:
 - apiVersion: v1
   kind: Pod
-  executeHookOnEvent: ["Deleted"]
+  executeHookOnEvent: ["Added"]
 EOF
 else
 	# Retrieve the webhook URL from the secret
@@ -21,35 +21,16 @@ else
 		echo "Error: WEBHOOK_URL is empty or the secret does not exist."
 		exit 1
 	fi
-
 	# Iterate over all events in the binding context
 	for i in $(seq 0 $(($(jq length $BINDING_CONTEXT_PATH) - 1))); do
 		podName=$(jq -r .[$i].object.metadata.name $BINDING_CONTEXT_PATH)
 		podNamespace=$(jq -r .[$i].object.metadata.namespace $BINDING_CONTEXT_PATH)
-		deletionTimestamp=$(jq -r .[$i].object.metadata.deletionTimestamp $BINDING_CONTEXT_PATH)
+		creationTimestamp=$(jq -r .[$i].object.metadata.creationTimestamp $BINDING_CONTEXT_PATH)
+		image=$(jq -r .[$i].object.spec.containers[0].image $BINDING_CONTEXT_PATH)
 
-		# Create a YAML for the CRD
-		cat <<EOF | kubectl apply -f -
-apiVersion: http.crossplane.io/v1alpha1
-kind: DisposableRequest
-metadata:
-  name: slack-webhook-deletion-$podName
-spec:
-  deletionPolicy: Orphan
-  forProvider:
-    url: $WEBHOOK_URL
-    method: POST
-    headers:
-      Content-Type:
-        - application/json
-    body: '{
-      "channel": "kalaxy2",
-      "username": "webhookbot",
-      "text": "A pod has been deleted.\n\nPod Name: $podName\nNamespace: $podNamespace\nDeletion Timestamp: $deletionTimestamp",
-      "icon_url": "https://icons8.com/icon/100414/bot"
-    }'
-EOF
+		export textline='{"text":"A new pod has been created.",\n"Pod Name:"'${podName}'",\n"Namespace:"'${podNamespace}'",\n"Timestamp":"'${creationTimestamp}'",\n"Image":"'${image}'"}'
 
-		echo "CRD created for deleted pod '${podName}' with webhook URL."
+		curl -X POST -H 'Content-type: application/json' --data $textline $WEBHOOK_URL
+		echo "Slack sent for created pod '${podName}' with webhook URL: '${WEBHOOK_URL}'."
 	done
 fi

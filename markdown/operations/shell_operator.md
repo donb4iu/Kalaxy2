@@ -7,7 +7,7 @@
 - [Automate Kubernetes with Shell-Operator](https://itnext.io/automate-kubernetes-with-shell-operator-1ae5b50408ae)
 - [Piotr1215/shell-operator-demo](https://github.com/Piotr1215/shell-operator-demo)
 - [provider-http](https://github.com/crossplane-contrib/provider-http)
-
+- [provider-http/resources-docs/disposablerequest_docs.md](https://github.com/crossplane-contrib/provider-http/blob/main/resources-docs/disposablerequest_docs.md)
 
 ## Build Docker image for operator
 

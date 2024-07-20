@@ -39,6 +39,9 @@ spec:
   forProvider:
     url: $WEBHOOK_URL
     method: POST
+    headers:
+      Content-Type:
+        - application/json
     body: '{
       "channel": "#kalaxy2",
       "username": "webhookbot",
