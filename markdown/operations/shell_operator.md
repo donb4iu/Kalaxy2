@@ -132,6 +132,10 @@ providerconfig.kubernetes.crossplane.io/default created
 providerconfig.helm.crossplane.io/default created
 ```
 
+## Slack Message
+
+![alt text](image-3.png)
+
 ## shell-operator Log
 
 
