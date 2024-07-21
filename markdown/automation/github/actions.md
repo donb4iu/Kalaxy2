@@ -9,6 +9,8 @@
 - [Using Docker Run inside of GitHub Actions](https://aschmelyun.com/blog/using-docker-run-inside-of-github-actions/)
 - [build-push-action](https://github.com/docker/build-push-action?tab=readme-ov-file)
 - [Multi-platform image with GitHub Actions](https://docs.docker.com/build/ci/github-actions/multi-platform/)
+
+- [Slack - Github Action](https://github.com/marketplace/actions/slack-github-action)
 ## Setup
 
 ### Docker Run for Daux IO
