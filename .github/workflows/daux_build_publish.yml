@@ -12,7 +12,7 @@ jobs:
 
     - name: Generate Daux webpages
       uses: addnab/docker-run-action@v3
-      id: generate
+      id: Generate_webpages
       with:
         image: daux/daux.io:latest
         options: |
@@ -22,6 +22,7 @@ jobs:
         run: /daux/bin/daux generate -s markdown -d docs
 
     - name: commit generated webpages files
+      id: Commit_webpages
       run: |
         git config --local user.email "dbuddenbaum@gmail.com"
         git config --local user.name "donb4iu"
@@ -36,7 +37,7 @@ jobs:
 
     - name: Publish webpages to donb4iu.github.io
       uses: cpina/github-action-push-to-another-repository@main
-      id: publish
+      id: Publish_to_Gitpages
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
@@ -62,7 +63,7 @@ jobs:
       
     - name: Build and push image to donb4iu/mynginx_docs:latest
       uses: docker/build-push-action@v6
-      id: push
+      id: Build_and_Push_Docker_Image
       with:
           platforms: linux/amd64,linux/arm64
           file: yaml/nginx-docs/k8s-doc-to-nginx/nginx/Dockerfile          
