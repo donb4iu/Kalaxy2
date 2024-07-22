@@ -1,4 +1,4 @@
-name: Build Daux webpages from markdown, push to donb4iu.github.io, then cr8 and push donb4iu/mynginx_docs:latest
+name: Build Daux webpages from markdown, publish to donb4iu.github.io, push image to donb4iu/mynginx_docs:latest
 on:
   push:
     branches: [ main ]
@@ -34,9 +34,9 @@ jobs:
         github_token: ${{ secrets.API_TOKEN_GITHUB }}
         branch: main
 
-    - name: Push webpages to donb4iu.github.io
+    - name: Publish webpages to donb4iu.github.io
       uses: cpina/github-action-push-to-another-repository@main
-      id: Push_webpages_to_donb4iu.github.io
+      id: Publish_webpages_to_gitpages
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
@@ -60,9 +60,9 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       
-    - name: Build and push to donb4iu/mynginx_docs:latest
+    - name: Build and push image to donb4iu/mynginx_docs:latest
       uses: docker/build-push-action@v6
-      id: Build_and_Push_image_to_dockerhub_mynginx_docs:latest
+      id: Build_and_Push_image_to_dockerhub
       with:
           platforms: linux/amd64,linux/arm64
           file: yaml/nginx-docs/k8s-doc-to-nginx/nginx/Dockerfile          
