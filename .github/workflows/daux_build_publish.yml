@@ -10,9 +10,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Generate static Daux webpages
+    - name: Generate Daux webpages
       uses: addnab/docker-run-action@v3
-      id: Generate static Daux webpages
+      id: Generate_Daux_webpages
       with:
         image: daux/daux.io:latest
         options: |
@@ -36,7 +36,7 @@ jobs:
 
     - name: Push webpages to donb4iu.github.io
       uses: cpina/github-action-push-to-another-repository@main
-      id: Push webpages to donb4iu.github.io
+      id: Push_webpages_to_donb4iu.github.io
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
@@ -62,7 +62,7 @@ jobs:
       
     - name: Build and push to donb4iu/mynginx_docs:latest
       uses: docker/build-push-action@v6
-      id: Push image to donb4iu/mynginx_docs:latest
+      id: Build_and_Push_image_to_donb4iu/mynginx_docs:latest
       with:
           platforms: linux/amd64,linux/arm64
           file: yaml/nginx-docs/k8s-doc-to-nginx/nginx/Dockerfile          
