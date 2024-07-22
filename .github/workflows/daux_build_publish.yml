@@ -1,4 +1,4 @@
-name: Build Daux webpages from markdown, push to docs/gitpages, then cr8 and push donb4iu/mynginx_docs:latest
+name: Build Daux webpages from markdown, push to donb4iu.github.io, then cr8 and push donb4iu/mynginx_docs:latest
 on:
   push:
     branches: [ main ]
@@ -12,6 +12,7 @@ jobs:
 
     - name: Generate static Daux webpages
       uses: addnab/docker-run-action@v3
+      id: Generate static Daux webpages
       with:
         image: daux/daux.io:latest
         options: |
@@ -33,8 +34,9 @@ jobs:
         github_token: ${{ secrets.API_TOKEN_GITHUB }}
         branch: main
 
-    - name: Push generated webpages in the docs directory to pages repository
+    - name: Push webpages to donb4iu.github.io
       uses: cpina/github-action-push-to-another-repository@main
+      id: Push webpages to donb4iu.github.io
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
@@ -58,8 +60,9 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       
-    - name: Build and push
+    - name: Build and push to donb4iu/mynginx_docs:latest
       uses: docker/build-push-action@v6
+      id: Push image to donb4iu/mynginx_docs:latest
       with:
           platforms: linux/amd64,linux/arm64
           file: yaml/nginx-docs/k8s-doc-to-nginx/nginx/Dockerfile          
