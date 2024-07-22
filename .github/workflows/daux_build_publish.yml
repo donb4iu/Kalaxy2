@@ -12,7 +12,7 @@ jobs:
 
     - name: Generate Daux webpages
       uses: addnab/docker-run-action@v3
-      id: Generate_Daux_webpages
+      id: generate_daux_webpages
       with:
         image: daux/daux.io:latest
         options: |
@@ -36,7 +36,7 @@ jobs:
 
     - name: Publish webpages to donb4iu.github.io
       uses: cpina/github-action-push-to-another-repository@main
-      id: Publish_webpages_to_gitpages
+      id: publish_webpages_to_gitpages
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
@@ -62,7 +62,7 @@ jobs:
       
     - name: Build and push image to donb4iu/mynginx_docs:latest
       uses: docker/build-push-action@v6
-      id: Build_and_Push_image_to_dockerhub
+      id: build_and_push_image_to_dockerhub
       with:
           platforms: linux/amd64,linux/arm64
           file: yaml/nginx-docs/k8s-doc-to-nginx/nginx/Dockerfile          
@@ -75,4 +75,4 @@ jobs:
           template: steps1
           description: Build Daux webpages from markdown, push to docs/gitpages, then cr8 and push donb4iu/mynginx_docs:latest
           title: Kalaxy2 documentation Build
-          status: ${{ toJSON('Generate_Daux_webpages' }}
+          status: ${{"generate_daux_webpages": {"outcome": {}, "conclusion": {}}, "publish_webpages_to_gitpages": {"outcome": {}, "conclusion": {}}, "build_and_push_image_to_dockerhub": {"outcome": {}, "conclusion": {}}}}
