@@ -1,5 +1,7 @@
 # Git Actions
 
+![alt text](image.png)
+
 ## Resources
 
 - [Copy files to another repository](https://github.com/marketplace/actions/copy-files-to-another-repository)
