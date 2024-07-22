@@ -75,4 +75,4 @@ jobs:
           template: steps1
           description: Build Daux webpages from markdown, push to docs/gitpages, then cr8 and push donb4iu/mynginx_docs:latest
           title: Kalaxy2 documentation Build
-          status: ${{ toJSON('Generate_Daux_webpages', 'Publish_webpages_to_gitpages', 'Build_and_Push_image_to_dockerhub') }}
+          status: ${{ toJSON('Generate_Daux_webpages' }}
