@@ -1,4 +1,4 @@
-name: Build Daux webpages from markdown, publish to donb4iu.github.io, push image to donb4iu/mynginx_docs:latest
+name: Kalaxy2 automated documentation generation and publication
 on:
   push:
     branches: [ main ]
@@ -9,10 +9,11 @@ jobs:
     runs-on: ubuntu-latest 
     steps:
     - uses: actions/checkout@v4
+      id: Detected_push
 
     - name: Generate Daux webpages
       uses: addnab/docker-run-action@v3
-      id: Generate_webpages
+      id: Generating_webpages_from_markdown
       with:
         image: daux/daux.io:latest
         options: |
@@ -22,7 +23,7 @@ jobs:
         run: /daux/bin/daux generate -s markdown -d docs
 
     - name: commit generated webpages files
-      id: Commit_webpages
+      id: Committing_webpage_changes
       run: |
         git config --local user.email "dbuddenbaum@gmail.com"
         git config --local user.name "donb4iu"
@@ -31,13 +32,14 @@ jobs:
 
     - name: Force push generated webpages back to the docs directory
       uses: ad-m/github-push-action@master
+      id: Pushing_webpage_changes
       with:
         github_token: ${{ secrets.API_TOKEN_GITHUB }}
         branch: main
 
     - name: Publish webpages to donb4iu.github.io
       uses: cpina/github-action-push-to-another-repository@main
-      id: Publish_to_Gitpages
+      id: Publishing_to_gitpages
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
@@ -57,6 +59,7 @@ jobs:
       
     - name: Login to Docker Hub
       uses: docker/login-action@v3
+      id: Logging_into_docker_hub
       with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
