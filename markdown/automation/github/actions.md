@@ -11,6 +11,8 @@
 - [Multi-platform image with GitHub Actions](https://docs.docker.com/build/ci/github-actions/multi-platform/)
 
 - [Slack - Github Action](https://github.com/marketplace/actions/slack-github-action)
+
+
 ## Setup
 
 ### Docker Run for Daux IO
@@ -33,4 +35,6 @@ addnab/docker-run-action@v3 doesnt support entry point so have to call executibl
 * github-action-push-to-another-repository: deletes and recreates docs directory
 
 ### Webpage Image Creation and Push
+
+### Send Slack message
 
