@@ -1,10 +1,13 @@
 # ArgoCD Image Updater
 
+![alt text](image.png)
+
 ## References
 
  - [https://argocd-image-updater.readthedocs.io/en/stable/install/installation/](https://argocd-image-updater.readthedocs.io/en/stable/install/installation/)
  - [How to Base64 Encode Kubernetes Secrets](https://www.cloudytuts.com/tutorials/kubernetes/how-to-base64-encode-kubernetes-secrets/)
  - [argoproj-labs/argocd-image-updater](https://github.com/argoproj-labs/argocd-image-updater/tree/master/config)
+ - [ArgoCD Image Updater](https://medium.com/@topahadzi/argocd-image-updater-c169697b2072)
 
 ## Setup
 
