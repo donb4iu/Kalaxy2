@@ -5,6 +5,8 @@
 
 - [Overview](https://argo-cd.readthedocs.io/en/stable/)
 
+= [Deploy using ArgoCD and Github Actions](https://medium.com/@mssantossousa/deploy-using-argocd-and-github-actions-888f7370e480)
+
 ## Warning
 
  **Will wipe out differences** on sync
