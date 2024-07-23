@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kalaxy2
+  name: documentation
   namespace: argocd
   annotations:
     argocd-image-updater.argoproj.io/image-list: docker.io/donb4iu/mynginx_docs:latest
