@@ -10,6 +10,7 @@
  - [ArgoCD Image Updater](https://medium.com/@topahadzi/argocd-image-updater-c169697b2072)
  - [ArgoCD + Image Updater](https://medium.com/@jerome.decoster/argocd-image-updater-56cd94651393)
  - [Update strategies](https://argocd-image-updater.readthedocs.io/en/stable/basics/update-strategies/)
+ - [ArgoCD Image updater -](https://medium.com/@megaurav25/argocd-image-updater-fbc93dc15e34)
 
 ## Setup
 

@@ -8,6 +8,13 @@ metadata:
     argocd-image-updater.argoproj.io/api.update-strategy: digest
     argocd-image-updater.argoproj.io/myapp.force-update: "true"
     argocd-image-updater.argoproj.io/api.pull-secret: pullsecret:argocd/argocd-image-updater-secret
+    argocd-image-updater.argoproj.io/write-back-method: git
+    argocd-image-updater.argoproj.io/git-branch: main
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  
+  labels:
+    name: documentation
 spec:
   destination:
     server: https://kubernetes.default.svc
