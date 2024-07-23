@@ -5,7 +5,9 @@
 
 - [Overview](https://argo-cd.readthedocs.io/en/stable/)
 
+## Warning
 
+ **Will wipe out differences** on sync
 ## Setup
 
 ### #( 07/08/24@ 6:44PM )( donbuddenbaum@donbs-imac ):~
