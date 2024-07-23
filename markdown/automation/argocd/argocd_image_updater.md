@@ -15,6 +15,14 @@
 
 ## Strategy
 
+  ```
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: docker.io/donb4iu/mynginx_docs:latest
+    argocd-image-updater.argoproj.io/api.update-strategy: digest
+    argocd-image-updater.argoproj.io/myapp.force-update: "true"
+    argocd-image-updater.argoproj.io/api.pull-secret: pullsecret:argocd/argocd-image-updater-secret
+    ```
+
 ```
 latest - Update to the most recently built image¶
 Warning
