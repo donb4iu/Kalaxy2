@@ -8,8 +8,31 @@
  - [How to Base64 Encode Kubernetes Secrets](https://www.cloudytuts.com/tutorials/kubernetes/how-to-base64-encode-kubernetes-secrets/)
  - [argoproj-labs/argocd-image-updater](https://github.com/argoproj-labs/argocd-image-updater/tree/master/config)
  - [ArgoCD Image Updater](https://medium.com/@topahadzi/argocd-image-updater-c169697b2072)
+ - [ArgoCD + Image Updater](https://medium.com/@jerome.decoster/argocd-image-updater-56cd94651393)
+ - [Update strategies](https://argocd-image-updater.readthedocs.io/en/stable/basics/update-strategies/)
 
 ## Setup
+
+## Strategy
+
+```
+latest - Update to the most recently built image¶
+Warning
+
+As of November 2020, Docker Hub has introduced pull limits for accounts on the free plan and unauthenticated requests. The latest update strategy will perform manifest pulls for determining the most recently pushed tags, and these will count into your pull limits. So unless you are not affected by these pull limits, it is not recommended to use the latest update strategy with images hosted on Docker Hub.
+```
+
+```
+Tags and digests
+
+Note that the digest update strategy will use image digests for updating the image tags in your applications, so the image running in your application will appear as some/image@sha256:<somelonghashstring> instead of some/image:latest. So in your running system, the tag information will be effectively lost.
+
+For example, the following specification would always update the image for an application on each new push of the image some/image with the tag latest:
+
+
+argocd-image-updater.argoproj.io/image-list: myimage=some/image:latest
+argocd-image-updater.argoproj.io/myimage.update-strategy: digest
+```
 
 ### Add Image updater
 #### #( 07/08/24@ 1:43PM )( donbuddenbaum@donbs-imac ):~
@@ -63,3 +86,21 @@ secret/argocd-image-updater-secret configured
    kubectl -n argocd rollout restart deployment argocd-image-updater
 
     deployment.apps/argocd-image-updater restarted
+
+### #( 07/23/24@12:28AM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/nginx-docs/k8s-doc-to-nginx@main✗✗✗
+   kubectl apply -f argocd-image-updater.yaml
+
+    application.argoproj.io/kalaxy2 configured
+
+## Logs
+
+### #( 07/22/24@11:32PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/nginx-docs/k8s-doc-to-nginx@main✗✗✗
+   kubectl logs --selector app.kubernetes.io/name=argocd-image-updater \
+        --namespace argocd \
+        --follow
+
+
+```
+time="2024-07-23T03:43:35Z" level=info msg="Starting image update cycle, considering 0 annotated application(s) for update"
+time="2024-07-23T03:43:35Z" level=info msg="Processing results: applications=0 images_considered=0 images_skipped=0 images_updated=0 errors=0"
+time="2024-07-23T03:45:35Z" level=warning msg="skipping app 'kalaxy2' of type 'Directory' because it's not of supported source type" application=kalaxy2
