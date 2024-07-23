@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kalaxy2
+  namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: docker.io/donb4iu/mynginx_docs
+    argocd-image-updater.argoproj.io/api.update-strategy: latest
+    argocd-image-updater.argoproj.io/myalias.force-update: "true"
+    argocd-image-updater.argoproj.io/api.pull-secret: pullsecret:argocd/argocd-image-updater-secret
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: documentation
+  project: default
+  source:
+    repoURL: "https://github.com/donb4iu/kalaxy2.git"
+    path: yaml/nginx-docs/k8s-doc-to-nginx
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
