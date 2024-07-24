@@ -5,7 +5,10 @@
 
 - [Overview](https://argo-cd.readthedocs.io/en/stable/)
 
-= [Deploy using ArgoCD and Github Actions](https://medium.com/@mssantossousa/deploy-using-argocd-and-github-actions-888f7370e480)
+- [Deploy using ArgoCD and Github Actions](https://medium.com/@mssantossousa/deploy-using-argocd-and-github-actions-888f7370e480)
+
+
+- [ArgoCD : How to access private github repository with ssh key new way](https://medium.com/@tiwarisan/argocd-how-to-access-private-github-repository-with-ssh-key-new-way-49cc4431971b)
 
 ## Warning
 

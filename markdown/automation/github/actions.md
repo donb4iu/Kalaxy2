@@ -13,6 +13,7 @@
 - [Multi-platform image with GitHub Actions](https://docs.docker.com/build/ci/github-actions/multi-platform/)
 - [Slack - Github Actions](https://github.com/marketplace/actions/slack-github-actions-slack-integration)
 - [Slack - Github Action](https://github.com/marketplace/actions/slack-github-action)
+- [Deploy using ArgoCD and Github Actions](https://medium.com/@mssantossousa/deploy-using-argocd-and-github-actions-888f7370e480)
 
 
 ## Setup
