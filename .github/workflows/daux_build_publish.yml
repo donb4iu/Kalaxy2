@@ -13,7 +13,7 @@ jobs:
 
     - name: Generate Daux webpages
       uses: addnab/docker-run-action@v3
-      id: Generating_webpages_from_markdown
+      id: Generating_webpages_from_commit_${{ github.sha }}
       with:
         image: daux/daux.io:latest
         options: |
@@ -22,7 +22,7 @@ jobs:
           -w /build
         run: /daux/bin/daux generate -s markdown -d docs
 
-    - name: ${{ github.sha }} commit generated webpages
+    - name: Commit generated webpages
       id: Committing_webpage_changes
       run: |
         git config --local user.email "dbuddenbaum@gmail.com"
@@ -64,9 +64,9 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       
-    - name: Build and push image to donb4iu/mynginx_docs:${{ github.sha }}
+    - name: Build and push image to donb4iu/mynginx_docs
       uses: docker/build-push-action@v6
-      id: Build_and_Push_Docker_Image
+      id: Build_and_Push_Docker_Image_${{ github.sha }}
       with:
           platforms: linux/amd64,linux/arm64
           file: yaml/nginx-docs/k8s-doc-to-nginx/nginx/Dockerfile          
