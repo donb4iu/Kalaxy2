@@ -66,7 +66,7 @@ jobs:
       
     - name: Build and push image to donb4iu/mynginx_docs
       uses: docker/build-push-action@v6
-      id: Build_and_Push_Docker_Image_${{ github.sha }}
+      id: Build_and_Push_Docker_Image
       with:
           platforms: linux/amd64,linux/arm64
           file: yaml/nginx-docs/k8s-doc-to-nginx/nginx/Dockerfile          
