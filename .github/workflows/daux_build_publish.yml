@@ -13,7 +13,7 @@ jobs:
 
     - name: Generate Daux webpages
       uses: addnab/docker-run-action@v3
-      id: Generating_webpages_from_commit_${{ github.sha }}
+      id: Generating_webpages_from_commit
       with:
         image: daux/daux.io:latest
         options: |
