@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "k8s-doc-to-nginx.fullname" . }}
+  labels:
+    {{- include "k8s-doc-to-nginx.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "k8s-doc-to-nginx.selectorLabels" . | nindent 4 }}

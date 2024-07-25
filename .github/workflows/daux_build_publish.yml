@@ -72,7 +72,18 @@ jobs:
           file: yaml/nginx-docs/k8s-doc-to-nginx/nginx/Dockerfile          
           push: true
           tags: donb4iu/mynginx_docs:${{ github.sha }}
-    
+
+    - name: Update values.yaml
+      id: Update_Helm_Values_File
+      run: |
+        cd yaml/nginx-docs/k8s-doc-to-nginx
+        sed -i 's|APP_VERSION:.*|APP_VERSION: '${{ github.sha }}'|' values.yaml 
+        git config --global user.name 'donb4iu'
+        git config --global user.email 'dbuddenbaum@gmail.com'
+        git add values.yaml
+        git commit -m "Update values.yaml"
+        git push
+
     - name: Send Slack message
       uses: act10ns/slack@v2
       with:
