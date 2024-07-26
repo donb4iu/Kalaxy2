@@ -126,10 +126,11 @@ jobs:
       - name: Update values.yaml
         id: Update_Helm_Values_File
         run: |
-          cd yaml/nginx-docs/k8s-resume-to-nginx
-          sed -i 's|APP_VERSION:.*|APP_VERSION: '${{ github.sha }}'|' values.yaml 
           git config --global user.name 'donb4iu'
           git config --global user.email 'dbuddenbaum@gmail.com'
+          git pull
+          cd yaml/nginx-docs/k8s-resume-to-nginx
+          sed -i 's|APP_VERSION:.*|APP_VERSION: '${{ github.sha }}'|' values.yaml 
           git add values.yaml
           git commit -m "Update values.yaml"
           git push
