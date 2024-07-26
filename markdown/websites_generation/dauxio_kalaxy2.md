@@ -9,7 +9,9 @@
 
 1. Git Pages won't display the pages in a directory named **Documentation**
 
-## Automatic Generation
+## Automatic Generation - Step 1
+
+[step 2](../websites_generation/resume.md)
 
 [git actions](../automation/github/actions.md)
 

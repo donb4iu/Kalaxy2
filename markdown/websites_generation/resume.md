@@ -1,6 +1,8 @@
 # Resume Website Generation
 
-## Automated Build
+## Automated Build - Step 2
+
+[step 1](../websites_generation/dauxio_kalaxy2.md)
 
 [git actions](../automation/github/actions.md)
 
