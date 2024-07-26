@@ -92,6 +92,8 @@ jobs:
       if: always()
 
   resume:
+      if: ${{ always() }}
+      needs: [doc]
     env:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
     runs-on: ubuntu-latest 
