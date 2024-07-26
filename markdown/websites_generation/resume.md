@@ -1,8 +1,19 @@
-# DauxIO Resume Website Generation
+# Resume Website Generation
 
+## Automated Build
 
+[git actions](../automation/github/actions.md)
 
-## Build
+### #( 07/26/24@ 2:17PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/nginx-docs@main✗✗✗
+   helm create k8s-resume-to-nginx
+
+```
+WARNING: Kubernetes configuration file is group-readable. This is insecure. Location: /Users/donbuddenbaum/.kube/config
+WARNING: Kubernetes configuration file is world-readable. This is insecure. Location: /Users/donbuddenbaum/.kube/config
+Creating k8s-resume-to-nginx
+```
+
+## Manual Build
 
 ### #( 04/30/24@ 8:18PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2@main✗✗✗
    docker buildx create --use

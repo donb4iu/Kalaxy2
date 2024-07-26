@@ -13,6 +13,14 @@
 
 [git actions](../automation/github/actions.md)
 
+### #( 07/25/24@ 4:31PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/nginx-docs@main✗✗✗
+   helm create k8s-doc-to-nginx
+
+```
+WARNING: Kubernetes configuration file is group-readable. This is insecure. Location: /Users/donbuddenbaum/.kube/config
+WARNING: Kubernetes configuration file is world-readable. This is insecure. Location: /Users/donbuddenbaum/.kube/config
+Creating k8s-doc-to-nginx
+```
 
 
 ## Generate Manually 

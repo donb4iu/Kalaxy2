@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: donb4iu/mynginx_resume:latest
+        image: donb4iu/mynginx_resume:{{ .Values.env.APP_VERSION }}
         imagePullPolicy: Always
         resources:
           limits:

@@ -1,0 +1,52 @@
+name: Kalaxy2 automated resume publication
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+    env:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+    runs-on: ubuntu-latest 
+    steps:
+    - uses: actions/checkout@v4
+      id: Detected_push
+
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v3
+      
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+      
+    - name: Login to Docker Hub
+      uses: docker/login-action@v3
+      id: Logging_into_docker_hub
+      with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      
+    - name: Build and push image to donb4iu/mynginx_resume
+      uses: docker/build-push-action@v6
+      id: Build_and_Push_Resume_Docker_Image
+      with:
+          platforms: linux/amd64,linux/arm64
+          file: yaml/nginx-docs/k8s-resume-to-nginx/nginx/Dockerfile          
+          push: true
+          tags: donb4iu/mynginx_resume:${{ github.sha }}
+
+    - name: Update values.yaml
+      id: Update_Helm_Values_File
+      run: |
+        cd yaml/nginx-docs/k8s-resume-to-nginx
+        sed -i 's|APP_VERSION:.*|APP_VERSION: '${{ github.sha }}'|' values.yaml 
+        git config --global user.name 'donb4iu'
+        git config --global user.email 'dbuddenbaum@gmail.com'
+        git add values.yaml
+        git commit -m "Update values.yaml"
+        git push
+
+    - name: Send Slack message
+      uses: act10ns/slack@v2
+      with:
+          status: ${{ job.status }}
+          steps: ${{ toJson(steps) }}
+      if: always()
