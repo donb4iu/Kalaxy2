@@ -6,9 +6,18 @@
 
 - [Nginx vs. Traefik: Which one you should choose?](https://medium.com/@thekubeguy/nginx-vs-traefik-which-one-you-should-choose-e6e841b56634)
 
+## M
+
+### MicroK8s
+- [configuration](../setup/notes.md)
+- [customization](../setup/microk8s.md)
+- [installation](../setup/README.md)
+
 ## N
 
+### Nginx
 - [Nginx](#i)
+- [Setup](../setup/microk8s.md)
 
 ## T
 
@@ -16,7 +25,8 @@
 
 ## Token
 
-### kubectl -n kube-system create token <user> --duration=720h
+### Dashboard
+    kubectl -n kube-system create token <user> --duration=720h
 
 ## S
 
