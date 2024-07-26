@@ -2,11 +2,13 @@
 
 ## References
 
+### Components used
 - [git actions](../automation/github/actions.md)
+- [helm](../automation/helm/helm.md)
 - [argocd](../cicd/argocd.md)
 - [shell operator](../operations/shell_operator.md)
 - [crossplane](../operations/crossplane.md)
-- [slack](../automation/slack/)
+- [slack](../automation/slack/slack.md)
 
 ## Definition
 
