@@ -108,9 +108,11 @@ Generating ...
 ### Multi Arc Build NGINX with static site
 
 #### #( 01/10/23@ 3:50PM )( donbuddenbaum@donbs-imac ):~/Documents/rPi4/kalaxy@main✗✗✗
-docker buildx create --use
+docker buildx create --use --name temp-builder
 
 docker buildx build --platform linux/amd64,linux/arm64 -f yaml/nginx-docs/k8s-doc-to-nginx/nginx/Dockerfile -t donb4iu/mynginx_docs --push .
+
+docker buildx rm temp-builder
 
 ```
 [+] Building 92.2s (12/12) FINISHED

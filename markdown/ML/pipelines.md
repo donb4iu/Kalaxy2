@@ -10,3 +10,4 @@
 - [Mage](../etl/mage_etl.md)
 
 - [Building a Local Data Lake from scratch with MinIO, Iceberg, Spark, StarRocks, Mage, and Docker](https://blog.det.life/building-a-local-data-lake-from-scratch-with-minio-iceberg-spark-starrocks-mage-and-docker-c12436e6ff9d)
+

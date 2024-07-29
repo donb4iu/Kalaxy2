@@ -18,9 +18,11 @@ Creating k8s-resume-to-nginx
 ## Manual Build
 
 ### #( 04/30/24@ 8:18PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2@main✗✗✗
-   docker buildx create --use
+   docker buildx create --use  --name temp-builder
 
    docker buildx build --platform linux/amd64,linux/arm64 -f yaml/nginx-docs/k8s-resume-to-nginx/nginx/Dockerfile -t donb4iu/mynginx_resume --push .
+
+   docker buildx rm temp-builder
 
 ```
 recursing_wescoff
