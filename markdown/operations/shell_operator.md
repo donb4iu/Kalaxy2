@@ -11,9 +11,11 @@
 
 ## Build Docker image for operator
 
-    docker buildx create --use
+    docker buildx create --use --name temp-builder
 
     docker buildx build --platform linux/amd64,linux/arm64 -f yaml/shell_operator/Dockerfile -t donb4iu/shell-operator-hooks:latest --push .
+
+    docker buildx rm temp-builder
 
 ### #( 07/16/24@ 7:15PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2@main✗✗✗
    docker buildx create --use
