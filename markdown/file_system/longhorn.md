@@ -5,6 +5,9 @@
 - [How to Install Rancher Longhorn on Microk8s, Ubuntu 20.04](https://artsysops.com/2021/10/12/how-to-install-rancher-longhorn-on-microk8s-ubuntu-20-04/)
 - [How to Make Rancher Longhorn Work with MicroK8S](https://artsysops.com/2021/10/31/how-to-make-rancher-longhorn-work-with-microk8s/)
 - [Using Longhorn Storage](https://github.com/balchua/do-microk8s/blob/master/docs/longhorn.md)
+- [Introducing Longhorn to the homelab](https://fredrickb.com/2022/07/24/introducing-longhorn-to-the-homelab/)
+- [Setting up Longhorn for Persistent Kubernetes Volumes](https://www.tech-couch.com/post/setting-up-longhorn-for-persistent-kubernetes-volumes)
+
 ## Validate
 
 ###dbuddenbaum@arm64-01:~$ 
