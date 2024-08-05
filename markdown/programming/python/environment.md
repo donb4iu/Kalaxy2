@@ -7,9 +7,11 @@
 /
 nicegui](https://github.com/zauberzeug/nicegui)
 
--  [How to start a Python project with Django in 2020  ](https://medium.com/@cristobalcl/how-to-start-a-python-project-with-django-in-2020-803122721b23)
+- [How to start a Python project with Django in 2020  ](https://medium.com/@cristobalcl/how-to-start-a-python-project-with-django-in-2020-803122721b23)
 
--  [The Ultimate Python Set Up: Pyenv + Poetry](https://delightfuldatascience.substack.com/p/the-ultimate-python-set-up-pyenv)
+- [The Ultimate Python Set Up: Pyenv + Poetry](https://delightfuldatascience.substack.com/p/the-ultimate-python-set-up-pyenv)
+
+- [Your Guide to pyenv](https://learnpython.com/blog/change-python-versions/)
 
 ## Install
 
