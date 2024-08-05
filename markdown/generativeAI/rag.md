@@ -4,6 +4,8 @@
 
 ![alt text](image-3.png)
 
+![alt text](image-10.png)
+
 ## References
 
 - [Tabular Data, RAG, & LLMs: Improve Results Through Data Table Prompting](https://medium.com/p/bcb42678914b)
@@ -15,3 +17,5 @@
 - [Running Local LLMs is More Useful and Easier Than You Think](https://towardsdatascience.com/running-local-llms-is-more-useful-and-easier-than-you-think-f735631272ad)
 
 - [The LLM Triangle Principles to Architect Reliable AI Apps](https://towardsdatascience.com/the-llm-triangle-principles-to-architect-reliable-ai-apps-d3753dd8542e)
+
+- [Guide to Multimodal RAG for Images and Text](https://medium.com/kx-systems/guide-to-multimodal-rag-for-images-and-text-10dab36e3117)
