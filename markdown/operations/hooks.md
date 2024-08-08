@@ -1,6 +1,6 @@
 # Crossplane Hooks
 
-
+![alt text](image-5.png)
 
 ## References
 
@@ -15,9 +15,10 @@
 - pvc-status-call-slack
 - sc-status-call-slack
 
+```
 #!/usr/bin/env bash
 
-```
+
 # Define the secret details
 SECRET_NAMESPACE="SECRET_NAMESPACE"
 SECRET_NAME="SECRET_NAME"
