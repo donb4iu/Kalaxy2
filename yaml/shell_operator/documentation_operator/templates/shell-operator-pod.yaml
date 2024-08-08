@@ -7,5 +7,5 @@ spec:
   serviceAccountName: monitor-pods-acc
   containers:
     - name: shell-operator
-      image: donb4iu/shell-operator-hooks:latest
+      image: donb4iu/shell-operator-hooks:{{ .Values.env.APP_VERSION }}
       imagePullPolicy: Always

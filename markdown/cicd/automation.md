@@ -39,6 +39,8 @@ Creating documentation_operator
 
 ### Step 3
 
+![alt text](image-4.png)
+
 [shell operator](../operations/shell_operator.md)
 
 ## Execution

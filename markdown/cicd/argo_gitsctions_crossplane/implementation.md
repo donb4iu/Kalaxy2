@@ -22,3 +22,7 @@
 ## Execution
 
 ![alt text](image.png)
+
+## Slack
+
+[slack](https://donb4iu.slack.com/archives/C07C97QB1S7)
