@@ -9,7 +9,7 @@ if [[ $1 == "--config" ]]; then
     cat <<EOF
 configVersion: v1
 kubernetes:
-- apiVersion: v1
+- apiVersion: storage.k8s.io/v1
   kind: StorageClass
   executeHookOnEvent: ["Modified"]
 EOF
