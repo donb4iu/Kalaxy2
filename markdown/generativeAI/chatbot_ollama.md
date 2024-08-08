@@ -1,6 +1,6 @@
-# ChatGPT
+# ChatBot Ollama
 
-![alt text](image-1.png)
+![alt text](image-12.png)
 
 ## References
 
