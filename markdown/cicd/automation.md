@@ -14,6 +14,17 @@
 
 ## Definition
 
+### Helm
+
+#### #( 08/08/24@ 5:03PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/shell_operator@main✗✗✗
+   helm create documentation_operator
+
+```
+WARNING: Kubernetes configuration file is group-readable. This is insecure. Location: /Users/donbuddenbaum/.kube/config
+WARNING: Kubernetes configuration file is world-readable. This is insecure. Location: /Users/donbuddenbaum/.kube/config
+Creating documentation_operator
+```
+
 ### Step 1
 
 ![alt text](image-1.png)
@@ -25,6 +36,10 @@
 ![alt text](image-2.png)
 
 [Resume](../websites_generation/resume.md)
+
+### Step 3
+
+[shell operator](../operations/shell_operator.md)
 
 ## Execution
 
