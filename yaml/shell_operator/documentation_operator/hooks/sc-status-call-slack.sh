@@ -51,7 +51,6 @@ spec:
     }'
 EOF
 
-            echo "CRD created for StorageClass modification on '${scName}' with webhook URL."
-        fi
+      echo "CRD created for StorageClass modification on '${scName}' with webhook URL."
     done
 fi

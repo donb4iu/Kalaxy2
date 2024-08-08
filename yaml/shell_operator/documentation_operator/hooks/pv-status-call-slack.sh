@@ -51,7 +51,6 @@ spec:
     }'
 EOF
 
-            echo "CRD created for PersistentVolume modification on '${pvName}' with webhook URL."
-        fi
+      echo "CRD created for PersistentVolume modification on '${pvName}' with webhook URL."
     done
 fi
