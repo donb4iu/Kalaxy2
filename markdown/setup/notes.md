@@ -16,21 +16,33 @@
 
 - [Installing fully-fledged vanilla Kubernetes on Raspberry Pi](https://blog.palark.com/installing-fully-fledged-vanilla-kubernetes-on-raspberry-pi/)
 
+## Prompt for AMD64 and ARM64
 
-## Raspberry Pi Monitoring
+```
+if [ "$color_prompt" = yes ]; then
+        PS1='${debian_chroot:+($debian_chroot)}\[\e[32m\](\D{%m/%d/%y}@\t)\[\033[01;32m\](\u@\h)\[\033[00m\]\[\033[01;34m\]\w\[\033[00m\]\$ '
+else
+        PS1='${debian_chroot:+($debian_chroot)}(\D{%m/%d/%y}@\t)(\u@\h)\w\$ '
+fi
+```
+
+## Arm64
+
+
+### Raspberry Pi Monitoring
 
 ```
 sudo apt-get update && sudo apt-get install htop -y
 ```
 
-## make up
+### make up
 ```
 xcode-select --install
 ```
 
 ![clusterUp](../images/cluster_initial_up.png)
 
-## Flash
+### Flash
 ```bash
 flash --userdata setup/cloud-config.yml ~/Downloads/ubuntu-20.04-preinstalled-server-arm64+raspi.img
     
@@ -116,7 +128,7 @@ ssh-copy-id dbuddenbaum@192.168.2.58
 ```
 /usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/Users/donbuddenbaum/.ssh/id_rsa.pub"
 /usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
-/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now its is to install the new keys
 dbuddenbaum@192.168.2.58's password:
 
 Number of key(s) added:        1
