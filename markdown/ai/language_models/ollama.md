@@ -10,6 +10,9 @@
 
 - [ollama/docs/](https://github.com/ollama/ollama/tree/main/docs)
 
+## Tutorials
+
+- [ollama/docs/tutorials/langchainpy.md](https://github.com/ollama/ollama/blob/main/docs/tutorials/langchainpy.md)
 
 ## Install
 
