@@ -10,6 +10,8 @@
 
 - [ollama/docs/](https://github.com/ollama/ollama/tree/main/docs)
 
+- [Ollama: The Ultimate Tool for Running Language Models Locally](https://blog.devops.dev/ollama-the-ultimate-tool-for-running-language-models-locally-062589ec3a09)
+
 ## Tutorials
 
 - [ollama/docs/tutorials/langchainpy.md](https://github.com/ollama/ollama/blob/main/docs/tutorials/langchainpy.md)
