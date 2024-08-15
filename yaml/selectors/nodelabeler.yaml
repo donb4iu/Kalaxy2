@@ -1,0 +1,1 @@
+kubectl label nodes my-node-1 qos=high
