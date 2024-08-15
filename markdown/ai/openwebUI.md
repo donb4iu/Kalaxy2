@@ -10,7 +10,7 @@
 
 ### Models
 
-- [Kalaxy Ollama](/markdown/ai/language_models/ollama.md)
+- [Kalaxy Ollama](language_models/ollama.md)
 - [Ollama](https://ollama.com/library)
 - [OpenWebUI](https://openwebui.com/)
 
