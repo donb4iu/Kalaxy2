@@ -3,7 +3,8 @@ kind: Namespace
 metadata:
   name: ollama
   annotations:
-    scheduler.alpha.kubernetes.io/node-selector: kubernetes.io/arch=amd64
+# Deprecated
+#    scheduler.alpha.kubernetes.io/node-selector: kubernetes.io/arch=amd64
   labels:
     name: ollama
 spec: {}

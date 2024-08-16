@@ -23,7 +23,10 @@ spec:
                     operator: In
                     values:
                       - high
-      containers:
+                  - key: kubernetes.io/arch
+                    operator: In
+                    values:
+                      - amd64
       containers:
       - name: ollama
         image: ollama/ollama:0.3.1

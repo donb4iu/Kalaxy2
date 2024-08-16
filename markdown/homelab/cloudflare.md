@@ -10,6 +10,10 @@
 
 ## [Add tunnel](https://one.dash.cloudflare.com/64f1cb9607a2e06c58a36f507317a457/networks/tunnels)
 
+## Setup Apps
+
+![alt text](image-3.png)
+
 ## Install on FileServer
 
 ### dbuddenbaum@donb-ms7821:~$ 
