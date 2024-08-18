@@ -22,6 +22,9 @@
 
 - [Guide to Multimodal RAG for Images and Text](https://medium.com/kx-systems/guide-to-multimodal-rag-for-images-and-text-10dab36e3117)
 
+- [LangGraph + Adaptive Rag + LLama3 Python Project: Easy AI/Chat for your Docs](https://medium.com/gitconnected/langgraph-adaptive-rag-llama3-python-project-easy-ai-chat-for-your-docs-2967b2f5066a)
+- [GaoDalie/LangGraph_Example](https://github.com/GaoDalie/LangGraph_Example)
+
 ### Series
 
 1. [Tabular Data, RAG, & LLMs: Improve Results Through Data Table Prompting](https://medium.com/intel-tech/tabular-data-rag-llms-improve-results-through-data-table-prompting-bcb42678914b)
