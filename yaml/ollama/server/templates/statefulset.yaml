@@ -38,7 +38,7 @@ spec:
             memory: "8Gi"
           limits:
             cpu: "10000m"
-            memory: "12Gi"
+            memory: "20Gi"
             nvidia.com/gpu: "1"
         volumeMounts:
         - name: ollama-volume
