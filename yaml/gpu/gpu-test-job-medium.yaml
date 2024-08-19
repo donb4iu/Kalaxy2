@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: gpu-test-job-medium
+spec:
+  template:
+    spec:
+      runtimeClassName: nvidia
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: qos
+                    operator: In
+                    values:
+                      - medium
+      containers:
+      - name: nvidia-test
+        image: nvidia/cuda:12.0.0-base-ubuntu22.04
+        command: ["nvidia-smi"]
+        resources:
+          limits:
+            nvidia.com/gpu: 1
+      nodeSelector:
+ #       kubernetes.io/hostname: ${NODE_NAME}
+      restartPolicy: Never

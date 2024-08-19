@@ -1,1 +1,2 @@
-kubectl label nodes my-node-1 qos=high
+kubectl label nodes amd64-01 qos=high
+kubectl label nodes amd64-03 qos=medium

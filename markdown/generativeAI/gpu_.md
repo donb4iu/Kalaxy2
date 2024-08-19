@@ -12,6 +12,8 @@
 
 - [GPU Operator with MIG](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/gpu-operator-mig.html)
 
+- [A Practical Guide to Running NVIDIA GPUs on Kubernetes](https://www.jimangel.io/posts/nvidia-rtx-gpu-kubernetes-setup/)
+
 ## Example
 
 ![alt text](image-19.png)
@@ -859,8 +861,45 @@ No user sessions are running outdated binaries.
 No VM guests are running outdated hypervisor (qemu) binaries on this host.
 ````
 
-### GPU Load
+## GPU Test
+
+### Host Test
 
 dbuddenbaum@amd64-03:~$ nvtop
 
 ![alt text](image-21.png)
+
+###  Kubernetes Test
+
+#### #( 08/19/24@12:44PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/gpu@main✗✗✗
+   kubectl apply -f gpu-test-job.yaml
+
+    job.batch/gpu-test-job created
+
+#### #( 08/19/24@12:46PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/gpu@main✗✗✗
+   kubectl logs job/gpu-test-job
+
+```
+Mon Aug 19 16:44:59 2024
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.183.01             Driver Version: 535.183.01   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA GeForce GTX 1050 Ti     Off | 00000000:01:00.0 Off |                  N/A |
+|  0%   34C    P8              N/A / 120W |      2MiB /  4096MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+```
+
+
