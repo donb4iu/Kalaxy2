@@ -6,6 +6,47 @@
 
 - [Introducing provider-http: Empowering Crossplane with HTTP Interactions](https://blog.crossplane.io/introducing-provider-http-empowering-crossplane-with-http-interactions/)
 
+## Notes
+
+In Kubernetes, nodes can have various conditions that describe their current state. Here’s a list of common node conditions and their meanings:
+
+Ready:
+
+```
+Type: Ready
+Description: Indicates whether the node is healthy and ready to accept pods. It is the most critical condition for a node. A True status means the node is healthy and can run pods, while False means the node is not ready.
+
+OutOfDisk:
+
+Type: OutOfDisk
+Description: Indicates whether the node is running out of disk space. If True, the node is out of disk space.
+
+MemoryPressure:
+
+Type: MemoryPressure
+Description: Indicates whether the node is under memory pressure. If True, the node is running low on memory.
+
+DiskPressure:
+
+Type: DiskPressure
+Description: Indicates whether the node is under disk pressure. If True, the node is running low on disk space.
+
+NetworkUnavailable:
+
+Type: NetworkUnavailable
+Description: Indicates whether the node’s network is unavailable. If True, the node’s network is not properly configured or is down.
+
+SchedulingDisabled:
+
+Type: SchedulingDisabled
+Description: Indicates whether scheduling of new pods to the node is disabled. If True, new pods will not be scheduled to the node.
+
+Unschedulable (Deprecated):
+
+Type: Unschedulable
+Description: An older condition that was used to indicate if a node was unschedulable. It has been replaced by SchedulingDisabled.
+```
+
 ## Implementations
 
 - node-status-call-slask

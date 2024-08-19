@@ -25,6 +25,8 @@
 - [LangGraph + Adaptive Rag + LLama3 Python Project: Easy AI/Chat for your Docs](https://medium.com/gitconnected/langgraph-adaptive-rag-llama3-python-project-easy-ai-chat-for-your-docs-2967b2f5066a)
 - [GaoDalie/LangGraph_Example](https://github.com/GaoDalie/LangGraph_Example)
 
+- [Implementing RAG in LangChain with Chroma: A Step-by-Step Guide](https://medium.com/@callumjmac/implementing-rag-in-langchain-with-chroma-a-step-by-step-guide-16fc21815339)
+
 ### Series
 
 1. [Tabular Data, RAG, & LLMs: Improve Results Through Data Table Prompting](https://medium.com/intel-tech/tabular-data-rag-llms-improve-results-through-data-table-prompting-bcb42678914b)
@@ -35,6 +37,8 @@
 ![alt text](image-16.png)
 
 - [From RAG to GraphRAG , What is the GraphRAG and why i use it?](https://medium.com/@jeongiitae/from-rag-to-graphrag-what-is-the-graphrag-and-why-i-use-it-f75a7852c10c)
+
+- [Building LLM Applications: Advanced RAG (Part 10)](https://medium.com/@vipra_singh/building-llm-applications-advanced-rag-part-10-ec0fe735aeb1)
 
 
 ### RAG Problems

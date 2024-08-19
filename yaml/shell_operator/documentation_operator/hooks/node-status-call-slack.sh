@@ -27,11 +27,60 @@ else
       nodeName=$(jq -r .[$i].object.metadata.name $BINDING_CONTEXT_PATH)
       conditions=$(jq -r .[$i].object.status.conditions $BINDING_CONTEXT_PATH)
 
-    # Check if the node is in a NotReady state
-      nodeStatus=$(echo "$conditions" | jq -r '.[] | select(.type == "Ready") | .status')
+    # Prepare the message with all conditions
+      message="Modification detected on node.\n\nNode Name: $nodeName"
 
-      reason=$(echo "$conditions" | jq -r '.[] | select(.type == "Ready") | .reason')
-      message=$(echo "$conditions" | jq -r '.[] | select(.type == "Ready") | .message')
+    # Check and append conditions to the message
+      for condition in $(echo "$conditions" | jq -r '.[] | @base64'); do
+          _jq() {
+              echo "$condition" | base64 --decode | jq -r "${1}"
+          }
+
+          type=$(_jq '.type')
+          status=$(_jq '.status')
+          reason=$(_jq '.reason')
+          messageDetail=$(_jq '.message')          
+
+    # check posibilities
+    
+          case "$type" in
+              "Ready")
+                  if [[ "$status" == "False" ]]; then
+                      message="$message\nStatus: Ready\nReason: $reason\nMessage: $messageDetail"
+                  else
+                      message="$message\nStatus: Ready"
+                  fi
+                  ;;
+              "OutOfDisk")
+                  if [[ "$status" == "True" ]]; then
+                      message="$message\nStatus: OutOfDisk\nReason: $reason\nMessage: $messageDetail"
+                  fi
+                  ;;
+              "MemoryPressure")
+                  if [[ "$status" == "True" ]]; then
+                      message="$message\nStatus: MemoryPressure\nReason: $reason\nMessage: $messageDetail"
+                  fi
+                  ;;
+              "DiskPressure")
+                  if [[ "$status" == "True" ]]; then
+                      message="$message\nStatus: DiskPressure\nReason: $reason\nMessage: $messageDetail"
+                  fi
+                  ;;
+              "NetworkUnavailable")
+                  if [[ "$status" == "True" ]]; then
+                      message="$message\nStatus: NetworkUnavailable\nReason: $reason\nMessage: $messageDetail"
+                  fi
+                  ;;
+              "SchedulingDisabled")
+                  if [[ "$status" == "True" ]]; then
+                      message="$message\nStatus: SchedulingDisabled\nReason: $reason\nMessage: $messageDetail"
+                  fi
+                  ;;
+              *)
+                  message="$message\nStatus: Unknown Condition Type '$type'\nReason: $reason\nMessage: $messageDetail"
+                  ;;
+          esac
+      done
 
     # Create a YAML for the CRD to notify via webhook
       cat <<EOF | kubectl apply -f -

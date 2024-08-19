@@ -6,6 +6,12 @@
 
 - [Nginx vs. Traefik: Which one you should choose?](https://medium.com/@thekubeguy/nginx-vs-traefik-which-one-you-should-choose-e6e841b56634)
 
+
+## K
+
+### Kubernetes
+- [My Top 50 Kubernetes Notes for DevOps Engineers — Detailed Q&A](https://medium.com/@thecloudarchitect/my-top-50-kubernetes-notes-for-devops-engineers-detailed-q-a-9d9c375c0076)
+
 ## M
 
 ### MicroK8s
