@@ -29,8 +29,11 @@
 
 ### Series
 
-1. [Tabular Data, RAG, & LLMs: Improve Results Through Data Table Prompting](https://medium.com/intel-tech/tabular-data-rag-llms-improve-results-through-data-table-prompting-bcb42678914b)
-1. [Improve your Tabular Data Ingestion for RAG with Reranking](https://medium.com/intel-tech/improve-your-tabular-data-ingestion-for-rag-with-reranking-bebcf52cdde3)
+- [Tabular Data, RAG, & LLMs: Improve Results Through Data Table Prompting](https://medium.com/intel-tech/tabular-data-rag-llms-improve-results-through-data-table-prompting-bcb42678914b)
+- [Improve your Tabular Data Ingestion for RAG with Reranking](https://medium.com/intel-tech/improve-your-tabular-data-ingestion-for-rag-with-reranking-bebcf52cdde3)
+
+1. [Building LLM Applications: Introduction (Part 1) Vipra Singh](https://medium.com/@vipra_singh/building-llm-applications-introduction-part-1-1c90294b155b#4d28)
+
 
 ### Rag Grapgh
 
@@ -44,3 +47,16 @@
 ### RAG Problems
 
 ![alt text](image-15.png)
+
+
+### Chunk Size
+
+- [Evaluating the Ideal Chunk Size for a RAG System using LlamaIndex](https://www.llamaindex.ai/blog/evaluating-the-ideal-chunk-size-for-a-rag-system-using-llamaindex-6207e5d3fec5)
+
+### Tokenizers
+
+- [![alt text](image-22.png)Summary of the tokenizers](https://huggingface.co/docs/transformers/tokenizer_summary)
+
+- [![alt text](image-23.png)Tokenizer
+Learn about language model tokenization
+ ](https://platform.openai.com/tokenizer)
