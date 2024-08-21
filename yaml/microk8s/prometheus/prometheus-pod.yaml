@@ -1,0 +1,342 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    cni.projectcalico.org/containerID: b53e82469825cb85c84c6b8e01043b197649db3f3cdbbe7a0aaebae00a377b7a
+    cni.projectcalico.org/podIP: 10.1.218.32/32
+    cni.projectcalico.org/podIPs: 10.1.218.32/32
+    kubectl.kubernetes.io/default-container: prometheus
+  creationTimestamp: "2024-08-16T10:54:38Z"
+  generateName: prometheus-kube-prom-stack-kube-prome-prometheus-
+  labels:
+    app.kubernetes.io/instance: kube-prom-stack-kube-prome-prometheus
+    app.kubernetes.io/managed-by: prometheus-operator
+    app.kubernetes.io/name: prometheus
+    app.kubernetes.io/version: 2.42.0
+    apps.kubernetes.io/pod-index: "0"
+    controller-revision-hash: prometheus-kube-prom-stack-kube-prome-prometheus-5cf8688487
+    operator.prometheus.io/name: kube-prom-stack-kube-prome-prometheus
+    operator.prometheus.io/shard: "0"
+    prometheus: kube-prom-stack-kube-prome-prometheus
+    statefulset.kubernetes.io/pod-name: prometheus-kube-prom-stack-kube-prome-prometheus-0
+  name: prometheus-kube-prom-stack-kube-prome-prometheus-0
+  namespace: observability
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: StatefulSet
+    name: prometheus-kube-prom-stack-kube-prome-prometheus
+    uid: 5aab6d7e-f967-4ca5-81ac-65c917e202f5
+  resourceVersion: "61142245"
+  uid: c53261e1-d197-473f-98c1-e8ece122bf40
+spec:
+  automountServiceAccountToken: true
+  containers:
+  - args:
+    - --web.console.templates=/etc/prometheus/consoles
+    - --web.console.libraries=/etc/prometheus/console_libraries
+    - --storage.tsdb.retention.time=10d
+    - --config.file=/etc/prometheus/config_out/prometheus.env.yaml
+    - --storage.tsdb.path=/prometheus
+    - --web.enable-lifecycle
+    - --web.external-url=http://kube-prom-stack-kube-prome-prometheus.observability:9090
+    - --web.route-prefix=/
+    - --storage.tsdb.wal-compression
+    - --web.config.file=/etc/prometheus/web_config/web-config.yaml
+    image: quay.io/prometheus/prometheus:v2.42.0
+    imagePullPolicy: IfNotPresent
+    livenessProbe:
+      failureThreshold: 6
+      httpGet:
+        path: /-/healthy
+        port: http-web
+        scheme: HTTP
+      periodSeconds: 5
+      successThreshold: 1
+      timeoutSeconds: 3
+    name: prometheus
+    ports:
+    - containerPort: 9090
+      name: http-web
+      protocol: TCP
+    readinessProbe:
+      failureThreshold: 3
+      httpGet:
+        path: /-/ready
+        port: http-web
+        scheme: HTTP
+      periodSeconds: 5
+      successThreshold: 1
+      timeoutSeconds: 3
+    resources: {}
+    securityContext:
+      allowPrivilegeEscalation: false
+      capabilities:
+        drop:
+        - ALL
+      readOnlyRootFilesystem: true
+    startupProbe:
+      failureThreshold: 60
+      httpGet:
+        path: /-/ready
+        port: http-web
+        scheme: HTTP
+      periodSeconds: 15
+      successThreshold: 1
+      timeoutSeconds: 3
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: FallbackToLogsOnError
+    volumeMounts:
+    - mountPath: /etc/prometheus/config_out
+      name: config-out
+      readOnly: true
+    - mountPath: /etc/prometheus/certs
+      name: tls-assets
+      readOnly: true
+    - mountPath: /prometheus
+      name: prometheus-kube-prom-stack-kube-prome-prometheus-db
+    - mountPath: /etc/prometheus/rules/prometheus-kube-prom-stack-kube-prome-prometheus-rulefiles-0
+      name: prometheus-kube-prom-stack-kube-prome-prometheus-rulefiles-0
+    - mountPath: /etc/prometheus/web_config/web-config.yaml
+      name: web-config
+      readOnly: true
+      subPath: web-config.yaml
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-tdc2n
+      readOnly: true
+  - args:
+    - --listen-address=:8080
+    - --reload-url=http://127.0.0.1:9090/-/reload
+    - --config-file=/etc/prometheus/config/prometheus.yaml.gz
+    - --config-envsubst-file=/etc/prometheus/config_out/prometheus.env.yaml
+    - --watched-dir=/etc/prometheus/rules/prometheus-kube-prom-stack-kube-prome-prometheus-rulefiles-0
+    command:
+    - /bin/prometheus-config-reloader
+    env:
+    - name: POD_NAME
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: metadata.name
+    - name: SHARD
+      value: "0"
+    image: quay.io/prometheus-operator/prometheus-config-reloader:v0.63.0
+    imagePullPolicy: IfNotPresent
+    name: config-reloader
+    ports:
+    - containerPort: 8080
+      name: reloader-web
+      protocol: TCP
+    resources:
+      limits:
+        cpu: 200m
+        memory: 50Mi
+      requests:
+        cpu: 200m
+        memory: 50Mi
+    securityContext:
+      allowPrivilegeEscalation: false
+      capabilities:
+        drop:
+        - ALL
+      readOnlyRootFilesystem: true
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: FallbackToLogsOnError
+    volumeMounts:
+    - mountPath: /etc/prometheus/config
+      name: config
+    - mountPath: /etc/prometheus/config_out
+      name: config-out
+    - mountPath: /etc/prometheus/rules/prometheus-kube-prom-stack-kube-prome-prometheus-rulefiles-0
+      name: prometheus-kube-prom-stack-kube-prome-prometheus-rulefiles-0
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-tdc2n
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  hostname: prometheus-kube-prom-stack-kube-prome-prometheus-0
+  initContainers:
+  - args:
+    - --watch-interval=0
+    - --listen-address=:8080
+    - --config-file=/etc/prometheus/config/prometheus.yaml.gz
+    - --config-envsubst-file=/etc/prometheus/config_out/prometheus.env.yaml
+    - --watched-dir=/etc/prometheus/rules/prometheus-kube-prom-stack-kube-prome-prometheus-rulefiles-0
+    command:
+    - /bin/prometheus-config-reloader
+    env:
+    - name: POD_NAME
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: metadata.name
+    - name: SHARD
+      value: "0"
+    image: quay.io/prometheus-operator/prometheus-config-reloader:v0.63.0
+    imagePullPolicy: IfNotPresent
+    name: init-config-reloader
+    ports:
+    - containerPort: 8080
+      name: reloader-web
+      protocol: TCP
+    resources:
+      limits:
+        cpu: 200m
+        memory: 50Mi
+      requests:
+        cpu: 200m
+        memory: 50Mi
+    securityContext:
+      allowPrivilegeEscalation: false
+      capabilities:
+        drop:
+        - ALL
+      readOnlyRootFilesystem: true
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: FallbackToLogsOnError
+    volumeMounts:
+    - mountPath: /etc/prometheus/config
+      name: config
+    - mountPath: /etc/prometheus/config_out
+      name: config-out
+    - mountPath: /etc/prometheus/rules/prometheus-kube-prom-stack-kube-prome-prometheus-rulefiles-0
+      name: prometheus-kube-prom-stack-kube-prome-prometheus-rulefiles-0
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-tdc2n
+      readOnly: true
+  nodeName: arm64-03
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext:
+    fsGroup: 2000
+    runAsGroup: 2000
+    runAsNonRoot: true
+    runAsUser: 1000
+  serviceAccount: kube-prom-stack-kube-prome-prometheus
+  serviceAccountName: kube-prom-stack-kube-prome-prometheus
+  subdomain: prometheus-operated
+  terminationGracePeriodSeconds: 600
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: config
+    secret:
+      defaultMode: 420
+      secretName: prometheus-kube-prom-stack-kube-prome-prometheus
+  - name: tls-assets
+    projected:
+      defaultMode: 420
+      sources:
+      - secret:
+          name: prometheus-kube-prom-stack-kube-prome-prometheus-tls-assets-0
+  - emptyDir:
+      medium: Memory
+    name: config-out
+  - configMap:
+      defaultMode: 420
+      name: prometheus-kube-prom-stack-kube-prome-prometheus-rulefiles-0
+    name: prometheus-kube-prom-stack-kube-prome-prometheus-rulefiles-0
+  - name: web-config
+    secret:
+      defaultMode: 420
+      secretName: prometheus-kube-prom-stack-kube-prome-prometheus-web-config
+  - emptyDir: {}
+    name: prometheus-kube-prom-stack-kube-prome-prometheus-db
+  - name: kube-api-access-tdc2n
+    projected:
+      defaultMode: 420
+      sources:
+      - serviceAccountToken:
+          expirationSeconds: 3607
+          path: token
+      - configMap:
+          items:
+          - key: ca.crt
+            path: ca.crt
+          name: kube-root-ca.crt
+      - downwardAPI:
+          items:
+          - fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+            path: namespace
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2024-08-16T10:54:42Z"
+    status: "True"
+    type: PodReadyToStartContainers
+  - lastProbeTime: null
+    lastTransitionTime: "2024-08-16T10:54:43Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2024-08-16T10:54:55Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2024-08-16T10:54:55Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2024-08-16T10:54:38Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: containerd://41b59df4115c2c7a31bf7f6880c73e64a0e587c908e96dc85170dd37428872e1
+    image: quay.io/prometheus-operator/prometheus-config-reloader:v0.63.0
+    imageID: quay.io/prometheus-operator/prometheus-config-reloader@sha256:3f976422884ec7744f69084da7736927eb634914a0c035d5a865cf6a6b8eb1b0
+    lastState: {}
+    name: config-reloader
+    ready: true
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: "2024-08-16T10:54:45Z"
+  - containerID: containerd://02acbb89378218d4c1c967583419449fd60dbaac2c67e3597e95d70addf0a0a1
+    image: quay.io/prometheus/prometheus:v2.42.0
+    imageID: quay.io/prometheus/prometheus@sha256:d2ab0a27783fd4ad96a8853e2847b99a0be0043687b8a5d1ebfb2dd3fa4fd1b8
+    lastState: {}
+    name: prometheus
+    ready: true
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: "2024-08-16T10:54:43Z"
+  hostIP: 192.168.2.53
+  hostIPs:
+  - ip: 192.168.2.53
+  initContainerStatuses:
+  - containerID: containerd://e21564102a9f15d0e08ecac1cfbffd8d84bcf2c4ac33e69398efa6d96ebb0d53
+    image: quay.io/prometheus-operator/prometheus-config-reloader:v0.63.0
+    imageID: quay.io/prometheus-operator/prometheus-config-reloader@sha256:3f976422884ec7744f69084da7736927eb634914a0c035d5a865cf6a6b8eb1b0
+    lastState: {}
+    name: init-config-reloader
+    ready: true
+    restartCount: 0
+    started: false
+    state:
+      terminated:
+        containerID: containerd://e21564102a9f15d0e08ecac1cfbffd8d84bcf2c4ac33e69398efa6d96ebb0d53
+        exitCode: 0
+        finishedAt: "2024-08-16T10:54:41Z"
+        reason: Completed
+        startedAt: "2024-08-16T10:54:41Z"
+  phase: Running
+  podIP: 10.1.218.32
+  podIPs:
+  - ip: 10.1.218.32
+  qosClass: Burstable
+  startTime: "2024-08-16T10:54:39Z"
