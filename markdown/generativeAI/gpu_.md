@@ -10,9 +10,11 @@
 
 - [Calculate : How much GPU Memory you need to serve any LLM ?](https://ksingh7.medium.com/calculate-how-much-gpu-memory-you-need-to-serve-any-llm-67301a844f21)
 
-- [GPU Operator with MIG](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/gpu-operator-mig.html)
+- [GPU Operator with MIG](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/gpu-operator-mig.html)
 
 - [A Practical Guide to Running NVIDIA GPUs on Kubernetes](https://www.jimangel.io/posts/nvidia-rtx-gpu-kubernetes-setup/)
+
+- [NVIDIA/dcgm-exporter](https://github.com/NVIDIA/dcgm-exporter)
 
 ## Example
 

@@ -1,27 +1,25 @@
-apiVersion: batch/v1
-kind: Job
+apiVersion: v1
+kind: Pod
 metadata:
   name: gpu-test-job-medium
 spec:
-  template:
-    spec:
-      runtimeClassName: nvidia
-      affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-              - matchExpressions:
-                  - key: qos
-                    operator: In
-                    values:
-                      - medium
-      containers:
-      - name: nvidia-test
-        image: nvidia/cuda:12.0.0-base-ubuntu22.04
-        command: ["nvidia-smi"]
-        resources:
-          limits:
-            nvidia.com/gpu: 1
-      nodeSelector:
- #       kubernetes.io/hostname: ${NODE_NAME}
-      restartPolicy: Never
+  restartPolicy: Never
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+              - key: qos
+                operator: In
+                values:
+                  - high
+  containers:
+  - name: cuda-container
+    image: nvcr.io/nvidia/k8s/cuda-sample:vectoradd-cuda11.7.1
+    resources:
+      limits:
+        nvidia.com/gpu: 1 # requesting 1 GPU
+  tolerations:
+  - key: nvidia.com/gpu
+    operator: Exists
+    effect: NoSchedule

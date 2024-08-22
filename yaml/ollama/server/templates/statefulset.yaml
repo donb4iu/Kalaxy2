@@ -35,10 +35,10 @@ spec:
         resources:
           requests:
             cpu: "8000m"
-            memory: "8Gi"
+            memory: "32Gi"
           limits:
             cpu: "10000m"
-            memory: "20Gi"
+            memory: "40Gi"
             nvidia.com/gpu: "1"
         volumeMounts:
         - name: ollama-volume

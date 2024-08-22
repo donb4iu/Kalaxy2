@@ -439,3 +439,79 @@ config
 sent 38 bytes  received 3676 bytes  1061.14 bytes/sec
 total size is 5462  speedup is 1.47
 ```
+
+### GPU
+
+#### (08/22/24@13:17:35)dbuddenbaum@amd64-01:~$ microk8s enable nvidia
+
+```
+Infer repository core for addon nvidia
+Addon core/dns is already enabled
+Addon core/helm3 is already enabled
+Checking if NVIDIA driver is already installed
+GPU 0: NVIDIA GeForce GTX 1070 (UUID: GPU-171e0276-e06a-e32f-2f3b-bd32e8253763)
+"nvidia" has been added to your repositories
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "nvidia" chart repository
+Update Complete. ⎈Happy Helming!⎈
+Deploy NVIDIA GPU operator
+Using host GPU driver
+NAME: gpu-operator
+LAST DEPLOYED: Thu Aug 22 13:18:13 2024
+NAMESPACE: gpu-operator-resources
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+Deployed NVIDIA GPU operator
+```
+
+#### #( 08/22/24@ 1:23PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/gpu@main✗✗✗
+   kubectl apply -f gpu-test-job-medium.yaml
+
+    pod/gpu-test-job-medium created
+
+#### #( 08/22/24@ 1:26PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/gpu@main✗✗✗
+   kubectl logs pod/gpu-test-job-medium
+
+```
+[Vector addition of 50000 elements]
+Copy input data from the host memory to the CUDA device
+CUDA kernel launch with 196 blocks of 256 threads
+Copy output data from the CUDA device to the host memory
+Test PASSED
+Done
+```
+#### #( 08/22/24@ 1:29PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/gpu@main✗✗✗
+     kubectl apply -f gpu-test-job-high.yaml
+pod/gpu-test-job-high created
+
+#### #( 08/22/24@ 1:30PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/gpu@main✗✗✗
+   kubectl logs pod/gpu-test-job-high
+
+```
+[Vector addition of 50000 elements]
+Copy input data from the host memory to the CUDA device
+CUDA kernel launch with 196 blocks of 256 threads
+Copy output data from the CUDA device to the host memory
+Test PASSED
+Done
+```
+
+
+### Setup AMD64 Nvidia GPU
+
+- [MicroK8s enable GPU](../generativeAI/gpu_.md)
+
+#### (08/22/24@13:32:08)dbuddenbaum@amd64-01:~$ inxi -G
+
+```
+Graphics:
+  Device-1: NVIDIA GP104 [GeForce GTX 1070] driver: nvidia v: 535.183.01
+  Display: server: X.org v: 1.21.1.11 with: Xwayland v: 23.2.6 driver: X:
+    loaded: modesetting,nouveau,nvidia unloaded: fbdev,vesa gpu: nvidia,nvidia-nvswitch tty: 133x66
+    resolution: 1: 2560x1440
+  API: EGL v: 1.5 drivers: nvidia,swrast platforms: surfaceless,device
+  API: OpenGL v: 4.6.0 compat-v: 4.5 vendor: mesa v: 24.0.9-0ubuntu0.1
+    note: console (EGL sourced) renderer: NVIDIA GeForce GTX 1070/PCIe/SSE2, llvmpipe (LLVM 17.0.6
+    256 bits)
+```

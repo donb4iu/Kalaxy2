@@ -9,6 +9,8 @@
 
 ## Reference
 
+- [Embedding models](https://ollama.com/blog/embedding-models)
+
 - [all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)
 
 - [[Bug]: Fail: [ONNXRuntimeError] : 1 : FAIL : Non-zero status code returned while running CoreML #2013](https://github.com/chroma-core/chroma/issues/2013)
@@ -22,6 +24,8 @@
 - [Sentence Transformers (Part 3)
 Vipra Singh
 ](https://medium.com/@vipra_singh/building-llm-applications-sentence-transformers-part-3-a9e2529f99c1)
+
+- [Semantic search using Sentence-BERT](https://medium.com/@jeremyarancio/semantic-search-using-sequence-bert-2116dabecfa3)
 
 
 ## Architectures (some kinds of embeddings)

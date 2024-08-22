@@ -6,6 +6,9 @@
 
 - [Nginx vs. Traefik: Which one you should choose?](https://medium.com/@thekubeguy/nginx-vs-traefik-which-one-you-should-choose-e6e841b56634)
 
+## J
+
+- [Top 8 magic commands in Jupyter Notebook](https://towardsdatascience.com/top-8-magic-commands-in-jupyter-notebook-c1582e813560)
 
 ## K
 

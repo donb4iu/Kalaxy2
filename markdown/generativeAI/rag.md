@@ -60,3 +60,9 @@
 - [![alt text](image-23.png)Tokenizer
 Learn about language model tokenization
  ](https://platform.openai.com/tokenizer)
+
+ ### Best Practices
+
+ ![alt text](image-49.png)
+
+ - [The Best Practices of RAG](https://medium.com/towards-artificial-intelligence/the-best-practices-of-rag-300e313322e6)
