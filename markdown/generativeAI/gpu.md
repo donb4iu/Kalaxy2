@@ -10,6 +10,10 @@
 
 - [Calculate : How much GPU Memory you need to serve any LLM ?](https://ksingh7.medium.com/calculate-how-much-gpu-memory-you-need-to-serve-any-llm-67301a844f21)
 
+- [How Much GPU Memory is Needed to Serve a Large Language Model (LLM)?
+Mastering LLM (Large Language Model)(https://masteringllm.medium.com/how-much-gpu-memory-is-needed-to-serve-a-large-languagemodel-llm-b1899bb2ab5d)
+]
+
 - [GPU Operator with MIG](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/gpu-operator-mig.html)
 
 - [A Practical Guide to Running NVIDIA GPUs on Kubernetes](https://www.jimangel.io/posts/nvidia-rtx-gpu-kubernetes-setup/)

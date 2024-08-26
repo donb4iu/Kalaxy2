@@ -1,2 +1,3 @@
-kubectl label nodes amd64-01 qos=high
-kubectl label nodes amd64-03 qos=medium
+kubectl label nodes amd64-01 cuda=high
+kubectl label nodes amd64-02 cuda=medium
+kubectl label nodes amd64-03 cuda=low

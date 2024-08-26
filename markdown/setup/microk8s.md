@@ -515,3 +515,65 @@ Graphics:
     note: console (EGL sourced) renderer: NVIDIA GeForce GTX 1070/PCIe/SSE2, llvmpipe (LLVM 17.0.6
     256 bits)
 ```
+
+#### dbuddenbaum@amd64-02:~$ sudo snap install nvtop
+[sudo] password for dbuddenbaum:
+
+      nvtop 3.1.0 from Maxime Schmitt (razortealeaf) installed
+
+
+## Remove Node 
+
+
+### (08/26/24@12:00:28)dbuddenbaum@arm64-02:~$ microk8s leave
+
+      Generating new cluster certificates.
+      Waiting for node to start. .
+
+
+### (08/26/24@12:02:49)dbuddenbaum@amd64-01:~$ microk8s remove-node arm64-01
+
+
+## Remove Microk8s
+
+### (08/26/24@12:10:43)dbuddenbaum@arm64-02:~$ sudo snap remove microk8s
+
+      microk8s removed
+
+### (08/26/24@12:12:11)dbuddenbaum@arm64-02:~$ sudo rm -rf /var/snap/microk8s/
+
+### (08/26/24@12:13:06)dbuddenbaum@arm64-02:~$ sudo rm -rf /var/snap/microk8s-common/
+
+### (08/26/24@12:13:07)dbuddenbaum@arm64-02:~$ ps aux | grep microk8s
+
+      dbudden+  461338  0.0  0.0   5968   668 pts/0    S+   12:13   0:00 grep --color=auto microk8s
+
+### (08/26/24@12:13:21)dbuddenbaum@arm64-02:~$ sudo rm -rf /etc/kubernetes/
+
+## Rejoin the cluster
+
+### (08/26/24@12:19:30)dbuddenbaum@arm64-02:~$ sudo snap install microk8s --classic --channel=1.29/stable
+      microk8s (1.29/stable) v1.29.8 from Canonical✓ installed
+
+### (08/26/24@12:21:45)dbuddenbaum@arm64-02:~$ microk8s join 192.168.2.61:25000/21738774876b9de75538fae2501f8c4f/a888dd82d6b2
+
+```
+Contacting cluster at 192.168.2.61
+Waiting for this node to finish joining the cluster. .. .. .. ..
+Successfully joined the cluster.
+```
+
+## Dqlite Repair
+
+### (08/26/24@14:45:52)dbuddenbaum@arm64-01:~$ microk8s join 192.168.2.61:25000/xxxxxxx.....
+
+
+```
+Contacting cluster at 192.168.2.61
+Connection failed. Failed to retrieve dqlite cluster nodes: the joining node (192.168.2.51) is already known to dqlite (500).
+```
+
+### (08/26/24@14:52:00)dbuddenbaum@amd64-01:~$ sudo /snap/microk8s/current/bin/dqlite -s file:///var/snap/microk8s/current/var/kubernetes/backend/cluster.yaml -c /var/snap/microk8s/current/var/kubernetes/backend/cluster.crt -k /var/snap/microk8s/current/var/kubernetes/backend/cluster.key -f json k8s ".remove 192.168.2.51:19001"
+
+### (08/26/24@14:52:25)dbuddenbaum@amd64-01:/var/snap/microk8s/current/var/kubernetes/backend$ vi cluster.yaml
+
