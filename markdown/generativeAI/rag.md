@@ -8,6 +8,9 @@
 
 ![alt text](image-14.png)
 
+![alt text](image-50.png)
+https://www.linkedin.com/posts/farhanmalik1_speculative-rag-activity-7233462628671479809-LoX2?utm_source=share&utm_medium=member_desktop
+
 ## References
 
 - [Tabular Data, RAG, & LLMs: Improve Results Through Data Table Prompting](https://medium.com/p/bcb42678914b)
