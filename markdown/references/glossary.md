@@ -2,6 +2,7 @@
 
 ## A
 
+### Easy Algorithms
 - [![alt text](image.png)](https://www.enjoyalgorithms.com/)
 
 ## I
@@ -13,6 +14,8 @@
 - [Top 8 magic commands in Jupyter Notebook](https://towardsdatascience.com/top-8-magic-commands-in-jupyter-notebook-c1582e813560)
 
 ## K
+### Kaggle
+- [Kaggle: The Machine Learning Community](https://www.kaggle.com/) 
 
 ### Kubernetes
 - [My Top 50 Kubernetes Notes for DevOps Engineers — Detailed Q&A](https://medium.com/@thecloudarchitect/my-top-50-kubernetes-notes-for-devops-engineers-detailed-q-a-9d9c375c0076)
