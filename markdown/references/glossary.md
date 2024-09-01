@@ -1,6 +1,8 @@
 # Glossary
 
+## A
 
+- [![alt text](image.png)](https://www.enjoyalgorithms.com/)
 
 ## I
 
