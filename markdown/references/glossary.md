@@ -5,6 +5,12 @@
 ### Easy Algorithms
 - [![alt text](image.png)](https://www.enjoyalgorithms.com/)
 
+## G
+
+### Github
+- [GitHub Actions](https://docs.github.com/en/actions)  
+- [renamining master to main](https://www.git-tower.com/learn/git/faq/git-rename-master-to-main/)
+
 ## I
 
 - [Nginx vs. Traefik: Which one you should choose?](https://medium.com/@thekubeguy/nginx-vs-traefik-which-one-you-should-choose-e6e841b56634)
