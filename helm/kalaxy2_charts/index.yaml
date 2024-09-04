@@ -2,8 +2,28 @@ apiVersion: v1
 entries:
   app-fakenews-flask:
   - apiVersion: v2
+    appVersion: 1.1.0
+    created: "2024-09-04T16:05:25.462065-04:00"
+    description: A Helm chart for Kubernetes
+    digest: a949c0c65c7bb16f750b3b08971407a69244e4e29371069c92c89a2434071dd0
+    name: app-fakenews-flask
+    type: application
+    urls:
+    - http://127.0.0.1:8080/app-fakenews-flask-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
+    appVersion: 1.1.0
+    created: "2024-09-04T16:05:25.461464-04:00"
+    description: A Helm chart for Kubernetes
+    digest: 0b6eb3536063507991d9600a7cf09dd65508a3582f7509896b33f0618053cf67
+    name: app-fakenews-flask
+    type: application
+    urls:
+    - http://127.0.0.1:8080/app-fakenews-flask-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-09-04T15:12:56.273005-04:00"
+    created: "2024-09-04T16:05:25.460486-04:00"
     description: A Helm chart for Kubernetes
     digest: 8701d3340f81a49b14f3516959611887abed6ac05b943e61c9ed355a289bbf20
     name: app-fakenews-flask
@@ -11,4 +31,4 @@ entries:
     urls:
     - http://127.0.0.1:8080/app-fakenews-flask-0.1.0.tgz
     version: 0.1.0
-generated: "2024-09-04T15:12:56.26905-04:00"
+generated: "2024-09-04T16:05:25.458076-04:00"
