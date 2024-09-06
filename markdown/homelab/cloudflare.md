@@ -8,6 +8,10 @@
 - [cloudflare docs](https://developers.cloudflare.com/)
 - [Enable or Disable systemd Services in Ubuntu](https://learnubuntu.com/enable-disable-systemd-services/)
 
+- [Overview](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/downloads/)
+
+- [Authentication and AUthorization](../)
+
 ## [Add tunnel](https://one.dash.cloudflare.com/64f1cb9607a2e06c58a36f507317a457/networks/tunnels)
 
 ## Setup Apps
