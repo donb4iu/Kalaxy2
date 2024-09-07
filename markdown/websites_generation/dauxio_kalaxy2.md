@@ -9,6 +9,7 @@
 
 1. Git Pages won't display the pages in a directory named **Documentation**
 1. relative reference to an MD will cause the build to fail if the referenced MD has not yet generated a doc subdirectory/file.  Requires MD reference to be created after letting daux first create the docs (2 steps)
+1. diretory/file names can get out of sync when workstation doesnt enable git to recognize changes because of case insensitivity - use git mv f1 ft git mv ft f2 to force recognition
 
 ## Automatic Generation - Step 1
 
