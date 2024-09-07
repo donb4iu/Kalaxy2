@@ -10,7 +10,7 @@
 
 - [Overview](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/downloads/)
 
-- [Authentication and AUthorization](../)
+- [Authentication and Authorization](../authentication_authorization/ssh.md)
 
 ## [Add tunnel](https://one.dash.cloudflare.com/64f1cb9607a2e06c58a36f507317a457/networks/tunnels)
 
