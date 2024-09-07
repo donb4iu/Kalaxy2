@@ -18,7 +18,7 @@
 
 ![alt text](image-3.png)
 
-## Install on FileServer
+## Install Tunnel on FileServer
 
 ### dbuddenbaum@donb-ms7821:~$ 
 curl -L --output cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb &&  sudo dpkg -i cloudflared.deb &&  sudo 
@@ -60,4 +60,3 @@ Password:
 385  systemctl status cloudflared
 386  sudo cloudflared service uninstall
 
-## LinkedIn Authorization
