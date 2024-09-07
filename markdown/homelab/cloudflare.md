@@ -10,20 +10,20 @@
 
 - [Overview](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/downloads/)
 
-#- [Authentication and Authorization](../authentication_authorization/ssh.md)
 
 ## [Add tunnel](https://one.dash.cloudflare.com/64f1cb9607a2e06c58a36f507317a457/networks/tunnels)
 
 ## Setup Apps
 
 ![alt text](image-3.png)
+![alt text](image-4.png)
 
 ## Install Tunnel on FileServer
 
 ### dbuddenbaum@donb-ms7821:~$ 
 curl -L --output cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb &&  sudo dpkg -i cloudflared.deb &&  sudo 
 ```
-cloudflared service install eyJhIjoiNjRmMWNiOTYwN2EyZTA2YzU4YTM2ZjUwNzMxN2E0NTciLCJ0IjoiZDliZGU5OTUtZjVhMy00MDVmLWJhZGYtM2ZhYWNkZGFhMDlhIiwicyI6IllUUTNNR1E1TVdJdE4yUTFOeTAwTjJSa0xUZ3lOemd0WkdNME1HSmtNR00xTURabCJ9
+cloudflared service install ${{--key--})
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
@@ -60,3 +60,6 @@ Password:
 385  systemctl status cloudflared
 386  sudo cloudflared service uninstall
 
+## SSH Client
+
+#Kalaxy2 Authentication and Authorization](../authentication_AUthorization/ssh.md)
