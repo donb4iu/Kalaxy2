@@ -1,4 +1,4 @@
-# Authentication and AUthorization
+# SSH
 
 ![alt text](image-1.png)
 
