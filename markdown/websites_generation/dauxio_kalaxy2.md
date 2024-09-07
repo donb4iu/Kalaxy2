@@ -8,6 +8,7 @@
 ## Issues
 
 1. Git Pages won't display the pages in a directory named **Documentation**
+1. relative reference to an MD will cause the build to fail if the referenced MD has not yet generated a doc subdirectory/file.  Requires MD reference to be created after letting daux first create the docs (2 steps)
 
 ## Automatic Generation - Step 1
 
