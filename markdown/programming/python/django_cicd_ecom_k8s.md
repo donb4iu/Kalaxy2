@@ -2,6 +2,8 @@
 ![alt text](image.png)
 ## References
 
+- [How to start a Python project with Django in 2020  ](https://medium.com/@cristobalcl/how-to-start-a-python-project-with-django-in-2020-803122721b23)
+
 - [Technical Guide: End-to-End CI/CD DevOps with Jenkins, Terraform, Docker, Kubernetes, SonarQube, ArgoCD, AWS EC2, EKS, and GitHub Actions (Django Deployment)](https://medium.com/django-unleashed/technical-guide-end-to-end-ci-cd-devops-with-jenkins-docker-kubernetes-argocd-github-actions-fee466fe949e#0a13)
 
 ## App Setup

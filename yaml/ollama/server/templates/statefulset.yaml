@@ -35,7 +35,7 @@ spec:
         resources:
           requests:
             cpu: "8000m"
-            memory: "32Gi"
+            memory: "20Gi"
           limits:
             cpu: "10000m"
             memory: "40Gi"
@@ -51,4 +51,4 @@ spec:
       accessModes: [ "ReadWriteOnce" ]
       resources:
         requests:
-          storage: 30Gi
+          storage: 60Gi
