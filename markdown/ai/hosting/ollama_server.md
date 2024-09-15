@@ -1,12 +1,12 @@
 # Ollama Server
 
-
+![alt text](image.png)
 
 ## References
 
 - [Ollama & open-webui on Kubernetes](https://medium.com/@arslankhanali/ollama-open-webui-on-kubernetes-3c18497a3ed2)
 
-
+- [Ollama — Build a ChatBot with Langchain, Ollama & Deploy on Docker](https://medium.com/@abvijaykumar/ollama-build-a-chatbot-with-langchain-ollama-deploy-on-docker-5dfcfd140363)
 
 ## Test Execution
 

@@ -13,6 +13,9 @@ https://www.linkedin.com/posts/farhanmalik1_speculative-rag-activity-72334626286
 
 ## References
 
+
+- [There are a few methods to interact with a chatbot over private data ranging from prompt engineering, RAG and model fine tuning by overfitting.](../generativeAI/overfitting.md)
+
 - [Tabular Data, RAG, & LLMs: Improve Results Through Data Table Prompting](https://medium.com/p/bcb42678914b)
 
 - [Microsoft’s GraphRAG + AutoGen + Ollama + Chainlit = Local & Free Multi-Agent RAG Superbot](https://ai.gopubby.com/microsofts-graphrag-autogen-ollama-chainlit-fully-local-free-multi-agent-rag-superbot-61ad3759f06f)

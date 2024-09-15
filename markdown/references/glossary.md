@@ -39,6 +39,14 @@
 - [Nginx](#i)
 - [Setup](../setup/microk8s.md)
 
+## P    
+
+### Papers with code
+
+- [Portals](https://portal.paperswithcode.com/)
+- [![alt text](image-1.png)  PapersWithCode API
+ v1 ](https://paperswithcode.com/api/v1/docs/)
+
 ## T
 
 - [Traefik](#i)
