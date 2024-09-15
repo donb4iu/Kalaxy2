@@ -20,6 +20,8 @@ kubernetes architecture
 
 ## Updating Config
 
+![alt text](image-3.png)
+
 ### #( 08/22/24@ 5:17PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/prometheus_monitoring@main✗✗✗
    helm list --all-namespaces
 
