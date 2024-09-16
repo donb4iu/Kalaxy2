@@ -1,6 +1,6 @@
 # OpenAi
 
-![alt text](image.png)
+![alt text](image-9.png)
 
 ## References
 
