@@ -500,7 +500,7 @@ Done
 
 ### Setup AMD64 Nvidia GPU
 
-- [MicroK8s enable GPU](../generativeAI/gpu.md)
+- [MicroK8s enable GPU](../ai/generativeAI/gpu.md)
 
 #### (08/22/24@13:32:08)dbuddenbaum@amd64-01:~$ inxi -G
 
