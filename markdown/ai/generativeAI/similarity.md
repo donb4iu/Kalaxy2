@@ -7,7 +7,7 @@
 -[Vector Database (Part 4)](https://medium.com/@vipra_singh/building-llm-applications-vector-database-part-4-2bb29e7c798d)
 
 - [kalaxy vectordb](vector.md)
-- [Kalaxy chromadb](../databases/chromadb.md)
+- [Kalaxy chromadb](../../databases/chromadb.md)
 
 ##  Measurements
 
