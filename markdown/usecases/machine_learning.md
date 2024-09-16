@@ -1,4 +1,4 @@
-# Use Cases
+# Machine Learning
 
 ![alt text](image-6.png)
 

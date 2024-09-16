@@ -22,6 +22,8 @@
 
 - [kubernetes/manifest/base](https://github.com/open-webui/open-webui/tree/main/kubernetes/manifest/base)
 
+- [kalaxy - private copilot](../private_copilot.md)
+
 ## Tutorials
 
 - [ollama/docs/tutorials/langchainpy.md](https://github.com/ollama/ollama/blob/main/docs/tutorials/langchainpy.md)
