@@ -12,10 +12,9 @@
 ## References
 
 - [Kalaxy similarity](similarity.md)
-- [Kalaxy chromadb](../databases/chromadb.md)
 
 - [Optimize Vector Databases, Enhance RAG-Driven Generative AI](https://medium.com/intel-tech/optimize-vector-databases-enhance-rag-driven-generative-ai-90c10416cb9c)
 
 - [openai-cookbook/examples/vector_databases/](https://github.com/openai/openai-cookbook/tree/main/examples/vector_databases)
 
-- [chromaDB](../databases/chromadb.md)
+- [Kalaxy chromaDB](../../databases/chromadb.md)
