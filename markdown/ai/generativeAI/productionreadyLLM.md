@@ -10,4 +10,6 @@
 
 - [Production-Ready LLM Twin Course](https://medium.com/decodingml/llm-twin-course/home)
 
+- [Build End-to-End RAG Pipeline with Monitoring and Evaluation using Langchain, Azure AI Search, OpenAI, Langfuse, Nemo-gaurdrails, ragas](https://medium.com/codex/build-end-to-end-rag-pipeline-with-monitoring-and-evaluation-using-langchain-azure-ai-search-6f190fffab2a)
+
 - [decodingml/llm-twin-course](https://github.com/decodingml/llm-twin-course)
