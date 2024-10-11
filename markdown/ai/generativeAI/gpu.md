@@ -6,6 +6,8 @@
 
 ## References
 
+- [Run the strongest open-source LLM model: Llama3 70B with just a single 4GB GPU!](https://medium.com/ai-advances/run-the-strongest-open-source-llm-model-llama3-70b-with-just-a-single-4gb-gpu-7e0ea2ad8ba2)
+
 - [How to install the NVIDIA drivers on Ubuntu 22.04](https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-ubuntu-22-04)
 
 - [Calculate : How much GPU Memory you need to serve any LLM ?](https://ksingh7.medium.com/calculate-how-much-gpu-memory-you-need-to-serve-any-llm-67301a844f21)
