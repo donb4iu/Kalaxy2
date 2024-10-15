@@ -2,6 +2,10 @@
 
 ![alt text](image.png)
 
+## Architecture
+
+![alt text](image-5.png)
+
 ## References
 
 - [An End-to-End ML Workflow: From Notebook to Kubeflow Pipelines with MiniKF & Kale](https://medium.com/kubeflow/an-end-to-end-ml-workflow-from-notebook-to-kubeflow-pipelines-with-minikf-kale-72244d245d53)
