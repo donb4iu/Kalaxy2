@@ -5,6 +5,12 @@
 ### Easy Algorithms
 - [![alt text](image.png)](https://www.enjoyalgorithms.com/)
 
+## E
+
+### Education
+
+- [![alt text](image-2.png) ](https://www.analyticsvidhya.com/blog/)
+
 ## G
 
 ### Github
@@ -25,6 +31,8 @@
 
 ### Kubernetes
 - [My Top 50 Kubernetes Notes for DevOps Engineers — Detailed Q&A](https://medium.com/@thecloudarchitect/my-top-50-kubernetes-notes-for-devops-engineers-detailed-q-a-9d9c375c0076)
+
+## 
 
 ## M
 
