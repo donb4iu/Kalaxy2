@@ -11,7 +11,12 @@
 ![alt text](image-50.png)
 https://www.linkedin.com/posts/farhanmalik1_speculative-rag-activity-7233462628671479809-LoX2?utm_source=share&utm_medium=member_desktop
 
+
 ## References
+
+- [The Best RAG Stack to Date
+(exploring every component)](https://medium.com/towards-artificial-intelligence/the-best-rag-stack-to-date-8dc035075e13)
+    - ![alt text](image-13.png)
 
 
 - [There are a few methods to interact with a chatbot over private data ranging from prompt engineering, RAG and model fine tuning by overfitting.](../generativeAI/overfitting.md)
