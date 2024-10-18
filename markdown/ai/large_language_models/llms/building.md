@@ -8,6 +8,10 @@
 
 ![alt text](image-38.png)
 
+## Linking
+
+- [Architecture Frameworks](../../generativeAI/architecture_framework.md)
+
 ## References
 
 - [How to Build an LLM From Scratch with Python?](https://medium.com/aimonks/how-to-build-an-llm-from-scratch-with-python-cb3cd9807e45)
