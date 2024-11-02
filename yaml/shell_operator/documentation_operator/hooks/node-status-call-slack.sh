@@ -28,7 +28,7 @@ else
       conditions=$(jq -r .[$i].object.status.conditions $BINDING_CONTEXT_PATH)
 
     # Prepare the message with all conditions
-      message="Modification detected on node.\n\nNode Name: $nodeName"
+      messagestatic="Modification detected on node.\n\nNode Name: $nodeName"
 
     # Check and append conditions to the message
       for condition in $(echo "$conditions" | jq -r '.[] | @base64'); do
@@ -46,9 +46,9 @@ else
           case "$type" in
               "Ready")
                   if [[ "$status" == "False" ]]; then
-                      message="$message\nStatus: Ready\nReason: $reason\nMessage: $messageDetail"
+                      message="$messagestatic\nStatus: Ready\nReason: $reason\nMessage: $messageDetail"
                   else
-                      message="$message\nStatus: Ready"
+                      message="$messagestatic\nStatus: Ready"
                   fi
                   ;;
               "OutOfDisk")
