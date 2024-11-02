@@ -14,6 +14,7 @@ kubernetes:
   executeHookOnEvent: ["Modified"]
 EOF
 else
+    report_message=true
     # Retrieve the webhook URL from the secret
     WEBHOOK_URL=$(kubectl get secret $SECRET_NAME -n $SECRET_NAMESPACE -o jsonpath="{.data.$SECRET_KEY}" | base64 -d)
 
@@ -78,11 +79,13 @@ else
                   ;;
               *)
                   message="$messagestatic\nStatus: Unknown Condition Type $type\nReason: $reason\nMessage: $messageDetail"
+                  report_message=false
                   ;;
           esac
       done
 
     # Create a YAML for the CRD to notify via webhook
+    if $report_message; then
       cat <<EOF | kubectl apply -f -
 apiVersion: http.crossplane.io/v1alpha1
 kind: DisposableRequest
