@@ -1,5 +1,10 @@
 # Retrieval Augmented Generation
 
+
+## Architecture 
+
+![alt text](image-24.png)
+
 ![alt text](image-2.png)
 
 ![alt text](image-3.png)
@@ -13,6 +18,11 @@ https://www.linkedin.com/posts/farhanmalik1_speculative-rag-activity-72334626286
 
 ## References
 
+- [RAG and Its Application using llama3, Lang chain and Chroma db.](https://medium.com/@nookalabadrinath/rag-and-its-application-using-llama3-lang-chain-and-chroma-db-ec61e905b9a5)
+
+![alt text](image-13.png)
+- [Learn RAG From Scratch – Python AI Tutorial from a LangChain Engineer](https://www.youtube.com/watch?v=5k63h1q480c)  
+    - [github: RAG From Scratch](langchain-ai/rag-from-scratch)
 
 - [There are a few methods to interact with a chatbot over private data ranging from prompt engineering, RAG and model fine tuning by overfitting.](../generativeAI/overfitting.md)
 

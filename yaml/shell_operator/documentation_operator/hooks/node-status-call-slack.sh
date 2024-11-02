@@ -11,7 +11,7 @@ configVersion: v1
 kubernetes:
 - apiVersion: v1
   kind: Node
-  executeHookOnEvent: ["Modified"]
+  executeHookOnEvent: ["Failed"]
 EOF
 else
     # Retrieve the webhook URL from the secret
