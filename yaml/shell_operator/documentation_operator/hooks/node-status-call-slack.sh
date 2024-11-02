@@ -87,7 +87,7 @@ else
 apiVersion: http.crossplane.io/v1alpha1
 kind: DisposableRequest
 metadata:
-  name: slack-webhook-node-mod-$nodeName
+  name: slack-webhook-node-mod-${nodeName}-$(date +%s)
 spec:
   deletionPolicy: Orphan
   forProvider:
