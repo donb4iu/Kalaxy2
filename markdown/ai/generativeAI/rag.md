@@ -24,7 +24,7 @@ https://www.linkedin.com/posts/farhanmalik1_speculative-rag-activity-72334626286
 
 ![alt text](image-13.png)
 - [Learn RAG From Scratch – Python AI Tutorial from a LangChain Engineer](https://www.youtube.com/watch?v=5k63h1q480c)  
-    - [github: RAG From Scratch](langchain-ai/rag-from-scratch)
+    - [github: RAG From Scratch](https://github.com/donb4iu/rag-from-scratch)
 =======
 - [The Best RAG Stack to Date
 (exploring every component)](https://medium.com/towards-artificial-intelligence/the-best-rag-stack-to-date-8dc035075e13)
