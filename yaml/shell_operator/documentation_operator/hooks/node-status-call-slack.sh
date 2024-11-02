@@ -53,31 +53,31 @@ else
                   ;;
               "OutOfDisk")
                   if [[ "$status" == "True" ]]; then
-                      message="$message\nStatus: OutOfDisk\nReason: $reason\nMessage: $messageDetail"
+                      message="$messagestatic\nStatus: OutOfDisk\nReason: $reason\nMessage: $messageDetail"
                   fi
                   ;;
               "MemoryPressure")
                   if [[ "$status" == "True" ]]; then
-                      message="$message\nStatus: MemoryPressure\nReason: $reason\nMessage: $messageDetail"
+                      message="$messagestatic\nStatus: MemoryPressure\nReason: $reason\nMessage: $messageDetail"
                   fi
                   ;;
               "DiskPressure")
                   if [[ "$status" == "True" ]]; then
-                      message="$message\nStatus: DiskPressure\nReason: $reason\nMessage: $messageDetail"
+                      message="$messagestatic\nStatus: DiskPressure\nReason: $reason\nMessage: $messageDetail"
                   fi
                   ;;
               "NetworkUnavailable")
                   if [[ "$status" == "True" ]]; then
-                      message="$message\nStatus: NetworkUnavailable\nReason: $reason\nMessage: $messageDetail"
+                      message="$messagestatic\nStatus: NetworkUnavailable\nReason: $reason\nMessage: $messageDetail"
                   fi
                   ;;
               "SchedulingDisabled")
                   if [[ "$status" == "True" ]]; then
-                      message="$message\nStatus: SchedulingDisabled\nReason: $reason\nMessage: $messageDetail"
+                      message="$messagestatic\nStatus: SchedulingDisabled\nReason: $reason\nMessage: $messageDetail"
                   fi
                   ;;
               *)
-                  message="$message\nStatus: Unknown Condition Type '$type'\nReason: $reason\nMessage: $messageDetail"
+                  message="$messagestatic\nStatus: Unknown Condition Type '$type'\nReason: $reason\nMessage: $messageDetail"
                   ;;
           esac
       done
