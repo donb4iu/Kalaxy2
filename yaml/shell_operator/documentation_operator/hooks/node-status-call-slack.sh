@@ -14,7 +14,7 @@ kubernetes:
   executeHookOnEvent: ["Modified"]
 EOF
 else
-    report_message=true
+    report_message=false
     # Retrieve the webhook URL from the secret
     WEBHOOK_URL=$(kubectl get secret $SECRET_NAME -n $SECRET_NAMESPACE -o jsonpath="{.data.$SECRET_KEY}" | base64 -d)
 
@@ -48,33 +48,37 @@ else
               "Ready")
                   if [[ "$status" == "False" ]]; then
                       message="$messagestatic\nStatus: Ready\nReason: $reason\nMessage: $messageDetail"
-                  else
-                      message="$messagestatic\nStatus: Ready"
+                      report_message=true
                   fi
                   ;;
               "OutOfDisk")
                   if [[ "$status" == "True" ]]; then
                       message="$messagestatic\nStatus: OutOfDisk\nReason: $reason\nMessage: $messageDetail"
+                      report_message=true
                   fi
                   ;;
               "MemoryPressure")
                   if [[ "$status" == "True" ]]; then
                       message="$messagestatic\nStatus: MemoryPressure\nReason: $reason\nMessage: $messageDetail"
+                      report_message=true
                   fi
                   ;;
               "DiskPressure")
                   if [[ "$status" == "True" ]]; then
                       message="$messagestatic\nStatus: DiskPressure\nReason: $reason\nMessage: $messageDetail"
+                      report_message=true
                   fi
                   ;;
               "NetworkUnavailable")
                   if [[ "$status" == "True" ]]; then
                       message="$messagestatic\nStatus: NetworkUnavailable\nReason: $reason\nMessage: $messageDetail"
+                      report_message=true
                   fi
                   ;;
               "SchedulingDisabled")
                   if [[ "$status" == "True" ]]; then
                       message="$messagestatic\nStatus: SchedulingDisabled\nReason: $reason\nMessage: $messageDetail"
+                      report_message=true
                   fi
                   ;;
               *)
@@ -85,7 +89,7 @@ else
       done
 
     # Create a YAML for the CRD to notify via webhook
-    if $report_message; then
+    if $report_message && [[ -n "$message" ]]; then
       cat <<EOF | kubectl apply -f -
 apiVersion: http.crossplane.io/v1alpha1
 kind: DisposableRequest
@@ -108,5 +112,6 @@ spec:
 EOF
 
       echo "CRD created for node modification on '${nodeName}' with webhook URL."
-    done
+    fi
+  done
 fi
