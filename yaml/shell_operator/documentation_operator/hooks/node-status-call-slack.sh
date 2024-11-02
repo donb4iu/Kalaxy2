@@ -77,7 +77,7 @@ else
                   fi
                   ;;
               *)
-                  message="$messagestatic\nStatus: Unknown Condition Type '$type'\nReason: $reason\nMessage: $messageDetail"
+                  message="$messagestatic\nStatus: Unknown Condition Type $type\nReason: $reason\nMessage: $messageDetail"
                   ;;
           esac
       done
