@@ -9,10 +9,10 @@ spec:
       requiredDuringSchedulingIgnoredDuringExecution:
         nodeSelectorTerms:
           - matchExpressions:
-              - key: qos
+              - key: cuda
                 operator: In
                 values:
-                  - high
+                  - medium
   containers:
   - name: cuda-container
     image: nvcr.io/nvidia/k8s/cuda-sample:vectoradd-cuda11.7.1
