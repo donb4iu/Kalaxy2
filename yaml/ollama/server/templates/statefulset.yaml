@@ -22,7 +22,8 @@ spec:
                   - key: cuda
                     operator: In
                     values:
-                      - high
+#                      - high
+                      - medium                      
                   - key: kubernetes.io/arch
                     operator: In
                     values:
@@ -35,11 +36,15 @@ spec:
         - containerPort: 11434
         resources:
           requests:
+#            cpu: "8000m"
+#            memory: "20Gi"
+            cpu: "4000m"
+            memory: "10Gi"
+          limits:
+#            cpu: "10000m"
+#            memory: "40Gi"
             cpu: "8000m"
             memory: "20Gi"
-          limits:
-            cpu: "10000m"
-            memory: "40Gi"
             nvidia.com/gpu: "1"
         volumeMounts:
         - name: ollama-volume
