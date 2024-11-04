@@ -10,6 +10,17 @@
 
 ## Commands
 
+### # Setup a directory for charts
+
+#### (base) #( 11/04/24@ 3:20PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml@main✔
+   helm create vllm
+
+```
+WARNING: Kubernetes configuration file is group-readable. This is insecure. Location: /Users/donbuddenbaum/.kube/config
+WARNING: Kubernetes configuration file is world-readable. This is insecure. Location: /Users/donbuddenbaum/.kube/config
+Creating vllm
+```
+
 ### # Package the chart
 helm package mychart
 
