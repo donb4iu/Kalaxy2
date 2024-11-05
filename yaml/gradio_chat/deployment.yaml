@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gradio
+  namespace: vllm
+  labels:
+    app: gradio
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gradio
+  template:
+    metadata:
+      labels:
+        app: gradio
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+                - key: cuda
+                  operator: In
+                  values:
+                      - high                    
+                - key: kubernetes.io/arch
+                  operator: In
+                  values:
+                      - amd64
+      containers:
+      - name: gradio
+        image: us-docker.pkg.dev/google-samples/containers/gke/gradio-app:v1.0.3
+        resources:
+          requests:
+            cpu: "250m"
+            memory: "512Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+        env:
+        - name: CONTEXT_PATH
+          value: "/generate"
+        - name: HOST
+          value: "http://llm-service:8000"
+        - name: LLM_ENGINE
+          value: "vllm"
+        - name: MODEL_ID
+          value: "gemma"
+        - name: USER_PROMPT
+          value: "<start_of_turn>user\nprompt<end_of_turn>\n"
+        - name: SYSTEM_PROMPT
+          value: "<start_of_turn>model\nprompt<end_of_turn>\n"
+        ports:
+        - containerPort: 7860
