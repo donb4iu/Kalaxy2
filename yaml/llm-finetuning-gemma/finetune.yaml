@@ -19,7 +19,7 @@ metadata:
   name: finetune-job
   namespace: vllm
 spec:
-#  backoffLimit: 2
+  backoffLimit: 2
   template:
     metadata:
       annotations:

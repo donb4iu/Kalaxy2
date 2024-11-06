@@ -181,6 +181,9 @@ model = AutoModelForCausalLM.from_pretrained(
     device_map=device_map,
     torch_dtype=torch.float16,
 )
+# Set activation function with new parameter
+model.config.hidden_activation = "gelu_pytorch_tanh"  # or use any other activation function you prefer
+
 model.config.use_cache = False
 model.config.pretraining_tp = 1
 

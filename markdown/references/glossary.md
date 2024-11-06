@@ -11,6 +11,14 @@
 
 - [![alt text](image-2.png) ](https://www.analyticsvidhya.com/blog/)
 
+## F
+
+### Force delete resource in Kubernetes
+
+```
+   kubectl delete job finetune-job-qvqmh --grace-period=0 --force -n vllm
+```
+
 ## G
 
 ### Github

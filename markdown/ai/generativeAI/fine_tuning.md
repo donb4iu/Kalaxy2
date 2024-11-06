@@ -94,3 +94,42 @@ job.batch/finetune-job created
 ## Execution
 
 ![alt text](image-26.png)
+
+## Notes
+
+### 1 
+
+#### Error
+```
+2024-11-06T00:11:09.628Z | `config.hidden_act` is ignored, you should use `config.hidden_activation` instead.
+2024-11-06T00:11:09.628Z | Gemma's activation function will be set to `gelu_pytorch_tanh`. Please, use
+2024-11-06T00:11:09.628Z | `config.hidden_activation` if you want to override this behaviour.
+2024-11-06T00:11:09.628Z | See https://github.com/huggingface/transformers/pull/29402 for more details.
+```
+#### Solution: Set activation function with new parameter
+
+
+    model.config.hidden_activation = "gelu_pytorch_tanh"  # or use any other activation function you prefer
+
+
+```
+2024-11-06T00:12:56.525Z | /usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:797: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+```
+
+### 2
+
+#### Error
+
+```
+2024-11-06T00:12:56.525Z | /usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:797: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+```
+### Solution: Set `force_download = True
+
+```
+# Replace resume_download with force_download=True if you want a fresh download
+file_path = hf_hub_download(
+    repo_id="your-repo-id",
+    filename="your-filename",
+    force_download=True  # forces a fresh download
+)
+```
