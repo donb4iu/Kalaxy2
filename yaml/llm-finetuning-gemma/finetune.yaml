@@ -43,6 +43,8 @@ spec:
       - name: finetuner
         image: donb4iu/finetune-gemma-gpu:cuda12.2.0
         resources:
+          requests:
+            nvidia.com/gpu: "1"
           limits:
             nvidia.com/gpu: "1"
         env:

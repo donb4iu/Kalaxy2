@@ -10,11 +10,18 @@
 
 ## Setup
 
+### Windows
 ```
 Run the following command when conda is activated:
 
 conda config --set auto_activate_base false
 
 ```
-## Activating GPU support
+### Activating Cuda support
 ![alt text](image-7.png)
+
+### Unbuntu
+
+### Activating Cuda
+(base) (10/18/24@09:58:27)dbuddenbaum@amd64-01:~/Documents/multichat$ source ~/Documents/cuda/bin/activate
+(cuda) (base) (10/18/24@10:03:19)dbuddenbaum@amd64-01:~/Documents/multichat$ 

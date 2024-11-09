@@ -5,6 +5,8 @@
 
 ## References
 
+- [Kalaxy2 Hosting vLLM](../hosting/vllm.md)
+
 - [Fine-tune Gemma open models using multiple GPUs on GKE](https://cloud.google.com/kubernetes-engine/docs/tutorials/finetune-gemma-gpu)
 
 - [GenAI Model Optimization: Guide to Fine-Tuning and Quantization](https://medium.com/@alibaba-cloud/genai-model-optimization-guide-to-fine-tuning-and-quantization-431d10db332a)
@@ -94,6 +96,43 @@ job.batch/finetune-job created
 ## Execution
 
 ![alt text](image-26.png)
+
+## Dataset
+
+![alt text](image-27.png)
+
+## Serving
+### #(base) #( 11/06/24@ 7:09PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/llm-finetuning-gemma@main✗✗✗
+   kubectl create -f deployment.yaml
+
+    deployment.apps/vllm-gemma-deployment created
+    service/llm-service created
+
+![alt text](image-29.png)
+
+### Curling
+
+#### #(base) #( 11/08/24@ 5:53PM )( donbuddenbaum@donbs-imac ):~
+```
+   USER_PROMPT="Question: What is the total number of attendees with age over 30 at kubecon eu? Context: CREATE TABLE attendees (name VARCHAR, age INTEGER, kubecon VARCHAR)"
+
+curl -X POST http://192.168.2.41:8000/generate \
+  -H "Content-Type: application/json" \
+  -d @- <<EOF
+{
+    "prompt": "${USER_PROMPT}",
+    "temperature": 0.1,
+    "top_p": 1.0,
+    "max_tokens": 24
+}
+EOF
+```
+```
+{"predictions":["Prompt:\nQuestion: What is the total number of attendees with age over 30 at kubecon eu? Context: CREATE TABLE attendees (name VARCHAR, age INTEGER, kubecon VARCHAR)\nOutput:\nAnswer: SELECT COUNT(age) FROM attendees WHERE kubecon = \"kubecon eu\" AND age > 3"]}%
+```
+## Gradio Chat
+
+
 
 ## Notes
 
