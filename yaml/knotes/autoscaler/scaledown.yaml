@@ -5,6 +5,9 @@ metadata:
   namespace: knote
 spec:
   schedule: "30 5 * * *"  # 12:30 AM every day
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: 1 # Retain after successful completion
+  failedJobsHistoryLimit: 1 # Retain failed so that we see it
   jobTemplate:
     spec:
       template:
@@ -14,9 +17,11 @@ spec:
             image: bitnami/kubectl:latest
             command:
               - kubectl
-              - scale -n knote
+              - scale
+              - -n 
+              - knote
               - deployment/knote
-              - --replicas=0
+              - --replicas=1
 #            env:
 #              - name: KUBERNETES_SERVICE_HOST
 #                value: "https://kubernetes.default.svc"

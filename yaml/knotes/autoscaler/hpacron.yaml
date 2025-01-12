@@ -1,0 +1,81 @@
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  namespace: knote
+  name: cron-runner
+rules:
+- apiGroups: ["autoscaling"]
+  resources: ["horizontalpodautoscalers"]
+  verbs: ["patch", "get"]
+
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: cron-runner
+  namespace: knote
+subjects:
+- kind: ServiceAccount
+  name: sa-cron-runner
+  namespace: knote
+roleRef:
+  kind: Role
+  name: cron-runner
+  apiGroup: rbac.authorization.k8s.io
+
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: sa-cron-runner
+  namespace: knote
+
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: knote-scale-up-job
+  namespace: knote
+spec:
+  schedule: "0 2 * * *"
+  successfulJobsHistoryLimit: 1 # Retain after successful completion
+  failedJobsHistoryLimit: 1 # Retain failed so that we see it
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          serviceAccountName: sa-cron-runner
+          containers:
+          - name: knote-scale-up-job
+            image: bitnami/kubectl:latest
+            command:
+            - /bin/sh
+            - -c
+            - kubectl patch hpa knote-hpa --patch '{"spec":{"minReplicas":3, "maxReplicas":6}}'
+          restartPolicy: OnFailure
+
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: knote-scale-down-job
+  namespace: knote
+spec:
+  schedule: "0 8 * * *"
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: 1 # Retain after successful completion
+  failedJobsHistoryLimit: 1 # Retain failed so that we see it
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          serviceAccountName: sa-cron-runner
+          containers:
+          - name: knote-scale-down-job
+            image: bitnami/kubectl:latest
+            command:
+            - /bin/sh
+            - -c
+            - kubectl patch hpa knote-hpa --patch '{"spec":{"minReplicas":1, "maxReplicas":1}}'
+          restartPolicy: OnFailure
