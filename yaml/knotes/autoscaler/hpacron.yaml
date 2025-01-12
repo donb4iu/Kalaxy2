@@ -49,6 +49,7 @@ spec:
           containers:
           - name: knote-scale-up-job
             image: bitnami/kubectl:latest
+            imagePullPolicy: IfNotPresent
             command:
             - /bin/sh
             - -c
@@ -74,6 +75,7 @@ spec:
           containers:
           - name: knote-scale-down-job
             image: bitnami/kubectl:latest
+            imagePullPolicy: IfNotPresent
             command:
             - /bin/sh
             - -c
