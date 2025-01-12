@@ -1,0 +1,25 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: scale-down
+  namespace: knote
+spec:
+  schedule: "30 5 * * *"  # 12:30 AM every day
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: scale-down
+            image: bitnami/kubectl:latest
+            command:
+              - kubectl
+              - scale -n knote
+              - deployment/knote
+              - --replicas=0
+#            env:
+#              - name: KUBERNETES_SERVICE_HOST
+#                value: "https://kubernetes.default.svc"
+#              - name: KUBERNETES_SERVICE_PORT
+#                value: "443"
+          restartPolicy: OnFailure

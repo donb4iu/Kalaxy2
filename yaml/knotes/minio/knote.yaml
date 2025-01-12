@@ -16,6 +16,11 @@ spec:
       containers:
         - name: app
           image: donb4iu/knote-java:2.0.0
+          resources:
+            requests:
+              cpu: "200m"    # Set the CPU request (200 milliCPU in this case)
+            limits:
+              cpu: "500m"    # Optional: Set a CPU limit if needed
           ports:
             - containerPort: 8080
           env:
