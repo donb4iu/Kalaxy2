@@ -5,6 +5,7 @@
 ## References
 
 - [Build a 100% Free, Traceable, and Secure RAG Chatbot Using Reranker and GPT-4o](https://medium.com/@Stan_DS/build-a-100-free-hallucination-free-secure-rag-chatbot-using-reranker-and-gpt4o-96c2eea24f95)
+    - [Github: RAG_Improvement](https://github.com/stanghong/RAG_Improvement)
 
 - [Building LLM Applications: Introduction (Part 1)](https://medium.com/@vipra_singh/building-llm-applications-introduction-part-1-1c90294b155b#4d28)
     - [kalaxy2 llms](../ai/generativeAI/architecture_framework.md)
