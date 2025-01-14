@@ -1,0 +1,17 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: keda-scaler
+  namespace: knote
+spec:
+  scaleTargetRef:
+    name: knote
+  minReplicaCount: 0
+  maxReplicaCount: 4
+  triggers:
+  - type: cron
+    metadata:
+      timezone: "America/New_York" # Adjust timezone as needed
+      start: 45 17 * * *   # Scale up at 8:00 AM
+      end: 20 17 * * *     # Scale down at 5:17 PM
+      desiredReplicas: "2" # Replicas during active hours
