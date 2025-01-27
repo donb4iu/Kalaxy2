@@ -15,3 +15,14 @@ spec:
       start: 0 8 * * *   # Scale up at 8:00 AM
       end: 20 17 * * *     # Scale down at 5:17 PM
       desiredReplicas: "2" # Replicas during active hours
+#        timezone: "America/New_York" # Adjust timezone as needed
+#          # Scale up: Monday to Friday, 8:00 AM
+#          - cron: "0 8 * * 1-5"
+#            desiredReplicas: "5" # Example number of replicas for scaling up
+#          # Scale down: Monday to Friday, 10:00 PM
+#          - cron: "0 22 * * 1-5"
+#            desiredReplicas: "0" # Scale down at the end of the workday
+#          # Scale down: Entire Saturday and Sunday
+#          - cron: "0 0 * * 6" # Start scaling down at midnight on Saturday
+#            desiredReplicas: "0"
+#          - cron: "0 0 * * 0" # Continue scaling down on Sunday
