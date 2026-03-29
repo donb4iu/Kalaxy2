@@ -351,7 +351,7 @@
     <div class="Page__header">
         <h1><a href="../../databases/chromadb.html">databases</a> <svg class="Page__header--separator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 477.175 477.175"><path d="M360.73 229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1 0s-5.3 13.8 0 19.1l215.5 215.5-215.5 215.5c-5.3 5.3-5.3 13.8 0 19.1 2.6 2.6 6.1 4 9.5 4 3.4 0 6.9-1.3 9.5-4l225.1-225.1c5.3-5.2 5.3-13.8.1-19z"/></svg> <a href="../../databases/clickhouse/docker.html">clickhouse</a> <svg class="Page__header--separator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 477.175 477.175"><path d="M360.73 229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1 0s-5.3 13.8 0 19.1l215.5 215.5-215.5 215.5c-5.3 5.3-5.3 13.8 0 19.1 2.6 2.6 6.1 4 9.5 4 3.4 0 6.9-1.3 9.5-4l225.1-225.1c5.3-5.2 5.3-13.8.1-19z"/></svg> <a href="../../databases/clickhouse/kubernetes_operator.html">kubernetes operator</a></h1>
                 <span class="ModifiedDate">
-            May 13, 2025 at 3:11 PM        </span>
+            March 29, 2026 at 2:43 PM        </span>
                     </div>
 
     <div class="s-content">
@@ -359,76 +359,38 @@
     <h4 class="TableOfContentsContainer__title">Table of Contents</h4>
     <div class="TableOfContentsContainer__content">
         <ul class="TableOfContents">
-<li>
-<a href="#clickhouse-kubernetes-operator">ClickHouse Kubernetes Operator</a>
+<li><a href="#clickhouse-kubernetes-operator">ClickHouse Kubernetes Operator</a>
 <ul>
-<li>
-<a href="#references">References</a>
-</li>
-<li>
-<a href="#setup">Setup</a>
+<li><a href="#references">References</a></li>
+<li><a href="#setup">Setup</a>
 <ul>
-<li>
-<a href="#quick-start">Quick Start</a>
+<li><a href="#quick-start">Quick Start</a>
 <ul>
-<li>
-<a href="#setup-1">Setup</a>
+<li><a href="#setup-1">Setup</a>
 <ul>
-<li>
-<a href="#02-18-24-10-18pm-donbuddenbaum-donbs-imac-documents-clickhouse-operator-deploy-operator-master">#( 02/18/24@10:18PM )( donbuddenbaum@donbs-imac ):~/Documents/clickhouse-operator/deploy/operator@master✔</a>
-</li>
+<li><a href="#02-18-24-10-18pm-donbuddenbaum-donbs-imac-documents-clickhouse-operator-deploy-operator-master">#( 02/18/24@10:18PM )( donbuddenbaum@donbs-imac ):~/Documents/clickhouse-operator/deploy/operator@master✔</a></li>
 </ul>
 </li>
-<li>
-<a href="#02-18-24-11-22pm-donbuddenbaum-donbs-imac-documents-kalaxy2-main">#( 02/18/24@11:22PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2@main✔</a>
-</li>
-<li>
-<a href="#tests">Tests</a>
+<li><a href="#02-18-24-11-22pm-donbuddenbaum-donbs-imac-documents-kalaxy2-main">#( 02/18/24@11:22PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2@main✔</a></li>
+<li><a href="#tests">Tests</a>
 <ul>
-<li>
-<a href="#02-18-24-10-22pm-donbuddenbaum-donbs-imac-documents-clickhouse-operator-deploy-operator-master">#( 02/18/24@10:22PM )( donbuddenbaum@donbs-imac ):~/Documents/clickhouse-operator/deploy/operator@master✔</a>
-</li>
-<li>
-<a href="#02-18-24-10-31pm-donbuddenbaum-donbs-imac-documents-kalaxy2-yaml-clickhouse-main">#( 02/18/24@10:31PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/clickhouse@main✗✗✗</a>
-</li>
-<li>
-<a href="#02-18-24-10-32pm-donbuddenbaum-donbs-imac-documents-kalaxy2-yaml-clickhouse-main">#( 02/18/24@10:32PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/clickhouse@main✗✗✗</a>
-</li>
-<li>
-<a href="#chi-demo-01-demo-01-0-0-0-chi-demo-01-demo-01-0-0-demo-svc-cluster-local">chi-demo-01-demo-01-0-0-0.chi-demo-01-demo-01-0-0.demo.svc.cluster.local :)</a>
-</li>
-<li>
-<a href="#chi-demo-01-demo-01-0-0-0-chi-demo-01-demo-01-0-0-demo-svc-cluster-local-1">chi-demo-01-demo-01-0-0-0.chi-demo-01-demo-01-0-0.demo.svc.cluster.local :)</a>
-</li>
-<li>
-<a href="#chi-demo-01-demo-01-0-0-0-chi-demo-01-demo-01-0-0-demo-svc-cluster-local-2">chi-demo-01-demo-01-0-0-0.chi-demo-01-demo-01-0-0.demo.svc.cluster.local :)</a>
-</li>
-<li>
-<a href="#chi-demo-01-demo-01-0-0-0-chi-demo-01-demo-01-0-0-demo-svc-cluster-local-select-distinct-pickup-ntaname-from-trips">chi-demo-01-demo-01-0-0-0.chi-demo-01-demo-01-0-0.demo.svc.cluster.local :) SELECT DISTINCT(pickup_ntaname) FROM trips</a>
-</li>
-<li>
-<a href="#chi-demo-01-demo-01-0-0-0-chi-demo-01-demo-01-0-0-demo-svc-cluster-local-select-round-avg-tip-amount-2-from-trips">chi-demo-01-demo-01-0-0-0.chi-demo-01-demo-01-0-0.demo.svc.cluster.local :) SELECT round(avg(tip_amount), 2) FROM trips</a>
-</li>
+<li><a href="#02-18-24-10-22pm-donbuddenbaum-donbs-imac-documents-clickhouse-operator-deploy-operator-master">#( 02/18/24@10:22PM )( donbuddenbaum@donbs-imac ):~/Documents/clickhouse-operator/deploy/operator@master✔</a></li>
+<li><a href="#02-18-24-10-31pm-donbuddenbaum-donbs-imac-documents-kalaxy2-yaml-clickhouse-main">#( 02/18/24@10:31PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/clickhouse@main✗✗✗</a></li>
+<li><a href="#02-18-24-10-32pm-donbuddenbaum-donbs-imac-documents-kalaxy2-yaml-clickhouse-main">#( 02/18/24@10:32PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/clickhouse@main✗✗✗</a></li>
+<li><a href="#chi-demo-01-demo-01-0-0-0-chi-demo-01-demo-01-0-0-demo-svc-cluster-local">chi-demo-01-demo-01-0-0-0.chi-demo-01-demo-01-0-0.demo.svc.cluster.local :)</a></li>
+<li><a href="#chi-demo-01-demo-01-0-0-0-chi-demo-01-demo-01-0-0-demo-svc-cluster-local-1">chi-demo-01-demo-01-0-0-0.chi-demo-01-demo-01-0-0.demo.svc.cluster.local :)</a></li>
+<li><a href="#chi-demo-01-demo-01-0-0-0-chi-demo-01-demo-01-0-0-demo-svc-cluster-local-2">chi-demo-01-demo-01-0-0-0.chi-demo-01-demo-01-0-0.demo.svc.cluster.local :)</a></li>
+<li><a href="#chi-demo-01-demo-01-0-0-0-chi-demo-01-demo-01-0-0-demo-svc-cluster-local-select-distinct-pickup-ntaname-from-trips">chi-demo-01-demo-01-0-0-0.chi-demo-01-demo-01-0-0.demo.svc.cluster.local :) SELECT DISTINCT(pickup_ntaname) FROM trips</a></li>
+<li><a href="#chi-demo-01-demo-01-0-0-0-chi-demo-01-demo-01-0-0-demo-svc-cluster-local-select-round-avg-tip-amount-2-from-trips">chi-demo-01-demo-01-0-0-0.chi-demo-01-demo-01-0-0.demo.svc.cluster.local :) SELECT round(avg(tip_amount), 2) FROM trips</a></li>
 </ul>
 </li>
-<li>
-<a href="#chi-demo-01-demo-01-0-0-0-chi-demo-01-demo-01-0-0-demo-svc-cluster-local-select-passenger-count-ceil-avg-total-amount-2-as-average-total-amount-from-trips-group-by-passenger-count">chi-demo-01-demo-01-0-0-0.chi-demo-01-demo-01-0-0.demo.svc.cluster.local :) SELECT passenger_count, ceil(avg(total_amount),2) AS average_total_amount FROM trips GROUP BY passenger_count</a>
+<li><a href="#chi-demo-01-demo-01-0-0-0-chi-demo-01-demo-01-0-0-demo-svc-cluster-local-select-passenger-count-ceil-avg-total-amount-2-as-average-total-amount-from-trips-group-by-passenger-count">chi-demo-01-demo-01-0-0-0.chi-demo-01-demo-01-0-0.demo.svc.cluster.local :) SELECT passenger_count, ceil(avg(total_amount),2) AS average_total_amount FROM trips GROUP BY passenger_count</a>
 <ul>
-<li>
-<a href="#chi-demo-01-demo-01-0-0-0-chi-demo-01-demo-01-0-0-demo-svc-cluster-local-create-dictionary-taxi-zone-dictionary-locationid-uint16-default-0-borough-string-zone-string-service-zone-string-primary-key-locationid-source-http-url-https-datasets-documentation-">chi-demo-01-demo-01-0-0-0.chi-demo-01-demo-01-0-0.demo.svc.cluster.local :) CREATE DICTIONARY taxi_zone_dictionary(LocationID UInt16 DEFAULT 0,Borough String,Zone String,service_zone String) PRIMARY KEY LocationID SOURCE(HTTP(URL ‘https://datasets-documentation.s3.eu-west-3.amazonaws.com/nyc-taxi/taxi_zone_lookup.csv’ FORMAT ‘CSVWithNames’)) LIFETIME(MIN 0 MAX 0) LAYOUT(HASHED_ARRAY())</a>
-</li>
-<li>
-<a href="#chi-demo-01-demo-01-0-0-0-chi-demo-01-demo-01-0-0-demo-svc-cluster-local-select-dictget-taxi-zone-dictionary-borough-132">chi-demo-01-demo-01-0-0-0.chi-demo-01-demo-01-0-0.demo.svc.cluster.local :) SELECT dictGet(‘taxi_zone_dictionary’, ‘Borough’, 132)</a>
-</li>
-<li>
-<a href="#chi-demo-01-demo-01-0-0-0-chi-demo-01-demo-01-0-0-demo-svc-cluster-local-select-dictget-taxi-zone-dictionary-borough-132-1">chi-demo-01-demo-01-0-0-0.chi-demo-01-demo-01-0-0.demo.svc.cluster.local :) SELECT dictGet(‘taxi_zone_dictionary’, ‘Borough’, 132)</a>
-</li>
-<li>
-<a href="#chi-demo-01-demo-01-0-0-0-chi-demo-01-demo-01-0-0-demo-svc-cluster-local-select-count-1-as-total-dictgetordefault-taxi-zone-dictionary-borough-touint64-pickup-nyct2010-gid-unknown-as-borough-name-from-trips-where-dropoff-nyct2010-gid-132-or-dropoff-nyct20">chi-demo-01-demo-01-0-0-0.chi-demo-01-demo-01-0-0.demo.svc.cluster.local :) SELECT count(1) AS total, dictGetOrDefault(‘taxi_zone_dictionary’,‘Borough’, toUInt64(pickup_nyct2010_gid), ‘Unknown’) AS borough_name FROM trips WHERE dropoff_nyct2010_gid = 132 OR dropoff_nyct2010_gid = 138 GROUP BY borough_name ORDER BY total DESC</a>
-</li>
-<li>
-<a href="#chi-demo-01-demo-01-0-0-0-chi-demo-01-demo-01-0-0-demo-svc-cluster-local-select-count-1-as-total-borough-from-trips-join-taxi-zone-dictionary-on-touint64-trips-pickup-nyct2010-gid-taxi-zone-dictionary-locationid-where-dropoff-nyct2010-gid-132-or-dropoff-n">chi-demo-01-demo-01-0-0-0.chi-demo-01-demo-01-0-0.demo.svc.cluster.local :) SELECT count(1) AS total, Borough FROM trips JOIN taxi_zone_dictionary ON toUInt64(trips.pickup_nyct2010_gid) = taxi_zone_dictionary.LocationID WHERE dropoff_nyct2010_gid = 132 OR dropoff_nyct2010_gid = 138 GROUP BY Borough ORDER BY total DESC</a>
-</li>
+<li><a href="#chi-demo-01-demo-01-0-0-0-chi-demo-01-demo-01-0-0-demo-svc-cluster-local-create-dictionary-taxi-zone-dictionary-locationid-uint16-default-0-borough-string-zone-string-service-zone-string-primary-key-locationid-source-http-url-https-datasets-documentation-">chi-demo-01-demo-01-0-0-0.chi-demo-01-demo-01-0-0.demo.svc.cluster.local :) CREATE DICTIONARY taxi_zone_dictionary(LocationID UInt16 DEFAULT 0,Borough String,Zone String,service_zone String) PRIMARY KEY LocationID SOURCE(HTTP(URL ‘https://datasets-documentation.s3.eu-west-3.amazonaws.com/nyc-taxi/taxi_zone_lookup.csv’ FORMAT ‘CSVWithNames’)) LIFETIME(MIN 0 MAX 0) LAYOUT(HASHED_ARRAY())</a></li>
+<li><a href="#chi-demo-01-demo-01-0-0-0-chi-demo-01-demo-01-0-0-demo-svc-cluster-local-select-dictget-taxi-zone-dictionary-borough-132">chi-demo-01-demo-01-0-0-0.chi-demo-01-demo-01-0-0.demo.svc.cluster.local :) SELECT dictGet(‘taxi_zone_dictionary’, ‘Borough’, 132)</a></li>
+<li><a href="#chi-demo-01-demo-01-0-0-0-chi-demo-01-demo-01-0-0-demo-svc-cluster-local-select-dictget-taxi-zone-dictionary-borough-132-1">chi-demo-01-demo-01-0-0-0.chi-demo-01-demo-01-0-0.demo.svc.cluster.local :) SELECT dictGet(‘taxi_zone_dictionary’, ‘Borough’, 132)</a></li>
+<li><a href="#chi-demo-01-demo-01-0-0-0-chi-demo-01-demo-01-0-0-demo-svc-cluster-local-select-count-1-as-total-dictgetordefault-taxi-zone-dictionary-borough-touint64-pickup-nyct2010-gid-unknown-as-borough-name-from-trips-where-dropoff-nyct2010-gid-132-or-dropoff-nyct20">chi-demo-01-demo-01-0-0-0.chi-demo-01-demo-01-0-0.demo.svc.cluster.local :) SELECT count(1) AS total, dictGetOrDefault(‘taxi_zone_dictionary’,‘Borough’, toUInt64(pickup_nyct2010_gid), ‘Unknown’) AS borough_name FROM trips WHERE dropoff_nyct2010_gid = 132 OR dropoff_nyct2010_gid = 138 GROUP BY borough_name ORDER BY total DESC</a></li>
+<li><a href="#chi-demo-01-demo-01-0-0-0-chi-demo-01-demo-01-0-0-demo-svc-cluster-local-select-count-1-as-total-borough-from-trips-join-taxi-zone-dictionary-on-touint64-trips-pickup-nyct2010-gid-taxi-zone-dictionary-locationid-where-dropoff-nyct2010-gid-132-or-dropoff-n">chi-demo-01-demo-01-0-0-0.chi-demo-01-demo-01-0-0.demo.svc.cluster.local :) SELECT count(1) AS total, Borough FROM trips JOIN taxi_zone_dictionary ON toUInt64(trips.pickup_nyct2010_gid) = taxi_zone_dictionary.LocationID WHERE dropoff_nyct2010_gid = 132 OR dropoff_nyct2010_gid = 138 GROUP BY Borough ORDER BY total DESC</a></li>
 </ul>
 </li>
 </ul>
@@ -1013,7 +975,7 @@ Peak memory usage: 496.75 KiB.
 
     
     <!-- JS -->
-            <script src="../../themes/daux/js/main.mjs"></script>
+            <script src="../../themes/daux/js/main.js"></script>
     
         <script>
         

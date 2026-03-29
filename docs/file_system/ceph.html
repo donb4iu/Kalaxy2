@@ -351,7 +351,7 @@
     <div class="Page__header">
         <h1><a href="../file_system/backup.html">file system</a> <svg class="Page__header--separator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 477.175 477.175"><path d="M360.73 229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1 0s-5.3 13.8 0 19.1l215.5 215.5-215.5 215.5c-5.3 5.3-5.3 13.8 0 19.1 2.6 2.6 6.1 4 9.5 4 3.4 0 6.9-1.3 9.5-4l225.1-225.1c5.3-5.2 5.3-13.8.1-19z"/></svg> <a href="../file_system/ceph.html">ceph</a></h1>
                 <span class="ModifiedDate">
-            May 13, 2025 at 3:11 PM        </span>
+            March 29, 2026 at 2:43 PM        </span>
                     </div>
 
     <div class="s-content">
@@ -359,72 +359,36 @@
     <h4 class="TableOfContentsContainer__title">Table of Contents</h4>
     <div class="TableOfContentsContainer__content">
         <ul class="TableOfContents">
-<li>
-<a href="#ceph">CEPH</a>
+<li><a href="#ceph">CEPH</a>
 <ul>
-<li>
-<a href="#setup-storage-devices-new">Setup storage devices  - New</a>
+<li><a href="#setup-storage-devices-new">Setup storage devices  - New</a>
 <ul>
-<li>
-<a href="#dbuddenbaum-arm64-worker-04">dbuddenbaum@arm64-worker-04:~$**</a>
-</li>
-<li>
-<a href="#dbuddenbaum-arm64-worker-04-1">dbuddenbaum@arm64-worker-04:~$</a>
-</li>
+<li><a href="#dbuddenbaum-arm64-worker-04">dbuddenbaum@arm64-worker-04:~$**</a></li>
+<li><a href="#dbuddenbaum-arm64-worker-04-1">dbuddenbaum@arm64-worker-04:~$</a></li>
 </ul>
 </li>
-<li>
-<a href="#setup-for-rpi4">Setup for rPi4</a>
-</li>
-<li>
-<a href="#old">Old</a>
-</li>
-<li>
-<a href="#if-the-fstype-field-is-not-empty-there-is-a-filesystem-on-top-of-the-corresponding-device-in-this-case-you-can-use-sda-for-ceph-partitions">If the FSTYPE field is not empty, there is a filesystem on top of the corresponding device. In this case, you can use sda for Ceph partitions.</a>
+<li><a href="#setup-for-rpi4">Setup for rPi4</a></li>
+<li><a href="#old">Old</a></li>
+<li><a href="#if-the-fstype-field-is-not-empty-there-is-a-filesystem-on-top-of-the-corresponding-device-in-this-case-you-can-use-sda-for-ceph-partitions">If the FSTYPE field is not empty, there is a filesystem on top of the corresponding device. In this case, you can use sda for Ceph partitions.</a>
 <ul>
-<li>
-<a href="#dbuddenbaum-amd64-06-sudo-vi-etc-fstab">dbuddenbaum@amd64-06:~$** sudo vi /etc/fstab</a>
-</li>
+<li><a href="#dbuddenbaum-amd64-06-sudo-vi-etc-fstab">dbuddenbaum@amd64-06:~$** sudo vi /etc/fstab</a></li>
 </ul>
 </li>
-<li>
-<a href="#disk-clean-up">disk clean up</a>
-</li>
-<li>
-<a href="#rook-ceph">Rook/Ceph</a>
-</li>
-<li>
-<a href="#rook-tools">Rook Tools</a>
-</li>
-<li>
-<a href="#crd-deletion-gets-stuck">CRD Deletion gets stuck</a>
-</li>
-<li>
-<a href="#remove-storage-host-based-cluster">Remove storage Host-based cluster</a>
+<li><a href="#disk-clean-up">disk clean up</a></li>
+<li><a href="#rook-ceph">Rook/Ceph</a></li>
+<li><a href="#rook-tools">Rook Tools</a></li>
+<li><a href="#crd-deletion-gets-stuck">CRD Deletion gets stuck</a></li>
+<li><a href="#remove-storage-host-based-cluster">Remove storage Host-based cluster</a>
 <ul>
-<li>
-<a href="#to-stop-the-rook-operator-run">To stop the Rook Operator, run</a>
-</li>
-<li>
-<a href="#start-the-rook-operator-run">Start the Rook operator run:</a>
-</li>
-<li>
-<a href="#purge-the-osd-from-the-ceph-cluster">Purge the OSD from the Ceph cluster</a>
-</li>
-<li>
-<a href="#remove-the-osd">Remove the OSD</a>
-</li>
-<li>
-<a href="#replace-an-osd">Replace an OSD</a>
-</li>
+<li><a href="#to-stop-the-rook-operator-run">To stop the Rook Operator, run</a></li>
+<li><a href="#start-the-rook-operator-run">Start the Rook operator run:</a></li>
+<li><a href="#purge-the-osd-from-the-ceph-cluster">Purge the OSD from the Ceph cluster</a></li>
+<li><a href="#remove-the-osd">Remove the OSD</a></li>
+<li><a href="#replace-an-osd">Replace an OSD</a></li>
 </ul>
 </li>
-<li>
-<a href="#block-storage">Block Storage</a>
-</li>
-<li>
-<a href="#deploy-mongodb-community-edition-on-ceph-block-storage">Deploy MongoDB Community Edition on CEPH block storage</a>
-</li>
+<li><a href="#block-storage">Block Storage</a></li>
+<li><a href="#deploy-mongodb-community-edition-on-ceph-block-storage">Deploy MongoDB Community Edition on CEPH block storage</a></li>
 </ul>
 </li>
 </ul>    </div>
@@ -978,7 +942,7 @@ arm64-worker-04   Ready    &lt;none&gt;   69d    v1.17.11   192.168.2.54   &lt;n
 
     
     <!-- JS -->
-            <script src="../themes/daux/js/main.mjs"></script>
+            <script src="../themes/daux/js/main.js"></script>
     
         <script>
         

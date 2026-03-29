@@ -351,7 +351,7 @@
     <div class="Page__header">
         <h1><a href="../../programming/java/java.html">programming</a> <svg class="Page__header--separator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 477.175 477.175"><path d="M360.73 229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1 0s-5.3 13.8 0 19.1l215.5 215.5-215.5 215.5c-5.3 5.3-5.3 13.8 0 19.1 2.6 2.6 6.1 4 9.5 4 3.4 0 6.9-1.3 9.5-4l225.1-225.1c5.3-5.2 5.3-13.8.1-19z"/></svg> <a href="../../programming/python/anaconda.html">python</a> <svg class="Page__header--separator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 477.175 477.175"><path d="M360.73 229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1 0s-5.3 13.8 0 19.1l215.5 215.5-215.5 215.5c-5.3 5.3-5.3 13.8 0 19.1 2.6 2.6 6.1 4 9.5 4 3.4 0 6.9-1.3 9.5-4l225.1-225.1c5.3-5.2 5.3-13.8.1-19z"/></svg> <a href="../../programming/python/pollapp.html">pollapp</a></h1>
                 <span class="ModifiedDate">
-            May 13, 2025 at 3:11 PM        </span>
+            March 29, 2026 at 2:43 PM        </span>
                     </div>
 
     <div class="s-content">
@@ -359,65 +359,39 @@
     <h4 class="TableOfContentsContainer__title">Table of Contents</h4>
     <div class="TableOfContentsContainer__content">
         <ul class="TableOfContents">
-<li>
-<a href="#python-polling-app">Python Polling App</a>
+<li><a href="#python-polling-app">Python Polling App</a>
 <ul>
-<li>
-<a href="#references">References</a>
-</li>
-<li>
-<a href="#setup">Setup</a>
+<li><a href="#references">References</a></li>
+<li><a href="#setup">Setup</a>
 <ul>
-<li>
-<a href="#project-and-pages">Project and pages</a>
-</li>
-<li>
-<a href="#run-project-and-pages">Run project and pages</a>
+<li><a href="#project-and-pages">Project and pages</a></li>
+<li><a href="#run-project-and-pages">Run project and pages</a>
 <ul>
-<li>
-<a href="#05-17-24-10-18pm-donbuddenbaum-donbs-imac-documents-pollapp-mysite-main">#( 05/17/24@10:18PM )( donbuddenbaum@donbs-imac ):~/Documents/pollapp/mysite@main✗✗✗</a>
-</li>
+<li><a href="#05-17-24-10-18pm-donbuddenbaum-donbs-imac-documents-pollapp-mysite-main">#( 05/17/24@10:18PM )( donbuddenbaum@donbs-imac ):~/Documents/pollapp/mysite@main✗✗✗</a></li>
 </ul>
 </li>
-<li>
-<a href="#setup-database">Setup database</a>
+<li><a href="#setup-database">Setup database</a>
 <ul>
-<li>
-<a href="#edit-the-polls-models-py-file-so-it-looks-like-this">Edit the polls/models.py file so it looks like this:</a>
-</li>
-<li>
-<a href="#edit-the-mysite-settings-py-file">Edit the mysite/settings.py file</a>
-</li>
-<li>
-<a href="#include-the-polls-app-in-database-tables">include the polls app in database tables</a>
+<li><a href="#edit-the-polls-models-py-file-so-it-looks-like-this">Edit the polls/models.py file so it looks like this:</a></li>
+<li><a href="#edit-the-mysite-settings-py-file">Edit the mysite/settings.py file</a></li>
+<li><a href="#include-the-polls-app-in-database-tables">include the polls app in database tables</a>
 <ul>
-<li>
-<a href="#3-12-0-venv-05-17-24-11-49pm-donbuddenbaum-donbs-imac-documents-pollapp-mysite-main">(3.12.0-venv) #( 05/17/24@11:49PM )( donbuddenbaum@donbs-imac ):~/Documents/pollapp/mysite@main✗✗✗</a>
-</li>
+<li><a href="#3-12-0-venv-05-17-24-11-49pm-donbuddenbaum-donbs-imac-documents-pollapp-mysite-main">(3.12.0-venv) #( 05/17/24@11:49PM )( donbuddenbaum@donbs-imac ):~/Documents/pollapp/mysite@main✗✗✗</a></li>
 </ul>
 </li>
-<li>
-<a href="#run-the-migrations-and-manage-database-schema-automatically">run the migrations and manage database schema automatically</a>
+<li><a href="#run-the-migrations-and-manage-database-schema-automatically">run the migrations and manage database schema automatically</a>
 <ul>
-<li>
-<a href="#3-12-0-venv-05-17-24-11-49pm-donbuddenbaum-donbs-imac-documents-pollapp-mysite-main-1">(3.12.0-venv) #( 05/17/24@11:49PM )( donbuddenbaum@donbs-imac ):~/Documents/pollapp/mysite@main✗✗✗</a>
-</li>
+<li><a href="#3-12-0-venv-05-17-24-11-49pm-donbuddenbaum-donbs-imac-documents-pollapp-mysite-main-1">(3.12.0-venv) #( 05/17/24@11:49PM )( donbuddenbaum@donbs-imac ):~/Documents/pollapp/mysite@main✗✗✗</a></li>
 </ul>
 </li>
-<li>
-<a href="#create-those-model-tables-in-database">create those model tables in database:</a>
+<li><a href="#create-those-model-tables-in-database">create those model tables in database:</a>
 <ul>
-<li>
-<a href="#3-12-0-venv-05-17-24-11-51pm-donbuddenbaum-donbs-imac-documents-pollapp-mysite-main">(3.12.0-venv) #( 05/17/24@11:51PM )( donbuddenbaum@donbs-imac ):~/Documents/pollapp/mysite@main✗✗✗</a>
-</li>
+<li><a href="#3-12-0-venv-05-17-24-11-51pm-donbuddenbaum-donbs-imac-documents-pollapp-mysite-main">(3.12.0-venv) #( 05/17/24@11:51PM )( donbuddenbaum@donbs-imac ):~/Documents/pollapp/mysite@main✗✗✗</a></li>
 </ul>
 </li>
-<li>
-<a href="#query-database-with-shell">query database with shell</a>
+<li><a href="#query-database-with-shell">query database with shell</a>
 <ul>
-<li>
-<a href="#3-12-0-venv-05-17-24-11-57pm-donbuddenbaum-donbs-imac-documents-pollapp-mysite-main">(3.12.0-venv) #( 05/17/24@11:57PM )( donbuddenbaum@donbs-imac ):~/Documents/pollapp/mysite@main✗✗✗</a>
-</li>
+<li><a href="#3-12-0-venv-05-17-24-11-57pm-donbuddenbaum-donbs-imac-documents-pollapp-mysite-main">(3.12.0-venv) #( 05/17/24@11:57PM )( donbuddenbaum@donbs-imac ):~/Documents/pollapp/mysite@main✗✗✗</a></li>
 </ul>
 </li>
 </ul>
@@ -431,12 +405,8 @@
 <h1><a id="python-polling-app" href="#python-polling-app" class="Permalink" aria-hidden="true" title="Permalink">#</a>Python Polling App</h1>
 <h2><a id="references" href="#references" class="Permalink" aria-hidden="true" title="Permalink">#</a>References</h2>
 <ul>
-<li>
-<a href="https://github.com/donb4iu/pollapp" class="Link--external" rel="noopener noreferrer">https://github.com/donb4iu/pollapp</a>
-</li>
-<li>
-<a href="https://docs.djangoproject.com/en/5.0/intro/tutorial01/" class="Link--external" rel="noopener noreferrer">Writing your first Django app</a>
-</li>
+<li><a href="https://github.com/donb4iu/pollapp" class="Link--external" rel="noopener noreferrer">https://github.com/donb4iu/pollapp</a></li>
+<li><a href="https://docs.djangoproject.com/en/5.0/intro/tutorial01/" class="Link--external" rel="noopener noreferrer">Writing your first Django app</a></li>
 </ul>
 <h2><a id="setup" href="#setup" class="Permalink" aria-hidden="true" title="Permalink">#</a>Setup</h2>
 <h3><a id="project-and-pages" href="#project-and-pages" class="Permalink" aria-hidden="true" title="Permalink">#</a>Project and pages</h3>
@@ -697,7 +667,7 @@ Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;licen
 
     
     <!-- JS -->
-            <script src="../../themes/daux/js/main.mjs"></script>
+            <script src="../../themes/daux/js/main.js"></script>
     
         <script>
         

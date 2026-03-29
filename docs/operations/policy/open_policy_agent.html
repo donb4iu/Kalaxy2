@@ -351,7 +351,7 @@
     <div class="Page__header">
         <h1><a href="../../operations/autoscaler.html">operations</a> <svg class="Page__header--separator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 477.175 477.175"><path d="M360.73 229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1 0s-5.3 13.8 0 19.1l215.5 215.5-215.5 215.5c-5.3 5.3-5.3 13.8 0 19.1 2.6 2.6 6.1 4 9.5 4 3.4 0 6.9-1.3 9.5-4l225.1-225.1c5.3-5.2 5.3-13.8.1-19z"/></svg> <a href="../../operations/policy/gatekeeper.html">policy</a> <svg class="Page__header--separator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 477.175 477.175"><path d="M360.73 229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1 0s-5.3 13.8 0 19.1l215.5 215.5-215.5 215.5c-5.3 5.3-5.3 13.8 0 19.1 2.6 2.6 6.1 4 9.5 4 3.4 0 6.9-1.3 9.5-4l225.1-225.1c5.3-5.2 5.3-13.8.1-19z"/></svg> <a href="../../operations/policy/open_policy_agent.html">open policy agent</a></h1>
                 <span class="ModifiedDate">
-            May 13, 2025 at 3:11 PM        </span>
+            March 29, 2026 at 2:43 PM        </span>
                     </div>
 
     <div class="s-content">
@@ -359,39 +359,20 @@
     <h4 class="TableOfContentsContainer__title">Table of Contents</h4>
     <div class="TableOfContentsContainer__content">
         <ul class="TableOfContents">
-<li>
-<a href="#open-policy-agent-opa">Open Policy Agent (OPA)</a>
+<li><a href="#open-policy-agent-opa">Open Policy Agent (OPA)</a>
 <ul>
-<li>
-<a href="#references">References</a>
-</li>
-<li>
-<a href="#example">Example</a>
-</li>
-<li>
-<a href="#alternatives">Alternatives</a>
-</li>
-<li>
-<a href="#opa-playground-for-debugging">OPA Playground for Debugging</a>
-</li>
-<li>
-<a href="#generating-and-testing-constraints-written-in-opa-rego">Generating and Testing Constraints written in OPA Rego</a>
-</li>
-<li>
-<a href="#installation-of-gatekeeper-opa-kubernetes-implementation">Installation of Gatekeeper (OPA Kubernetes Implementation)</a>
+<li><a href="#references">References</a></li>
+<li><a href="#example">Example</a></li>
+<li><a href="#alternatives">Alternatives</a></li>
+<li><a href="#opa-playground-for-debugging">OPA Playground for Debugging</a></li>
+<li><a href="#generating-and-testing-constraints-written-in-opa-rego">Generating and Testing Constraints written in OPA Rego</a></li>
+<li><a href="#installation-of-gatekeeper-opa-kubernetes-implementation">Installation of Gatekeeper (OPA Kubernetes Implementation)</a>
 <ul>
-<li>
-<a href="#12-07-22-6-20pm-donbuddenbaum-donbs-imac-documents-rpi4-kalaxy-main">#( 12/07/22@ 6:20PM )( donbuddenbaum@donbs-imac ):~/Documents/rPi4/kalaxy@main✗✗✗</a>
-</li>
-<li>
-<a href="#12-07-22-6-21pm-donbuddenbaum-donbs-imac-documents-rpi4-kalaxy-main">#( 12/07/22@ 6:21PM )( donbuddenbaum@donbs-imac ):~/Documents/rPi4/kalaxy@main✗✗✗</a>
-</li>
-<li>
-<a href="#demo-basic">Demo Basic</a>
+<li><a href="#12-07-22-6-20pm-donbuddenbaum-donbs-imac-documents-rpi4-kalaxy-main">#( 12/07/22@ 6:20PM )( donbuddenbaum@donbs-imac ):~/Documents/rPi4/kalaxy@main✗✗✗</a></li>
+<li><a href="#12-07-22-6-21pm-donbuddenbaum-donbs-imac-documents-rpi4-kalaxy-main">#( 12/07/22@ 6:21PM )( donbuddenbaum@donbs-imac ):~/Documents/rPi4/kalaxy@main✗✗✗</a></li>
+<li><a href="#demo-basic">Demo Basic</a>
 <ul>
-<li>
-<a href="#12-07-22-6-59pm-donbuddenbaum-donbs-imac-documents-rpi4-gatekeeper-demo-basic-master">#( 12/07/22@ 6:59PM )( donbuddenbaum@donbs-imac ):~/Documents/rPi4/gatekeeper/demo/basic@master✔</a>
-</li>
+<li><a href="#12-07-22-6-59pm-donbuddenbaum-donbs-imac-documents-rpi4-gatekeeper-demo-basic-master">#( 12/07/22@ 6:59PM )( donbuddenbaum@donbs-imac ):~/Documents/rPi4/gatekeeper/demo/basic@master✔</a></li>
 </ul>
 </li>
 </ul>
@@ -409,15 +390,9 @@
 <li>
 <p><a href="https://www.openpolicyagent.org/docs/latest/#overview" class="Link--external" rel="noopener noreferrer">Open Policy Introduction <br/> <img src="img_5.png" alt="img_5.png" /></a></p>
 <ul>
-<li>
-<a href="https://www.openpolicyagent.org/docs/latest/kubernetes-introduction/" class="Link--external" rel="noopener noreferrer">Kubernetes Overview &amp; Architecture</a>
-</li>
-<li>
-<a href="https://www.openpolicyagent.org/docs/latest/policy-language/" class="Link--external" rel="noopener noreferrer">Policy Language</a>
-</li>
-<li>
-<a href="https://medium.com/trendyol-tech/first-look-to-opa-open-policy-agent-3542810941c9" class="Link--external" rel="noopener noreferrer">First look to OPA(Open Policy Agent)</a>
-</li>
+<li><a href="https://www.openpolicyagent.org/docs/latest/kubernetes-introduction/" class="Link--external" rel="noopener noreferrer">Kubernetes Overview &amp; Architecture</a></li>
+<li><a href="https://www.openpolicyagent.org/docs/latest/policy-language/" class="Link--external" rel="noopener noreferrer">Policy Language</a></li>
+<li><a href="https://medium.com/trendyol-tech/first-look-to-opa-open-policy-agent-3542810941c9" class="Link--external" rel="noopener noreferrer">First look to OPA(Open Policy Agent)</a></li>
 </ul>
 </li>
 <li>
@@ -435,39 +410,25 @@
 </ul>
 <h2><a id="example" href="#example" class="Permalink" aria-hidden="true" title="Permalink">#</a>Example</h2>
 <ul>
-<li>
-<a href="https://www.openpolicyagent.org/docs/latest/#putting-it-together" class="Link--external" rel="noopener noreferrer">Network Server Example <br/> <img src="img_8.png" alt="img_8.png" /></a>
-</li>
+<li><a href="https://www.openpolicyagent.org/docs/latest/#putting-it-together" class="Link--external" rel="noopener noreferrer">Network Server Example <br/> <img src="img_8.png" alt="img_8.png" /></a></li>
 </ul>
 <h2><a id="alternatives" href="#alternatives" class="Permalink" aria-hidden="true" title="Permalink">#</a>Alternatives</h2>
 <ul>
-<li>
-<a href="https://medium.com/@devopslearning/day-6-open-policy-agent-opa-vs-kyverno-7604b5ecddd9" class="Link--external" rel="noopener noreferrer">Day 6 — Open Policy Agent(OPA) vs Kyverno <br/> <img src="img_3.png" alt="img_3.png" /></a>
-</li>
+<li><a href="https://medium.com/@devopslearning/day-6-open-policy-agent-opa-vs-kyverno-7604b5ecddd9" class="Link--external" rel="noopener noreferrer">Day 6 — Open Policy Agent(OPA) vs Kyverno <br/> <img src="img_3.png" alt="img_3.png" /></a></li>
 </ul>
 <h2><a id="opa-playground-for-debugging" href="#opa-playground-for-debugging" class="Permalink" aria-hidden="true" title="Permalink">#</a>OPA Playground for Debugging</h2>
 <ul>
-<li>
-<a href="https://play.openpolicyagent.org" class="Link--external" rel="noopener noreferrer">The Rego Playground <br/> <img src="img.png" alt="img.png" /></a>
-</li>
+<li><a href="https://play.openpolicyagent.org" class="Link--external" rel="noopener noreferrer">The Rego Playground <br/> <img src="img.png" alt="img.png" /></a></li>
 </ul>
 <h2><a id="generating-and-testing-constraints-written-in-opa-rego" href="#generating-and-testing-constraints-written-in-opa-rego" class="Permalink" aria-hidden="true" title="Permalink">#</a>Generating and Testing Constraints written in OPA Rego</h2>
 <ul>
-<li>
-<a href="https://github.com/plexsystems/konstraint" class="Link--external" rel="noopener noreferrer">Konstraint <br/> <img src="img_9.png" alt="img_9.png" /></a>
-</li>
-<li>
-<a href="https://github.com/open-policy-agent/conftest" class="Link--external" rel="noopener noreferrer"> Conftest</a>
-</li>
+<li><a href="https://github.com/plexsystems/konstraint" class="Link--external" rel="noopener noreferrer">Konstraint <br/> <img src="img_9.png" alt="img_9.png" /></a></li>
+<li><a href="https://github.com/open-policy-agent/conftest" class="Link--external" rel="noopener noreferrer"> Conftest</a></li>
 </ul>
 <h2><a id="installation-of-gatekeeper-opa-kubernetes-implementation" href="#installation-of-gatekeeper-opa-kubernetes-implementation" class="Permalink" aria-hidden="true" title="Permalink">#</a>Installation of Gatekeeper (OPA Kubernetes Implementation)</h2>
 <ul>
-<li>
-<a href="https://open-policy-agent.github.io/gatekeeper/website/docs/howto/" class="Link--external" rel="noopener noreferrer">How to use Gatekeeper</a>
-</li>
-<li>
-<a href="https://github.com/open-policy-agent/gatekeeper#installation-instructions" class="Link--external" rel="noopener noreferrer">open-policy-agent / gatekeeper</a>
-</li>
+<li><a href="https://open-policy-agent.github.io/gatekeeper/website/docs/howto/" class="Link--external" rel="noopener noreferrer">How to use Gatekeeper</a></li>
+<li><a href="https://github.com/open-policy-agent/gatekeeper#installation-instructions" class="Link--external" rel="noopener noreferrer">open-policy-agent / gatekeeper</a></li>
 </ul>
 <h3><a id="12-07-22-6-20pm-donbuddenbaum-donbs-imac-documents-rpi4-kalaxy-main" href="#12-07-22-6-20pm-donbuddenbaum-donbs-imac-documents-rpi4-kalaxy-main" class="Permalink" aria-hidden="true" title="Permalink">#</a>#( 12/07/22@ 6:20PM )( donbuddenbaum@donbs-imac ):~/Documents/rPi4/kalaxy@main✗✗✗</h3>
 <p>helm repo add gatekeeper <a href="https://open-policy-agent.github.io/gatekeeper/charts" class="Link--external" rel="noopener noreferrer">https://open-policy-agent.github.io/gatekeeper/charts</a>
@@ -832,7 +793,7 @@ byPod:
 
     
     <!-- JS -->
-            <script src="../../themes/daux/js/main.mjs"></script>
+            <script src="../../themes/daux/js/main.js"></script>
     
         <script>
         
