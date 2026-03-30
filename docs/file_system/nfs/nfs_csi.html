@@ -351,7 +351,7 @@
     <div class="Page__header">
         <h1><a href="../../file_system/backup.html">file system</a> <svg class="Page__header--separator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 477.175 477.175"><path d="M360.73 229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1 0s-5.3 13.8 0 19.1l215.5 215.5-215.5 215.5c-5.3 5.3-5.3 13.8 0 19.1 2.6 2.6 6.1 4 9.5 4 3.4 0 6.9-1.3 9.5-4l225.1-225.1c5.3-5.2 5.3-13.8.1-19z"/></svg> <a href="../../file_system/nfs/nfs.html">nfs</a> <svg class="Page__header--separator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 477.175 477.175"><path d="M360.73 229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1 0s-5.3 13.8 0 19.1l215.5 215.5-215.5 215.5c-5.3 5.3-5.3 13.8 0 19.1 2.6 2.6 6.1 4 9.5 4 3.4 0 6.9-1.3 9.5-4l225.1-225.1c5.3-5.2 5.3-13.8.1-19z"/></svg> <a href="../../file_system/nfs/nfs_csi.html">nfs-csi</a></h1>
                 <span class="ModifiedDate">
-            May 13, 2025 at 3:11 PM        </span>
+            March 29, 2026 at 2:43 PM        </span>
                     </div>
 
     <div class="s-content">
@@ -359,47 +359,25 @@
     <h4 class="TableOfContentsContainer__title">Table of Contents</h4>
     <div class="TableOfContentsContainer__content">
         <ul class="TableOfContents">
-<li>
-<a href="#microk8s-nfs-csi">MicroK8s NFS CSI</a>
+<li><a href="#microk8s-nfs-csi">MicroK8s NFS CSI</a>
 <ul>
-<li>
-<a href="#reference">Reference</a>
-</li>
-<li>
-<a href="#setup">Setup</a>
+<li><a href="#reference">Reference</a></li>
+<li><a href="#setup">Setup</a>
 <ul>
-<li>
-<a href="#microk8s">MicroK8s</a>
+<li><a href="#microk8s">MicroK8s</a>
 <ul>
-<li>
-<a href="#dbuddenbaum-arm64-01-microk8s-enable-helm3">dbuddenbaum@arm64-01:~$ microk8s enable helm3</a>
-</li>
-<li>
-<a href="#dbuddenbaum-arm64-01-microk8s-helm3-repo-add-csi-driver-nfs-https-raw-githubusercontent-com-kubernetes-csi-csi-driver-nfs-master-charts">dbuddenbaum@arm64-01:~$ microk8s helm3 repo add csi-driver-nfs https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/charts</a>
-</li>
-<li>
-<a href="#dbuddenbaum-arm64-01-microk8s-helm3-repo-update">dbuddenbaum@arm64-01:~$ microk8s helm3 repo update</a>
-</li>
-<li>
-<a href="#dbuddenbaum-arm64-01-microk8s-helm3-install-csi-driver-nfs-csi-driver-nfs-csi-driver-nfs-namespace-kube-system-set-kubeletdir-var-snap-microk8s-common-var-lib-kubelet">dbuddenbaum@arm64-01:~$ microk8s helm3 install csi-driver-nfs csi-driver-nfs/csi-driver-nfs –namespace kube-system –set kubeletDir=/var/snap/microk8s/common/var/lib/kubelet</a>
-</li>
-<li>
-<a href="#dbuddenbaum-arm64-01-microk8s-kubectl-get-csidrivers">dbuddenbaum@arm64-01:~$ microk8s kubectl get csidrivers</a>
-</li>
+<li><a href="#dbuddenbaum-arm64-01-microk8s-enable-helm3">dbuddenbaum@arm64-01:~$ microk8s enable helm3</a></li>
+<li><a href="#dbuddenbaum-arm64-01-microk8s-helm3-repo-add-csi-driver-nfs-https-raw-githubusercontent-com-kubernetes-csi-csi-driver-nfs-master-charts">dbuddenbaum@arm64-01:~$ microk8s helm3 repo add csi-driver-nfs https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/charts</a></li>
+<li><a href="#dbuddenbaum-arm64-01-microk8s-helm3-repo-update">dbuddenbaum@arm64-01:~$ microk8s helm3 repo update</a></li>
+<li><a href="#dbuddenbaum-arm64-01-microk8s-helm3-install-csi-driver-nfs-csi-driver-nfs-csi-driver-nfs-namespace-kube-system-set-kubeletdir-var-snap-microk8s-common-var-lib-kubelet">dbuddenbaum@arm64-01:~$ microk8s helm3 install csi-driver-nfs csi-driver-nfs/csi-driver-nfs –namespace kube-system –set kubeletDir=/var/snap/microk8s/common/var/lib/kubelet</a></li>
+<li><a href="#dbuddenbaum-arm64-01-microk8s-kubectl-get-csidrivers">dbuddenbaum@arm64-01:~$ microk8s kubectl get csidrivers</a></li>
 </ul>
 </li>
-<li>
-<a href="#storage-class-and-pv">Storage Class and PV</a>
+<li><a href="#storage-class-and-pv">Storage Class and PV</a>
 <ul>
-<li>
-<a href="#02-18-24-5-15pm-donbuddenbaum-donbs-imac-documents-kalaxy2-yaml-microk8s-nfs-main">#( 02/18/24@ 5:15PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/microk8s/nfs@main✗✗✗</a>
-</li>
-<li>
-<a href="#02-18-24-5-28pm-donbuddenbaum-donbs-imac-documents-kalaxy2-yaml-microk8s-k8s-dashboard-main">#( 02/18/24@ 5:28PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/microk8s/k8s-dashboard@main✗✗✗</a>
-</li>
-<li>
-<a href="#dbuddenbaum-arm64-01-microk8s-kubectl-describe-pvc-my-pvc">dbuddenbaum@arm64-01:~$ microk8s kubectl describe pvc my-pvc</a>
-</li>
+<li><a href="#02-18-24-5-15pm-donbuddenbaum-donbs-imac-documents-kalaxy2-yaml-microk8s-nfs-main">#( 02/18/24@ 5:15PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/microk8s/nfs@main✗✗✗</a></li>
+<li><a href="#02-18-24-5-28pm-donbuddenbaum-donbs-imac-documents-kalaxy2-yaml-microk8s-k8s-dashboard-main">#( 02/18/24@ 5:28PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/microk8s/k8s-dashboard@main✗✗✗</a></li>
+<li><a href="#dbuddenbaum-arm64-01-microk8s-kubectl-describe-pvc-my-pvc">dbuddenbaum@arm64-01:~$ microk8s kubectl describe pvc my-pvc</a></li>
 </ul>
 </li>
 </ul>
@@ -489,7 +467,7 @@ Events:        &lt;none&gt;
 
     
     <!-- JS -->
-            <script src="../../themes/daux/js/main.mjs"></script>
+            <script src="../../themes/daux/js/main.js"></script>
     
         <script>
         

@@ -351,7 +351,7 @@
     <div class="Page__header">
         <h1><a href="../setup/microk8s.html">setup</a> <svg class="Page__header--separator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 477.175 477.175"><path d="M360.73 229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1 0s-5.3 13.8 0 19.1l215.5 215.5-215.5 215.5c-5.3 5.3-5.3 13.8 0 19.1 2.6 2.6 6.1 4 9.5 4 3.4 0 6.9-1.3 9.5-4l225.1-225.1c5.3-5.2 5.3-13.8.1-19z"/></svg> <a href="../setup/microk8s.html">microk8s</a></h1>
                 <span class="ModifiedDate">
-            May 13, 2025 at 3:11 PM        </span>
+            March 29, 2026 at 2:43 PM        </span>
                     </div>
 
     <div class="s-content">
@@ -359,229 +359,115 @@
     <h4 class="TableOfContentsContainer__title">Table of Contents</h4>
     <div class="TableOfContentsContainer__content">
         <ul class="TableOfContents">
-<li>
-<a href="#setup-microk8s">Setup MicroK8s</a>
+<li><a href="#setup-microk8s">Setup MicroK8s</a>
 <ul>
-<li>
-<a href="#reference">Reference</a>
-</li>
-<li>
-<a href="#setup">Setup</a>
+<li><a href="#reference">Reference</a></li>
+<li><a href="#setup">Setup</a>
 <ul>
-<li>
-<a href="#arm64-init">ARM64 Init</a>
+<li><a href="#arm64-init">ARM64 Init</a>
 <ul>
-<li>
-<a href="#02-17-24-10-43pm-donbuddenbaum-donbs-imac-documents-kalaxy2-cloud-init-setup-main">#( 02/17/24@10:43PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/cloud-init-setup@main✔</a>
-</li>
+<li><a href="#02-17-24-10-43pm-donbuddenbaum-donbs-imac-documents-kalaxy2-cloud-init-setup-main">#( 02/17/24@10:43PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/cloud-init-setup@main✔</a></li>
 </ul>
 </li>
-<li>
-<a href="#node">Node</a>
+<li><a href="#node">Node</a>
 <ul>
-<li>
-<a href="#pi-arm64-05-sudo-passwd-dbuddenbaum">pi@arm64-05:~$ sudo passwd dbuddenbaum</a>
-</li>
-<li>
-<a href="#02-18-24-1-00am-donbuddenbaum-donbs-imac-documents-kalaxy2-cloud-init-setup-main">#( 02/18/24@ 1:00AM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/cloud-init-setup@main✗✗✗</a>
-</li>
-<li>
-<a href="#dbuddenbaum-donb-ms7821-ssh-keygen-f-home-dbuddenbaum-ssh-known-hosts-r-192-168-2-51">dbuddenbaum@donb-ms7821:~$ ssh-keygen -f “/home/dbuddenbaum/.ssh/known_hosts” -R “192.168.2.51”</a>
-</li>
-<li>
-<a href="#dbuddenbaum-arm64-05-sudo-snap-install-microk8s-classic-channel-1-29-stable">dbuddenbaum@arm64-05:~$ sudo snap install microk8s –classic –channel=1.29/stable</a>
-</li>
-<li>
-<a href="#buddenbaum-arm64-01-sudo-microk8s-add-node">buddenbaum@arm64-01:~$ sudo microk8s add-node</a>
-</li>
-<li>
-<a href="#dbuddenbaum-arm64-05-sudo-usermod-a-g-microk8s-dbuddenbaum">dbuddenbaum@arm64-05:~$ sudo usermod -a -G microk8s dbuddenbaum</a>
-</li>
-<li>
-<a href="#dbuddenbaum-arm64-05-sudo-chown-f-r-dbuddenbaum-kubesudo-chown-f-r-dbuddenbaum-kube">dbuddenbaum@arm64-05:~$ sudo chown -f -R dbuddenbaum ~/.kubesudo chown -f -R dbuddenbaum ~/.kube</a>
-</li>
-<li>
-<a href="#dbuddenbaum-arm64-05-newgrp-microk8s">#### dbuddenbaum@arm64-05:~$ newgrp microk8s</a>
-</li>
-<li>
-<a href="#dbuddenbaum-arm64-05-microk8s-join-192-168-2-51-25000-64fd2ec74c48cdd2d113805beead7a28-307234781a84-worker">dbuddenbaum@arm64-05:~$ microk8s join 192.168.2.51:25000/64fd2ec74c48cdd2d113805beead7a28/307234781a84 –worker</a>
-</li>
-<li>
-<a href="#dbuddenbaum-arm64-01-microk8s-config-config">dbuddenbaum@arm64-01:~$ microk8s config &gt; config</a>
-</li>
+<li><a href="#pi-arm64-05-sudo-passwd-dbuddenbaum">pi@arm64-05:~$ sudo passwd dbuddenbaum</a></li>
+<li><a href="#02-18-24-1-00am-donbuddenbaum-donbs-imac-documents-kalaxy2-cloud-init-setup-main">#( 02/18/24@ 1:00AM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/cloud-init-setup@main✗✗✗</a></li>
+<li><a href="#dbuddenbaum-donb-ms7821-ssh-keygen-f-home-dbuddenbaum-ssh-known-hosts-r-192-168-2-51">dbuddenbaum@donb-ms7821:~$ ssh-keygen -f “/home/dbuddenbaum/.ssh/known_hosts” -R “192.168.2.51”</a></li>
+<li><a href="#dbuddenbaum-arm64-05-sudo-snap-install-microk8s-classic-channel-1-29-stable">dbuddenbaum@arm64-05:~$ sudo snap install microk8s –classic –channel=1.29/stable</a></li>
+<li><a href="#buddenbaum-arm64-01-sudo-microk8s-add-node">buddenbaum@arm64-01:~$ sudo microk8s add-node</a></li>
+<li><a href="#dbuddenbaum-arm64-05-sudo-usermod-a-g-microk8s-dbuddenbaum">dbuddenbaum@arm64-05:~$ sudo usermod -a -G microk8s dbuddenbaum</a></li>
+<li><a href="#dbuddenbaum-arm64-05-sudo-chown-f-r-dbuddenbaum-kubesudo-chown-f-r-dbuddenbaum-kube">dbuddenbaum@arm64-05:~$ sudo chown -f -R dbuddenbaum ~/.kubesudo chown -f -R dbuddenbaum ~/.kube</a></li>
+<li><a href="#dbuddenbaum-arm64-05-newgrp-microk8s">#### dbuddenbaum@arm64-05:~$ newgrp microk8s</a></li>
+<li><a href="#dbuddenbaum-arm64-05-microk8s-join-192-168-2-51-25000-64fd2ec74c48cdd2d113805beead7a28-307234781a84-worker">dbuddenbaum@arm64-05:~$ microk8s join 192.168.2.51:25000/64fd2ec74c48cdd2d113805beead7a28/307234781a84 –worker</a></li>
+<li><a href="#dbuddenbaum-arm64-01-microk8s-config-config">dbuddenbaum@arm64-01:~$ microk8s config &gt; config</a></li>
 </ul>
 </li>
-<li>
-<a href="#cluster">Cluster</a>
+<li><a href="#cluster">Cluster</a>
 <ul>
-<li>
-<a href="#dbuddenbaum-amd64-03-microk8s-enable-dns">dbuddenbaum@amd64-03:~$ microk8s enable dns</a>
-</li>
-<li>
-<a href="#dbuddenbaum-amd64-03-microk8s-enable-dashboard">dbuddenbaum@amd64-03:~$ microk8s enable dashboard</a>
-</li>
-<li>
-<a href="#04-09-24-9-43pm-donbuddenbaum-donbs-imac">#( 04/09/24@ 9:43PM )( donbuddenbaum@donbs-imac ):~</a>
-</li>
-<li>
-<a href="#dbuddenbaum-amd64-03-microk8s-enable-ingress">dbuddenbaum@amd64-03:~$ microk8s enable ingress</a>
-</li>
-<li>
-<a href="#dbuddenbaum-amd64-03-microk8s-enable-metallb">dbuddenbaum@amd64-03:~$ microk8s enable metallb</a>
-</li>
-<li>
-<a href="#dbuddenbaum-amd64-03-microk8s-enable-observability">dbuddenbaum@amd64-03:~$ microk8s enable observability</a>
-</li>
+<li><a href="#dbuddenbaum-amd64-03-microk8s-enable-dns">dbuddenbaum@amd64-03:~$ microk8s enable dns</a></li>
+<li><a href="#dbuddenbaum-amd64-03-microk8s-enable-dashboard">dbuddenbaum@amd64-03:~$ microk8s enable dashboard</a></li>
+<li><a href="#04-09-24-9-43pm-donbuddenbaum-donbs-imac">#( 04/09/24@ 9:43PM )( donbuddenbaum@donbs-imac ):~</a></li>
+<li><a href="#dbuddenbaum-amd64-03-microk8s-enable-ingress">dbuddenbaum@amd64-03:~$ microk8s enable ingress</a></li>
+<li><a href="#dbuddenbaum-amd64-03-microk8s-enable-metallb">dbuddenbaum@amd64-03:~$ microk8s enable metallb</a></li>
+<li><a href="#dbuddenbaum-amd64-03-microk8s-enable-observability">dbuddenbaum@amd64-03:~$ microk8s enable observability</a></li>
 </ul>
 </li>
-<li>
-<a href="#dashboard">Dashboard</a>
+<li><a href="#dashboard">Dashboard</a>
 <ul>
-<li>
-<a href="#02-18-24-3-04pm-donbuddenbaum-donbs-imac-documents-kalaxy2-yaml-microk8s-k8s-dashboard-main">#( 02/18/24@ 3:04PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/microk8s/k8s-dashboard@main✗✗✗</a>
-</li>
-<li>
-<a href="#02-18-24-3-04pm-donbuddenbaum-donbs-imac-documents-kalaxy2-yaml-microk8s-k8s-dashboard-main-1">#( 02/18/24@ 3:04PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/microk8s/k8s-dashboard@main✗✗✗</a>
-</li>
-<li>
-<a href="#token-with-duration">Token with Duration</a>
+<li><a href="#02-18-24-3-04pm-donbuddenbaum-donbs-imac-documents-kalaxy2-yaml-microk8s-k8s-dashboard-main">#( 02/18/24@ 3:04PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/microk8s/k8s-dashboard@main✗✗✗</a></li>
+<li><a href="#02-18-24-3-04pm-donbuddenbaum-donbs-imac-documents-kalaxy2-yaml-microk8s-k8s-dashboard-main-1">#( 02/18/24@ 3:04PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/microk8s/k8s-dashboard@main✗✗✗</a></li>
+<li><a href="#token-with-duration">Token with Duration</a>
 <ul>
-<li>
-<a href="#02-18-24-3-13pm-donbuddenbaum-donbs-imac-documents-kalaxy2-yaml-microk8s-k8s-dashboard-main">#( 02/18/24@ 3:13PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/microk8s/k8s-dashboard@main✗✗✗</a>
-</li>
+<li><a href="#02-18-24-3-13pm-donbuddenbaum-donbs-imac-documents-kalaxy2-yaml-microk8s-k8s-dashboard-main">#( 02/18/24@ 3:13PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/microk8s/k8s-dashboard@main✗✗✗</a></li>
 </ul>
 </li>
-<li>
-<a href="#02-18-24-3-13pm-donbuddenbaum-donbs-imac-documents-kalaxy2-yaml-microk8s-k8s-dashboard-main-1">#( 02/18/24@ 3:13PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/microk8s/k8s-dashboard@main✗✗✗</a>
-</li>
+<li><a href="#02-18-24-3-13pm-donbuddenbaum-donbs-imac-documents-kalaxy2-yaml-microk8s-k8s-dashboard-main-1">#( 02/18/24@ 3:13PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/microk8s/k8s-dashboard@main✗✗✗</a></li>
 </ul>
 </li>
-<li>
-<a href="#observability">Observability</a>
+<li><a href="#observability">Observability</a>
 <ul>
-<li>
-<a href="#dbuddenbaum-arm64-01-microk8s-enable-prometheus">dbuddenbaum@arm64-01:~$ microk8s enable prometheus</a>
-</li>
+<li><a href="#dbuddenbaum-arm64-01-microk8s-enable-prometheus">dbuddenbaum@arm64-01:~$ microk8s enable prometheus</a></li>
 </ul>
 </li>
-<li>
-<a href="#grafana">Grafana</a>
+<li><a href="#grafana">Grafana</a>
 <ul>
-<li>
-<a href="#02-20-24-6-54pm-donbuddenbaum-donbs-imac-documents-kalaxy2-main">#( 02/20/24@ 6:54PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2@main✗✗✗</a>
-</li>
-<li>
-<a href="#02-20-24-6-56pm-donbuddenbaum-donbs-imac-documents-kalaxy2-main">#( 02/20/24@ 6:56PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2@main✗✗✗</a>
-</li>
-<li>
-<a href="#02-20-24-7-47pm-donbuddenbaum-donbs-imac-documents-kalaxy2-yaml-microk8s-prometheus-main">#( 02/20/24@ 7:47PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/microk8s/prometheus@main✗✗✗</a>
-</li>
+<li><a href="#02-20-24-6-54pm-donbuddenbaum-donbs-imac-documents-kalaxy2-main">#( 02/20/24@ 6:54PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2@main✗✗✗</a></li>
+<li><a href="#02-20-24-6-56pm-donbuddenbaum-donbs-imac-documents-kalaxy2-main">#( 02/20/24@ 6:56PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2@main✗✗✗</a></li>
+<li><a href="#02-20-24-7-47pm-donbuddenbaum-donbs-imac-documents-kalaxy2-yaml-microk8s-prometheus-main">#( 02/20/24@ 7:47PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/microk8s/prometheus@main✗✗✗</a></li>
 </ul>
 </li>
-<li>
-<a href="#config-for-kubectl">Config for Kubectl</a>
+<li><a href="#config-for-kubectl">Config for Kubectl</a>
 <ul>
-<li>
-<a href="#dbuddenbaum-arm64-01-kube">dbuddenbaum@arm64-01:~/.kube$</a>
-</li>
-<li>
-<a href="#02-29-24-7-05pm-donbuddenbaum-donbs-imac-kube">#( 02/29/24@ 7:05PM )( donbuddenbaum@donbs-imac ):~/.kube</a>
-</li>
-<li>
-<a href="#02-29-24-7-05pm-donbuddenbaum-donbs-imac-kube-1">#( 02/29/24@ 7:05PM )( donbuddenbaum@donbs-imac ):~/.kube</a>
-</li>
-<li>
-<a href="#05-07-24-2-32pm-donbuddenbaum-donbs-imac">#( 05/07/24@ 2:32PM )( donbuddenbaum@donbs-imac ):~</a>
-</li>
+<li><a href="#dbuddenbaum-arm64-01-kube">dbuddenbaum@arm64-01:~/.kube$</a></li>
+<li><a href="#02-29-24-7-05pm-donbuddenbaum-donbs-imac-kube">#( 02/29/24@ 7:05PM )( donbuddenbaum@donbs-imac ):~/.kube</a></li>
+<li><a href="#02-29-24-7-05pm-donbuddenbaum-donbs-imac-kube-1">#( 02/29/24@ 7:05PM )( donbuddenbaum@donbs-imac ):~/.kube</a></li>
+<li><a href="#05-07-24-2-32pm-donbuddenbaum-donbs-imac">#( 05/07/24@ 2:32PM )( donbuddenbaum@donbs-imac ):~</a></li>
 </ul>
 </li>
-<li>
-<a href="#gpu">GPU</a>
+<li><a href="#gpu">GPU</a>
 <ul>
-<li>
-<a href="#08-22-24-13-17-35-dbuddenbaum-amd64-01-microk8s-enable-nvidia">(08/22/24@13:17:35)dbuddenbaum@amd64-01:~$ microk8s enable nvidia</a>
-</li>
-<li>
-<a href="#08-22-24-1-23pm-donbuddenbaum-donbs-imac-documents-kalaxy2-yaml-gpu-main">#( 08/22/24@ 1:23PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/gpu@main✗✗✗</a>
-</li>
-<li>
-<a href="#08-22-24-1-26pm-donbuddenbaum-donbs-imac-documents-kalaxy2-yaml-gpu-main">#( 08/22/24@ 1:26PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/gpu@main✗✗✗</a>
-</li>
-<li>
-<a href="#08-22-24-1-29pm-donbuddenbaum-donbs-imac-documents-kalaxy2-yaml-gpu-main">#( 08/22/24@ 1:29PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/gpu@main✗✗✗</a>
-</li>
-<li>
-<a href="#08-22-24-1-30pm-donbuddenbaum-donbs-imac-documents-kalaxy2-yaml-gpu-main">#( 08/22/24@ 1:30PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/gpu@main✗✗✗</a>
-</li>
+<li><a href="#08-22-24-13-17-35-dbuddenbaum-amd64-01-microk8s-enable-nvidia">(08/22/24@13:17:35)dbuddenbaum@amd64-01:~$ microk8s enable nvidia</a></li>
+<li><a href="#08-22-24-1-23pm-donbuddenbaum-donbs-imac-documents-kalaxy2-yaml-gpu-main">#( 08/22/24@ 1:23PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/gpu@main✗✗✗</a></li>
+<li><a href="#08-22-24-1-26pm-donbuddenbaum-donbs-imac-documents-kalaxy2-yaml-gpu-main">#( 08/22/24@ 1:26PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/gpu@main✗✗✗</a></li>
+<li><a href="#08-22-24-1-29pm-donbuddenbaum-donbs-imac-documents-kalaxy2-yaml-gpu-main">#( 08/22/24@ 1:29PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/gpu@main✗✗✗</a></li>
+<li><a href="#08-22-24-1-30pm-donbuddenbaum-donbs-imac-documents-kalaxy2-yaml-gpu-main">#( 08/22/24@ 1:30PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml/gpu@main✗✗✗</a></li>
 </ul>
 </li>
-<li>
-<a href="#setup-amd64-nvidia-gpu">Setup AMD64 Nvidia GPU</a>
+<li><a href="#setup-amd64-nvidia-gpu">Setup AMD64 Nvidia GPU</a>
 <ul>
-<li>
-<a href="#08-22-24-13-32-08-dbuddenbaum-amd64-01-inxi-g">(08/22/24@13:32:08)dbuddenbaum@amd64-01:~$ inxi -G</a>
-</li>
-<li>
-<a href="#dbuddenbaum-amd64-02-sudo-snap-install-nvtop">dbuddenbaum@amd64-02:~$ sudo snap install nvtop</a>
-</li>
+<li><a href="#08-22-24-13-32-08-dbuddenbaum-amd64-01-inxi-g">(08/22/24@13:32:08)dbuddenbaum@amd64-01:~$ inxi -G</a></li>
+<li><a href="#dbuddenbaum-amd64-02-sudo-snap-install-nvtop">dbuddenbaum@amd64-02:~$ sudo snap install nvtop</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
-<a href="#remove-node">Remove Node</a>
+<li><a href="#remove-node">Remove Node</a>
 <ul>
-<li>
-<a href="#08-26-24-12-00-28-dbuddenbaum-arm64-02-microk8s-leave">(08/26/24@12:00:28)dbuddenbaum@arm64-02:~$ microk8s leave</a>
-</li>
-<li>
-<a href="#08-26-24-12-02-49-dbuddenbaum-amd64-01-microk8s-remove-node-arm64-01">(08/26/24@12:02:49)dbuddenbaum@amd64-01:~$ microk8s remove-node arm64-01</a>
-</li>
+<li><a href="#08-26-24-12-00-28-dbuddenbaum-arm64-02-microk8s-leave">(08/26/24@12:00:28)dbuddenbaum@arm64-02:~$ microk8s leave</a></li>
+<li><a href="#08-26-24-12-02-49-dbuddenbaum-amd64-01-microk8s-remove-node-arm64-01">(08/26/24@12:02:49)dbuddenbaum@amd64-01:~$ microk8s remove-node arm64-01</a></li>
 </ul>
 </li>
-<li>
-<a href="#remove-microk8s">Remove Microk8s</a>
+<li><a href="#remove-microk8s">Remove Microk8s</a>
 <ul>
-<li>
-<a href="#08-26-24-12-10-43-dbuddenbaum-arm64-02-sudo-snap-remove-microk8s">(08/26/24@12:10:43)dbuddenbaum@arm64-02:~$ sudo snap remove microk8s</a>
-</li>
-<li>
-<a href="#08-26-24-12-12-11-dbuddenbaum-arm64-02-sudo-rm-rf-var-snap-microk8s">(08/26/24@12:12:11)dbuddenbaum@arm64-02:~$ sudo rm -rf /var/snap/microk8s/</a>
-</li>
-<li>
-<a href="#08-26-24-12-13-06-dbuddenbaum-arm64-02-sudo-rm-rf-var-snap-microk8s-common">(08/26/24@12:13:06)dbuddenbaum@arm64-02:~$ sudo rm -rf /var/snap/microk8s-common/</a>
-</li>
-<li>
-<a href="#08-26-24-12-13-07-dbuddenbaum-arm64-02-ps-aux-grep-microk8s">(08/26/24@12:13:07)dbuddenbaum@arm64-02:~$ ps aux | grep microk8s</a>
-</li>
-<li>
-<a href="#08-26-24-12-13-21-dbuddenbaum-arm64-02-sudo-rm-rf-etc-kubernetes">(08/26/24@12:13:21)dbuddenbaum@arm64-02:~$ sudo rm -rf /etc/kubernetes/</a>
-</li>
+<li><a href="#08-26-24-12-10-43-dbuddenbaum-arm64-02-sudo-snap-remove-microk8s">(08/26/24@12:10:43)dbuddenbaum@arm64-02:~$ sudo snap remove microk8s</a></li>
+<li><a href="#08-26-24-12-12-11-dbuddenbaum-arm64-02-sudo-rm-rf-var-snap-microk8s">(08/26/24@12:12:11)dbuddenbaum@arm64-02:~$ sudo rm -rf /var/snap/microk8s/</a></li>
+<li><a href="#08-26-24-12-13-06-dbuddenbaum-arm64-02-sudo-rm-rf-var-snap-microk8s-common">(08/26/24@12:13:06)dbuddenbaum@arm64-02:~$ sudo rm -rf /var/snap/microk8s-common/</a></li>
+<li><a href="#08-26-24-12-13-07-dbuddenbaum-arm64-02-ps-aux-grep-microk8s">(08/26/24@12:13:07)dbuddenbaum@arm64-02:~$ ps aux | grep microk8s</a></li>
+<li><a href="#08-26-24-12-13-21-dbuddenbaum-arm64-02-sudo-rm-rf-etc-kubernetes">(08/26/24@12:13:21)dbuddenbaum@arm64-02:~$ sudo rm -rf /etc/kubernetes/</a></li>
 </ul>
 </li>
-<li>
-<a href="#rejoin-the-cluster">Rejoin the cluster</a>
+<li><a href="#rejoin-the-cluster">Rejoin the cluster</a>
 <ul>
-<li>
-<a href="#08-26-24-12-19-30-dbuddenbaum-arm64-02-sudo-snap-install-microk8s-classic-channel-1-29-stable">(08/26/24@12:19:30)dbuddenbaum@arm64-02:~$ sudo snap install microk8s –classic –channel=1.29/stable</a>
-</li>
-<li>
-<a href="#08-26-24-12-21-45-dbuddenbaum-arm64-02-microk8s-join-192-168-2-61-25000-21738774876b9de75538fae2501f8c4f-a888dd82d6b2">(08/26/24@12:21:45)dbuddenbaum@arm64-02:~$ microk8s join 192.168.2.61:25000/21738774876b9de75538fae2501f8c4f/a888dd82d6b2</a>
-</li>
+<li><a href="#08-26-24-12-19-30-dbuddenbaum-arm64-02-sudo-snap-install-microk8s-classic-channel-1-29-stable">(08/26/24@12:19:30)dbuddenbaum@arm64-02:~$ sudo snap install microk8s –classic –channel=1.29/stable</a></li>
+<li><a href="#08-26-24-12-21-45-dbuddenbaum-arm64-02-microk8s-join-192-168-2-61-25000-21738774876b9de75538fae2501f8c4f-a888dd82d6b2">(08/26/24@12:21:45)dbuddenbaum@arm64-02:~$ microk8s join 192.168.2.61:25000/21738774876b9de75538fae2501f8c4f/a888dd82d6b2</a></li>
 </ul>
 </li>
-<li>
-<a href="#dqlite-repair">Dqlite Repair</a>
+<li><a href="#dqlite-repair">Dqlite Repair</a>
 <ul>
-<li>
-<a href="#08-26-24-14-45-52-dbuddenbaum-arm64-01-microk8s-join-192-168-2-61-25000-xxxxxxx">(08/26/24@14:45:52)dbuddenbaum@arm64-01:~$ microk8s join 192.168.2.61:25000/xxxxxxx…..</a>
-</li>
-<li>
-<a href="#08-26-24-14-52-00-dbuddenbaum-amd64-01-sudo-snap-microk8s-current-bin-dqlite-s-file-var-snap-microk8s-current-var-kubernetes-backend-cluster-yaml-c-var-snap-microk8s-current-var-kubernetes-backend-cluster-crt-k-var-snap-microk8s-current-var-kubernetes-bac">(08/26/24@14:52:00)dbuddenbaum@amd64-01:~$ sudo /snap/microk8s/current/bin/dqlite -s file:///var/snap/microk8s/current/var/kubernetes/backend/cluster.yaml -c /var/snap/microk8s/current/var/kubernetes/backend/cluster.crt -k /var/snap/microk8s/current/var/kubernetes/backend/cluster.key -f json k8s “.remove 192.168.2.51:19001”</a>
-</li>
-<li>
-<a href="#08-26-24-14-52-25-dbuddenbaum-amd64-01-var-snap-microk8s-current-var-kubernetes-backend-vi-cluster-yaml">(08/26/24@14:52:25)dbuddenbaum@amd64-01:/var/snap/microk8s/current/var/kubernetes/backend$ vi cluster.yaml</a>
-</li>
+<li><a href="#08-26-24-14-45-52-dbuddenbaum-arm64-01-microk8s-join-192-168-2-61-25000-xxxxxxx">(08/26/24@14:45:52)dbuddenbaum@arm64-01:~$ microk8s join 192.168.2.61:25000/xxxxxxx…..</a></li>
+<li><a href="#08-26-24-14-52-00-dbuddenbaum-amd64-01-sudo-snap-microk8s-current-bin-dqlite-s-file-var-snap-microk8s-current-var-kubernetes-backend-cluster-yaml-c-var-snap-microk8s-current-var-kubernetes-backend-cluster-crt-k-var-snap-microk8s-current-var-kubernetes-bac">(08/26/24@14:52:00)dbuddenbaum@amd64-01:~$ sudo /snap/microk8s/current/bin/dqlite -s file:///var/snap/microk8s/current/var/kubernetes/backend/cluster.yaml -c /var/snap/microk8s/current/var/kubernetes/backend/cluster.crt -k /var/snap/microk8s/current/var/kubernetes/backend/cluster.key -f json k8s “.remove 192.168.2.51:19001”</a></li>
+<li><a href="#08-26-24-14-52-25-dbuddenbaum-amd64-01-var-snap-microk8s-current-var-kubernetes-backend-vi-cluster-yaml">(08/26/24@14:52:25)dbuddenbaum@amd64-01:/var/snap/microk8s/current/var/kubernetes/backend$ vi cluster.yaml</a></li>
 </ul>
 </li>
 </ul>
@@ -591,9 +477,7 @@
 <h1><a id="setup-microk8s" href="#setup-microk8s" class="Permalink" aria-hidden="true" title="Permalink">#</a>Setup MicroK8s</h1>
 <h2><a id="reference" href="#reference" class="Permalink" aria-hidden="true" title="Permalink">#</a>Reference</h2>
 <ul>
-<li>
-<a href="https://nuculabs.dev/p/how-to-create-a-servicemonitor-in-microk8s-observability-tutorial" class="Link--external" rel="noopener noreferrer">How to create a ServiceMonitor in Microk8s: Observability Tutorial</a>
-</li>
+<li><a href="https://nuculabs.dev/p/how-to-create-a-servicemonitor-in-microk8s-observability-tutorial" class="Link--external" rel="noopener noreferrer">How to create a ServiceMonitor in Microk8s: Observability Tutorial</a></li>
 </ul>
 <h2><a id="setup" href="#setup" class="Permalink" aria-hidden="true" title="Permalink">#</a>Setup</h2>
 <h3><a id="arm64-init" href="#arm64-init" class="Permalink" aria-hidden="true" title="Permalink">#</a>ARM64 Init</h3>
@@ -1029,9 +913,7 @@ Done
 </code></pre>
 <h3><a id="setup-amd64-nvidia-gpu" href="#setup-amd64-nvidia-gpu" class="Permalink" aria-hidden="true" title="Permalink">#</a>Setup AMD64 Nvidia GPU</h3>
 <ul>
-<li>
-<a href="../ai/generativeAI/gpu.html">MicroK8s enable GPU</a>
-</li>
+<li><a href="../ai/generativeAI/gpu.html">MicroK8s enable GPU</a></li>
 </ul>
 <h4><a id="08-22-24-13-32-08-dbuddenbaum-amd64-01-inxi-g" href="#08-22-24-13-32-08-dbuddenbaum-amd64-01-inxi-g" class="Permalink" aria-hidden="true" title="Permalink">#</a>(08/22/24@13:32:08)dbuddenbaum@amd64-01:~$ inxi -G</h4>
 <pre><code>Graphics:
@@ -1095,7 +977,7 @@ Connection failed. Failed to retrieve dqlite cluster nodes: the joining node (19
 
     
     <!-- JS -->
-            <script src="../themes/daux/js/main.mjs"></script>
+            <script src="../themes/daux/js/main.js"></script>
     
         <script>
         

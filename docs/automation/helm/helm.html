@@ -351,7 +351,7 @@
     <div class="Page__header">
         <h1><a href="../../automation/ansible/ansible_automation.html">automation</a> <svg class="Page__header--separator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 477.175 477.175"><path d="M360.73 229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1 0s-5.3 13.8 0 19.1l215.5 215.5-215.5 215.5c-5.3 5.3-5.3 13.8 0 19.1 2.6 2.6 6.1 4 9.5 4 3.4 0 6.9-1.3 9.5-4l225.1-225.1c5.3-5.2 5.3-13.8.1-19z"/></svg> <a href="../../automation/helm/helm.html">helm</a> <svg class="Page__header--separator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 477.175 477.175"><path d="M360.73 229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1 0s-5.3 13.8 0 19.1l215.5 215.5-215.5 215.5c-5.3 5.3-5.3 13.8 0 19.1 2.6 2.6 6.1 4 9.5 4 3.4 0 6.9-1.3 9.5-4l225.1-225.1c5.3-5.2 5.3-13.8.1-19z"/></svg> <a href="../../automation/helm/helm.html">helm</a></h1>
                 <span class="ModifiedDate">
-            May 13, 2025 at 3:11 PM        </span>
+            March 29, 2026 at 2:43 PM        </span>
                     </div>
 
     <div class="s-content">
@@ -359,91 +359,56 @@
     <h4 class="TableOfContentsContainer__title">Table of Contents</h4>
     <div class="TableOfContentsContainer__content">
         <ul class="TableOfContents">
-<li>
-<a href="#helm">Helm</a>
+<li><a href="#helm">Helm</a>
 <ul>
-<li>
-<a href="#references">References</a>
-</li>
-<li>
-<a href="#commands">Commands</a>
+<li><a href="#references">References</a></li>
+<li><a href="#commands">Commands</a>
 <ul>
-<li>
-<a href="#setup-a-directory-for-charts"># Setup a directory for charts</a>
+<li><a href="#setup-a-directory-for-charts"># Setup a directory for charts</a>
 <ul>
-<li>
-<a href="#base-11-04-24-3-20pm-donbuddenbaum-donbs-imac-documents-kalaxy2-yaml-main">(base) #( 11/04/24@ 3:20PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml@main✔</a>
-</li>
+<li><a href="#base-11-04-24-3-20pm-donbuddenbaum-donbs-imac-documents-kalaxy2-yaml-main">(base) #( 11/04/24@ 3:20PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/yaml@main✔</a></li>
 </ul>
 </li>
-<li>
-<a href="#package-the-chart"># Package the chart</a>
+<li><a href="#package-the-chart"># Package the chart</a>
 <ul>
-<li>
-<a href="#09-04-24-3-42pm-donbuddenbaum-donbs-imac-documents-fake-news-app-fakenewsdetection-anend-to-endmachinelearningproject-yaml-main">#( 09/04/24@ 3:42PM )( donbuddenbaum@donbs-imac ):~/Documents/fake_news/app/FakeNewsDetection:AnEnd-to-EndMachineLearningProject/yaml@main✗✗✗</a>
-</li>
+<li><a href="#09-04-24-3-42pm-donbuddenbaum-donbs-imac-documents-fake-news-app-fakenewsdetection-anend-to-endmachinelearningproject-yaml-main">#( 09/04/24@ 3:42PM )( donbuddenbaum@donbs-imac ):~/Documents/fake_news/app/FakeNewsDetection:AnEnd-to-EndMachineLearningProject/yaml@main✗✗✗</a></li>
 </ul>
 </li>
-<li>
-<a href="#create-a-directory-for-the-local-repo"># Create a directory for the local repo</a>
-</li>
-<li>
-<a href="#move-the-package-to-the-local-repo-directory"># Move the package to the local repo directory</a>
-</li>
-<li>
-<a href="#create-an-index-file-for-the-repo"># Create an index file for the repo</a>
+<li><a href="#create-a-directory-for-the-local-repo"># Create a directory for the local repo</a></li>
+<li><a href="#move-the-package-to-the-local-repo-directory"># Move the package to the local repo directory</a></li>
+<li><a href="#create-an-index-file-for-the-repo"># Create an index file for the repo</a>
 <ul>
-<li>
-<a href="#09-04-24-3-12pm-donbuddenbaum-donbs-imac-documents-kalaxy2-helm-main">#( 09/04/24@ 3:12PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/helm@main✗✗✗</a>
-</li>
+<li><a href="#09-04-24-3-12pm-donbuddenbaum-donbs-imac-documents-kalaxy2-helm-main">#( 09/04/24@ 3:12PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/helm@main✗✗✗</a></li>
 </ul>
 </li>
-<li>
-<a href="#start-a-local-web-server-to-serve-the-repo"># Start a local web server to serve the repo</a>
+<li><a href="#start-a-local-web-server-to-serve-the-repo"># Start a local web server to serve the repo</a>
 <ul>
-<li>
-<a href="#09-04-24-3-45pm-donbuddenbaum-donbs-imac-documents-kalaxy2-helm-kalaxy2-charts-main">#( 09/04/24@ 3:45PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/helm/kalaxy2_charts@main✗✗✗</a>
-</li>
+<li><a href="#09-04-24-3-45pm-donbuddenbaum-donbs-imac-documents-kalaxy2-helm-kalaxy2-charts-main">#( 09/04/24@ 3:45PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/helm/kalaxy2_charts@main✗✗✗</a></li>
 </ul>
 </li>
-<li>
-<a href="#add-the-local-repo-to-helm"># Add the local repo to Helm</a>
+<li><a href="#add-the-local-repo-to-helm"># Add the local repo to Helm</a>
 <ul>
-<li>
-<a href="#09-04-24-3-16pm-donbuddenbaum-donbs-imac-documents-kalaxy2-helm-kalaxy2-charts-main">#( 09/04/24@ 3:16PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/helm/kalaxy2_charts@main✗✗✗</a>
-</li>
+<li><a href="#09-04-24-3-16pm-donbuddenbaum-donbs-imac-documents-kalaxy2-helm-kalaxy2-charts-main">#( 09/04/24@ 3:16PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/helm/kalaxy2_charts@main✗✗✗</a></li>
 </ul>
 </li>
-<li>
-<a href="#update-helm-to-recognize-the-new-repo"># Update Helm to recognize the new repo</a>
+<li><a href="#update-helm-to-recognize-the-new-repo"># Update Helm to recognize the new repo</a>
 <ul>
-<li>
-<a href="#09-04-24-3-47pm-donbuddenbaum-donbs-imac-documents-fake-news-app-fakenewsdetection-anend-to-endmachinelearningproject-yaml-main">#( 09/04/24@ 3:47PM )( donbuddenbaum@donbs-imac ):~/Documents/fake_news/app/FakeNewsDetection:AnEnd-to-EndMachineLearningProject/yaml@main✗✗✗</a>
-</li>
+<li><a href="#09-04-24-3-47pm-donbuddenbaum-donbs-imac-documents-fake-news-app-fakenewsdetection-anend-to-endmachinelearningproject-yaml-main">#( 09/04/24@ 3:47PM )( donbuddenbaum@donbs-imac ):~/Documents/fake_news/app/FakeNewsDetection:AnEnd-to-EndMachineLearningProject/yaml@main✗✗✗</a></li>
 </ul>
 </li>
-<li>
-<a href="#install-the-chart-from-the-local-repo"># Install the chart from the local repo</a>
+<li><a href="#install-the-chart-from-the-local-repo"># Install the chart from the local repo</a>
 <ul>
-<li>
-<a href="#09-04-24-3-22pm-donbuddenbaum-donbs-imac-documents-kalaxy2-helm-kalaxy2-charts-main">#( 09/04/24@ 3:22PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/helm/kalaxy2_charts@main✗✗✗</a>
-</li>
+<li><a href="#09-04-24-3-22pm-donbuddenbaum-donbs-imac-documents-kalaxy2-helm-kalaxy2-charts-main">#( 09/04/24@ 3:22PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/helm/kalaxy2_charts@main✗✗✗</a></li>
 </ul>
 </li>
-<li>
-<a href="#list-installed-charts"># List Installed Charts</a>
+<li><a href="#list-installed-charts"># List Installed Charts</a>
 <ul>
-<li>
-<a href="#09-04-24-3-24pm-donbuddenbaum-donbs-imac-documents-kalaxy2-helm-kalaxy2-charts-main">#( 09/04/24@ 3:24PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/helm/kalaxy2_charts@main✗✗✗</a>
-</li>
+<li><a href="#09-04-24-3-24pm-donbuddenbaum-donbs-imac-documents-kalaxy2-helm-kalaxy2-charts-main">#( 09/04/24@ 3:24PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/helm/kalaxy2_charts@main✗✗✗</a></li>
 </ul>
 </li>
-<li>
-<a href="#uninstall-charts"># Uninstall Charts</a>
+<li><a href="#uninstall-charts"># Uninstall Charts</a>
 <ul>
-<li>
-<a href="#09-04-24-3-28pm-donbuddenbaum-donbs-imac-documents-kalaxy2-helm-kalaxy2-charts-main">#( 09/04/24@ 3:28PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/helm/kalaxy2_charts@main✗✗✗</a>
-</li>
+<li><a href="#09-04-24-3-28pm-donbuddenbaum-donbs-imac-documents-kalaxy2-helm-kalaxy2-charts-main">#( 09/04/24@ 3:28PM )( donbuddenbaum@donbs-imac ):~/Documents/Kalaxy2/helm/kalaxy2_charts@main✗✗✗</a></li>
 </ul>
 </li>
 </ul>
@@ -456,15 +421,9 @@
 <p><img src="image.png" alt="alt text" /></p>
 <h2><a id="references" href="#references" class="Permalink" aria-hidden="true" title="Permalink">#</a>References</h2>
 <ul>
-<li>
-<a href="https://medium.com/@mssantossousa/deploy-using-argocd-and-github-actions-888f7370e480" class="Link--external" rel="noopener noreferrer">Deploy using ArgoCD and Github Actions</a>
-</li>
-<li>
-<a href="https://medium.com/@maorfr/template-everything-with-helm-48e5a32ff72d" class="Link--external" rel="noopener noreferrer">Template everything with Helm</a>
-</li>
-<li>
-<a href="https://medium.com/swlh/getting-started-with-helm-v3-3c07ba63c9f8" class="Link--external" rel="noopener noreferrer">Getting Started With Helm v3</a>
-</li>
+<li><a href="https://medium.com/@mssantossousa/deploy-using-argocd-and-github-actions-888f7370e480" class="Link--external" rel="noopener noreferrer">Deploy using ArgoCD and Github Actions</a></li>
+<li><a href="https://medium.com/@maorfr/template-everything-with-helm-48e5a32ff72d" class="Link--external" rel="noopener noreferrer">Template everything with Helm</a></li>
+<li><a href="https://medium.com/swlh/getting-started-with-helm-v3-3c07ba63c9f8" class="Link--external" rel="noopener noreferrer">Getting Started With Helm v3</a></li>
 </ul>
 <h2><a id="commands" href="#commands" class="Permalink" aria-hidden="true" title="Permalink">#</a>Commands</h2>
 <h3><a id="setup-a-directory-for-charts" href="#setup-a-directory-for-charts" class="Permalink" aria-hidden="true" title="Permalink">#</a># Setup a directory for charts</h3>
@@ -572,7 +531,7 @@ release &quot;fakenews-release&quot; uninstalled
 
     
     <!-- JS -->
-            <script src="../../themes/daux/js/main.mjs"></script>
+            <script src="../../themes/daux/js/main.js"></script>
     
         <script>
         
