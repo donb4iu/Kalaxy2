@@ -16,26 +16,28 @@ jobs:
       id: Generating_webpages_from_commit
       with:
         image: daux/daux.io:latest
-        options: |
-          --rm 
+        options: >-
+          --rm
           -v ${{ github.workspace }}:/build
           -w /build
-        run: /daux/bin/daux generate -s markdown -d docs
+        run: |
+          rm -rf docs
+          /daux/bin/daux generate -s markdown -d docs
 
-    - name: Commit generated webpages
-      id: Committing_webpage_changes
+    - name: Commit generated documentation to Kalaxy2
       run: |
         git config --local user.email "dbuddenbaum@gmail.com"
         git config --local user.name "donb4iu"
-        git add -A
-        git commit -a -m 'commit generated daux.io generated docs to repository'
 
-    - name: Force push generated webpages back to the docs directory
-      uses: ad-m/github-push-action@master
-      id: Pushing_webpage_changes
-      with:
-        github_token: ${{ secrets.API_TOKEN_GITHUB }}
-        branch: main
+        git add docs
+
+        if git diff --cached --quiet; then
+          echo "No generated documentation changes."
+         exit 0
+        fi
+
+        git commit -m "Generate Kalaxy2 Daux documentation [skip ci]"
+        git push origin main
 
     - name: Publish webpages to donb4iu.github.io
       uses: cpina/github-action-push-to-another-repository@main
@@ -43,13 +45,14 @@ jobs:
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        source-directory: 'docs'
-        target-directory: 'docs'
-        destination-github-username: 'donb4iu'
-        destination-repository-name: 'donb4iu.github.io'
-        target-branch: 'main'
-        commit-message: 'DauxIO webpage commit from Kalaxy2'
-        user-email: dbuddenbaum@gmail.com
+        source-directory: "docs"
+        target-directory: "docs/Kalaxy2"
+        destination-github-username: "donb4iu"
+        destination-repository-name: "donb4iu.github.io"
+        target-branch: "main"
+        commit-message: "DauxIO webpage commit from Kalaxy2"
+        user-email: "dbuddenbaum@gmail.com"
+        user-name: "donb4iu"
 
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v3
