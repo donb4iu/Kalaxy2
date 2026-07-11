@@ -1,6 +1,5 @@
 name: Kalaxy2 automated documentation generation and publication
 on:
-on:
   push:
     branches:
       - main
@@ -20,7 +19,7 @@ jobs:
     env:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
     runs-on: ubuntu-latest 
-    
+
     steps:
     - name: Check out repository
       uses: actions/checkout@v4
