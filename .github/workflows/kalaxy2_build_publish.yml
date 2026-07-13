@@ -9,6 +9,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: kalaxy2-main-writer
@@ -16,8 +18,12 @@ concurrency:
 
 jobs:
   doc:
+    environment:
+      name: github-pages
+      url: ${{ steps.pages_deployment.outputs.page_url }}
     env:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
     runs-on: ubuntu-latest 
 
     steps:
@@ -39,7 +45,18 @@ jobs:
         run: |
           rm -rf docs
           /daux/bin/daux generate -s markdown -d docs
-
+    - name: Configure GitHub Pages
+      uses: actions/configure-pages@v5          
+    - name: Disable Jekyll processing
+      run: touch docs/.nojekyll
+    - name: Upload GitHub Pages artifact
+      uses: actions/upload-pages-artifact@v4
+      with:
+        path: docs
+        include-hidden-files: true
+    - name: Deploy Kalaxy2 documentation
+      id: pages_deployment
+      uses: actions/deploy-pages@v4      
     - name: Commit generated documentation to Kalaxy2
       run: |
         git config --local user.email "dbuddenbaum@gmail.com"
@@ -107,8 +124,12 @@ jobs:
         git config --global user.name 'donb4iu'
         git config --global user.email 'dbuddenbaum@gmail.com'
         git add values.yaml
-        git commit -m "Update values.yaml"
-        git push
+        if git diff --cached --quiet; then
+          echo "values.yaml already contains the current application version."
+        else
+          git commit -m "Update values.yaml [skip ci]"
+          git push
+        fi
 
     - name: Send Slack message
       uses: act10ns/slack@v2
